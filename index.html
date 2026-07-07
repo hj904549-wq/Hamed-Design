@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamed - UI/UX Designer & Front-End Developer</title>
+
+    <!-- فونت Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- فونت وزیرمتن برای فارسی -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- آیکون‌های Tabler -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css"
+    />
+
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ===== AOS ===== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== نوار پیشرفت اسکرول ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== پس‌زمینه موج‌ها ===== -->
+    <div class="wave-bg">
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+    </div>
+
+    <!-- ===== کانتینر ذرات ===== -->
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های بالا سمت راست ===== -->
+    <div class="header-controls">
+      <!-- دکمه تغییر زبان -->
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current">EN</span>
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+          <button class="lang-option" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+        </div>
+      </div>
+
+      <!-- دکمه تغییر تم -->
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="ti ti-sun theme-icon sun"></i>
+        <i class="ti ti-moon theme-icon moon"></i>
+      </button>
+    </div>
+
+    <!-- ===== نشان وضعیت ===== -->
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span class="status-text" data-key="status">Available for work</span>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== کپسول نوار کناری ===== -->
+    <nav class="capsule-nav">
+      <div class="desktop-menu">
+        <a href="#home" class="nav-link active"><i class="ti ti-home"></i></a>
+        <a href="#about" class="nav-link"><i class="ti ti-user"></i></a>
+        <a href="#skills" class="nav-link"
+          ><i class="ti ti-language-katakana"></i
+        ></a>
+        <a href="#portfolio" class="nav-link"
+          ><i class="ti ti-layout-navbar"></i
+        ></a>
+        <a href="#education" class="nav-link"><i class="ti ti-school"></i></a>
+        <a href="#contact" class="nav-link"><i class="ti ti-mail"></i></a>
+      </div>
+    </nav>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="#home" class="nav-link active"
+          ><i class="ti ti-home"></i> <span data-key="nav-home">Home</span></a
+        >
+        <a href="#about" class="nav-link"
+          ><i class="ti ti-user"></i> <span data-key="nav-about">About</span></a
+        >
+        <a href="#skills" class="nav-link"
+          ><i class="ti ti-language-katakana"></i>
+          <span data-key="nav-skills">Skills</span></a
+        >
+        <a href="#portfolio" class="nav-link"
+          ><i class="ti ti-layout-navbar"></i>
+          <span data-key="nav-portfolio">Portfolio</span></a
+        >
+        <a href="#education" class="nav-link"
+          ><i class="ti ti-school"></i>
+          <span data-key="nav-education">Education</span></a
+        >
+        <a href="#contact" class="nav-link"
+          ><i class="ti ti-mail"></i>
+          <span data-key="nav-contact">Contact</span></a
+        >
+      </div>
+    </div>
+
+    <!-- ===== اوورلی ===== -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- =========================================
+         محتوای اصلی
+         ========================================= -->
+
+    <!-- ===== HERO ===== -->
+    <main class="content-area" id="home">
+      <section class="hero-content">
+        <div class="avatar-container">
+          <img
+            src="./img/Profile-image.jpg"
+            alt="Hamed"
+            class="avatar-img"
+            loading="lazy"
+          />
+        </div>
+        <h1>
+          <span data-key="hero-greeting">Hi, I'm</span>
+          <span class="highlight-text">Hamed</span>
+        </h1>
+        <h2 class="subtitle" data-key="hero-title">I'm a UI/UX Designer</h2>
+        <p data-key="hero-desc">
+          I create beautiful, responsive web experiences using modern
+          technologies.
+        </p>
+        <div>
+          <a href="#portfolio" class="hero-btn primary" data-key="hero-btn-work"
+            >View My Work</a
+          >
+          <a href="#contact" class="hero-btn" data-key="hero-btn-talk"
+            >Let's Talk</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-header" data-aos="fade-down" data-aos-once="true">
+          <h2 class="about-title">
+            <span class="highlight-about" data-key="about-title-highlight"
+              >About</span
+            >
+            <span data-key="about-title">Me</span>
+          </h2>
+          <div
+            class="about-subtitle-line"
+            data-aos="zoom-in"
+            data-aos-once="true"
+            data-aos-delay="100"
+          ></div>
+          <p
+            class="about-subtitle-text"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="200"
+            data-key="about-subtitle"
+          >
+            Designer &amp; Developer with a passion for clean, human-centered
+            interfaces
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div
+            class="about-image-wrapper"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-delay="100"
+          >
+            <div class="about-image-card">
+              <div class="about-image-frame">
+                <img
+                  src="./img/Profile-image.jpg"
+                  alt="Hamed"
+                  class="about-avatar"
+                  loading="lazy"
+                />
+                <div class="about-ring"></div>
+              </div>
+              <div
+                class="about-stats-card"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-delay="200"
+              >
+                <div class="stat-about-item">
+                  <span class="stat-number">3+</span>
+                  <span class="stat-label" data-key="about-stat-exp"
+                    >Years Experience</span
+                  >
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-about-item">
+                  <span class="stat-number">20+</span>
+                  <span class="stat-label" data-key="about-stat-projects"
+                    >Projects Done</span
+                  >
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-about-item">
+                  <span class="stat-number">12</span>
+                  <span class="stat-label" data-key="about-stat-clients"
+                    >Happy Clients</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="content-about"
+            data-aos="fade-left"
+            data-aos-once="true"
+            data-aos-delay="200"
+          >
+            <span class="about-badge" data-aos="fade-up" data-aos-once="true">
+              <i class="ti ti-user-check"></i
+              ><span data-key="about-badge">Who I Am</span>
+            </span>
+            <h2
+              class="heading"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="50"
+              data-key="about-heading"
+            >
+              UI/UX Designer &amp; Front-End Developer
+            </h2>
+            <p
+              class="paragraph"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="100"
+              data-key="about-p1"
+            >
+              I'm Hamed, a creative UI/UX designer and front-end developer based
+              in Iran. With over 3 years of experience, I specialize in crafting
+              beautiful, responsive, and user-friendly digital experiences.
+            </p>
+            <p
+              class="paragraph"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="150"
+              data-key="about-p2"
+            >
+              From concept to pixel-perfect implementation, I combine design
+              thinking with modern web technologies to build products that
+              people love to use.
+            </p>
+            <div
+              class="about-features"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="200"
+            >
+              <div
+                class="feature-item"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-delay="50"
+              >
+                <i class="ti ti-brand-figma"></i>
+                <span data-key="about-feature-1">UI/UX Design</span>
+              </div>
+              <div
+                class="feature-item"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-delay="100"
+              >
+                <i class="ti ti-code"></i>
+                <span data-key="about-feature-2">Front-End Dev</span>
+              </div>
+              <div
+                class="feature-item"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-delay="150"
+              >
+                <i class="ti ti-device-mobile"></i>
+                <span data-key="about-feature-3">Responsive Design</span>
+              </div>
+              <div
+                class="feature-item"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-delay="200"
+              >
+                <i class="ti ti-brand-react"></i>
+                <span data-key="about-feature-4">React / Vue</span>
+              </div>
+            </div>
+            <div
+              class="about-actions"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="250"
+            >
+              <a href="#contact" class="about-btn primary-btn">
+                <i class="ti ti-message"></i>
+                <span data-key="about-btn-talk">Let's Talk</span>
+              </a>
+              <a href="#" class="about-btn ghost-btn">
+                <i class="ti ti-file-text"></i>
+                <span data-key="about-btn-resume">My Resume</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <!-- سمت چپ: تصاویر بزرگ و شناور (با انیمیشن نرم) -->
+        <div class="skills-visual" data-aos="fade-right" data-aos-once="true">
+          <div class="robot-hands-wrapper">
+            <!-- دایره‌های اصلی با عکس‌های خودتان -->
+            <div
+              class="robot-hand hand-back"
+              data-aos="zoom-in"
+              data-aos-once="true"
+              data-aos-delay="100"
+            >
+              <img src="./img/physics.png" alt="React Icon" loading="lazy" />
+            </div>
+            <div
+              class="robot-hand hand-mid"
+              data-aos="zoom-in"
+              data-aos-once="true"
+              data-aos-delay="200"
+            >
+              <img
+                src="./img/java-script.png"
+                alt="JavaScript Icon"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="robot-hand hand-front"
+              data-aos="zoom-in"
+              data-aos-once="true"
+              data-aos-delay="300"
+            >
+              <img src="./img/css-3.png" alt="CSS3 Icon" loading="lazy" />
+            </div>
+
+            <!-- آیکون‌های شناور (با گرادینت) -->
+            <div
+              class="floating-icon float-1"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="100"
+            >
+              <i class="fas fa-brain icon-grad-brain"></i>
+            </div>
+            <div
+              class="floating-icon float-2"
+              data-aos="fade-down"
+              data-aos-once="true"
+              data-aos-delay="200"
+            >
+              <i class="fas fa-paint-roller icon-grad-paint"></i>
+            </div>
+            <div
+              class="floating-icon float-3"
+              data-aos="fade-left"
+              data-aos-once="true"
+              data-aos-delay="300"
+            >
+              <i class="fas fa-code icon-grad-code"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- سمت راست: لیست مهارت‌ها (با عکس‌های خودتان) -->
+        <div class="skills-content" data-aos="fade-left" data-aos-once="true">
+          <h2 class="skills-title">
+            <span class="title-icon-wrapper"
+              ><i class="fas fa-microchip"></i
+            ></span>
+            <span data-key="skills-title">My Skills</span>
+          </h2>
+
+          <p class="skills-description" data-key="skills-desc">
+            I'm a passionate web developer with over 3 years of experience
+            creating modern, responsive and pixel-perfect UI experiences.
+          </p>
+
+          <div class="skills-list">
+            <!-- React -->
+            <div
+              class="skill-item"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="50"
+            >
+              <div class="skill-icon-wrapper">
+                <img src="./img/physics.png" alt="React" loading="lazy" />
+              </div>
+              <span class="skill-name">React</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-90"></div>
+              </div>
+              <span class="skill-percent">90%</span>
+            </div>
+
+            <!-- JavaScript -->
+            <div
+              class="skill-item"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="100"
+            >
+              <div class="skill-icon-wrapper">
+                <img
+                  src="./img/java-script.png"
+                  alt="JavaScript"
+                  loading="lazy"
+                />
+              </div>
+              <span class="skill-name">JavaScript</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-85"></div>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+
+            <!-- TypeScript -->
+            <div
+              class="skill-item"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="150"
+            >
+              <div class="skill-icon-wrapper">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <span class="skill-name">TypeScript</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-80"></div>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+
+            <!-- Vue.js -->
+            <div
+              class="skill-item"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="200"
+            >
+              <div class="skill-icon-wrapper">
+                <i class="fas fa-brain"></i>
+              </div>
+              <span class="skill-name">Vue.js</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-75"></div>
+              </div>
+              <span class="skill-percent">75%</span>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div
+              class="skill-item"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="250"
+            >
+              <div class="skill-icon-wrapper">
+                <i class="fas fa-paint-roller"></i>
+              </div>
+              <span class="skill-name" data-key="skill-uiux">UI/UX Design</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-95"></div>
+              </div>
+              <span class="skill-percent">95%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="portfolio" id="portfolio">
+      <h2
+        class="titel-portfolio"
+        data-aos="fade-down"
+        data-aos-once="true"
+        data-aos-duration="500"
+      >
+        <span data-key="portfolio-title-highlight">My</span>
+        <span data-key="portfolio-title">Portfolio</span>
+      </h2>
+
+      <div class="portfolio-grid">
+        <div
+          class="portfolio-card"
+          data-aos="flip-up"
+          data-aos-once="true"
+          data-aos-duration="500"
+          data-aos-delay="0"
+        >
+          <div class="card-image">
+            <img
+              src="./img/Screenshot 2026-07-06 153718.png"
+              alt="KICKS"
+              loading="lazy"
+            />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">Online</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"
+              ><i class="ti ti-file-type-html"></i> HTML</span
+            >
+            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ti ti-brand-javascript"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">KICKS Website</h3>
+          <p class="card-description" data-key="portfolio-desc-1">
+            Premium Footwear E-Commerce with dynamic product showcase, cart
+            system, favorites, and contact form. Built with HTML/CSS/JavaScript
+            featuring Swiper.js.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/-KICKS./"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-primary"
+            >
+              <i class="ti ti-external-link"></i>
+              <span data-key="portfolio-btn-demo">View Demo</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/-KICKS."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-ghost"
+            >
+              <i class="fab fa-github"></i>
+              <span data-key="portfolio-btn-source">Source code</span>
+            </a>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <span class="stat-item"
+                ><i class="fas fa-file-alt"></i>
+                <span data-key="portfolio-stat-single">Single-page</span></span
+              >
+              <span class="stat-item"
+                ><i class="fas fa-tag"></i>
+                <span data-key="portfolio-stat-v1">Version 1</span></span
+              >
+            </div>
+            <span class="project-date"
+              ><i class="far fa-calendar-alt"></i> May 2025</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="portfolio-card"
+          data-aos="flip-up"
+          data-aos-once="true"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
+          <div class="card-image">
+            <img src="./img/Coffee-Land.png" alt="Cafe Land" loading="lazy" />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">Online</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"
+              ><i class="ti ti-file-type-html"></i> HTML</span
+            >
+            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ti ti-brand-javascript"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">Cafe Land Website</h3>
+          <p class="card-description" data-key="portfolio-desc-2">
+            Responsive Coffee Shop Website with interactive menu, shopping cart,
+            and contact form. Built using vanilla HTML/CSS/JS with localStorage.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/Cafe-Noir/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-primary"
+            >
+              <i class="ti ti-external-link"></i>
+              <span data-key="portfolio-btn-demo">View Demo</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/Cafe-Noir-"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-ghost"
+            >
+              <i class="fab fa-github"></i>
+              <span data-key="portfolio-btn-source">Source code</span>
+            </a>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <span class="stat-item"
+                ><i class="fas fa-file-alt"></i>
+                <span data-key="portfolio-stat-single">Single-page</span></span
+              >
+              <span class="stat-item"
+                ><i class="fas fa-tag"></i>
+                <span data-key="portfolio-stat-v1">Version 1</span></span
+              >
+            </div>
+            <span class="project-date"
+              ><i class="far fa-calendar-alt"></i> July 2025</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="portfolio-card"
+          data-aos="flip-up"
+          data-aos-once="true"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
+          <div class="card-image">
+            <img src="./img/motor-sit.png" alt="Motoride" loading="lazy" />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">Online</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"
+              ><i class="ti ti-file-type-html"></i> HTML</span
+            >
+            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ti ti-brand-javascript"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">Motorcycle Rental</h3>
+          <p class="card-description" data-key="portfolio-desc-3">
+            Motorcycle Rental Platform with dynamic bike listings, shopping
+            cart, destination slider, and blog system. Built with
+            HTML/CSS/JavaScript.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/MOTORIDE/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-primary"
+            >
+              <i class="ti ti-external-link"></i>
+              <span data-key="portfolio-btn-demo">View Demo</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/MOTORIDE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-card btn-ghost"
+            >
+              <i class="fab fa-github"></i>
+              <span data-key="portfolio-btn-source">Source code</span>
+            </a>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <span class="stat-item"
+                ><i class="fas fa-file-alt"></i>
+                <span data-key="portfolio-stat-single">Single-page</span></span
+              >
+              <span class="stat-item"
+                ><i class="fas fa-tag"></i>
+                <span data-key="portfolio-stat-v1">Version 1</span></span
+              >
+            </div>
+            <span class="project-date"
+              ><i class="far fa-calendar-alt"></i> May 2025</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="text-align: center; margin-top: 40px"
+        data-aos="fade-up"
+        data-aos-once="true"
+        data-aos-duration="500"
+      >
+        <a href="#" class="view"
+          ><span data-key="portfolio-view-all">View All Portfolio</span></a
+        >
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="education-section" id="education">
+      <div class="education-container">
+        <div
+          class="education-header"
+          data-aos="fade-down"
+          data-aos-once="true"
+          data-aos-duration="500"
+        >
+          <span
+            class="education-tag"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+          >
+            <i class="ti ti-school"></i>
+            <span data-key="edu-tag">My Journey</span>
+          </span>
+          <h2
+            class="education-title"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+          >
+            <span class="gradient-text" data-key="edu-title">Education</span>
+          </h2>
+          <p
+            class="education-subtitle"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="50"
+            data-key="edu-subtitle"
+          >
+            A strong foundation in computer science and modern web development
+          </p>
+        </div>
+
+        <div
+          class="education-stats"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="500"
+        >
+          <div
+            class="stat-box"
+            data-aos="zoom-in"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="0"
+          >
+            <span class="icon"><i class="ti ti-certificate"></i></span>
+            <span class="number">3</span>
+            <span class="label" data-key="edu-stat-certs">Certificates</span>
+          </div>
+          <div
+            class="stat-box"
+            data-aos="zoom-in"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="50"
+          >
+            <span class="icon"><i class="ti ti-clock"></i></span>
+            <span class="number">2+</span>
+            <span class="label" data-key="edu-stat-learning"
+              >Years Learning</span
+            >
+          </div>
+          <div
+            class="stat-box"
+            data-aos="zoom-in"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="100"
+          >
+            <span class="icon"><i class="ti ti-code"></i></span>
+            <span class="number">15+</span>
+            <span class="label" data-key="edu-stat-projects"
+              >Projects Built</span
+            >
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div
+            class="timeline-item"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="0"
+          >
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">
+                <i class="ti ti-calendar"></i> 2023 – 2026
+              </div>
+              <div class="timeline-title-wrapper">
+                <span class="title-icon">🎓</span>
+                <h3 class="timeline-title" data-key="edu-item1-title">
+                  High School Diploma
+                </h3>
+              </div>
+              <p class="timeline-institution">
+                <i class="ti ti-building-school"></i>
+                <span data-key="edu-item1-school">Bright Future School</span>
+              </p>
+              <p class="timeline-description" data-key="edu-item1-desc">
+                Currently in 9th grade. Studying Mathematics, Physics, and
+                Computer Science. Passionate about coding, web development, and
+                design.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-badge badge-current">
+                  <i class="ti ti-star"></i>
+                  <span data-key="edu-badge-progress">In Progress</span>
+                </span>
+                <span class="timeline-badge">
+                  <i class="ti ti-book"></i>
+                  <span data-key="edu-badge-student">Student</span>
+                </span>
+              </div>
+              <div class="timeline-progress">
+                <span class="progress-label" data-key="edu-progress"
+                  >Progress</span
+                >
+                <div class="progress-track">
+                  <div class="fill" style="width: 45%"></div>
+                </div>
+                <span class="progress-percent">45%</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="timeline-item"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="50"
+          >
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">
+                <i class="ti ti-calendar"></i> 2025 – Present
+              </div>
+              <div class="timeline-title-wrapper">
+                <span class="title-icon">💻</span>
+                <h3 class="timeline-title" data-key="edu-item2-title">
+                  Web Development &amp; UI/UX
+                </h3>
+              </div>
+              <p class="timeline-institution">
+                <i class="ti ti-world"></i>
+                <span data-key="edu-item2-school">Online — Self‑Taught</span>
+              </p>
+              <p class="timeline-description" data-key="edu-item2-desc">
+                Learning HTML, CSS, JavaScript, React, and UI/UX design
+                principles. Building real‑world projects and responsive
+                websites.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">
+                  <i class="ti ti-rocket"></i>
+                  <span data-key="edu-badge-learning">Learning</span>
+                </span>
+                <span class="timeline-badge"
+                  ><i class="ti ti-brand-react"></i> React</span
+                >
+                <span class="timeline-badge"
+                  ><i class="ti ti-brand-figma"></i> Figma</span
+                >
+              </div>
+              <div class="timeline-progress">
+                <span class="progress-label" data-key="edu-progress"
+                  >Progress</span
+                >
+                <div class="progress-track">
+                  <div class="fill" style="width: 70%"></div>
+                </div>
+                <span class="progress-percent">70%</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="timeline-item"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="100"
+          >
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">
+                <i class="ti ti-calendar"></i> 2023 – 2024
+              </div>
+              <div class="timeline-title-wrapper">
+                <span class="title-icon">🐍</span>
+                <h3 class="timeline-title" data-key="edu-item3-title">
+                  Programming Fundamentals
+                </h3>
+              </div>
+              <p class="timeline-institution">
+                <i class="ti ti-user"></i>
+                <span data-key="edu-item3-school">Self‑Taught</span>
+              </p>
+              <p class="timeline-description" data-key="edu-item3-desc">
+                Started coding with Python and basic web technologies. Built
+                first mini‑projects and gained confidence in programming.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">
+                  <i class="ti ti-check"></i>
+                  <span data-key="edu-badge-completed">Completed</span>
+                </span>
+                <span class="timeline-badge"
+                  ><i class="ti ti-brand-python"></i> Python</span
+                >
+                <span class="timeline-badge"
+                  ><i class="ti ti-file-type-html"></i> HTML/CSS</span
+                >
+              </div>
+              <div class="timeline-progress">
+                <span class="progress-label" data-key="edu-progress"
+                  >Progress</span
+                >
+                <div class="progress-track">
+                  <div class="fill" style="width: 100%"></div>
+                </div>
+                <span class="progress-percent">100%</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="timeline-item"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="150"
+          >
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">
+                <i class="ti ti-calendar"></i> 2026 – 2030
+              </div>
+              <div class="timeline-title-wrapper">
+                <span class="title-icon">🎯</span>
+                <h3 class="timeline-title" data-key="edu-item4-title">
+                  Computer Science (Planned)
+                </h3>
+              </div>
+              <p class="timeline-institution">
+                <i class="ti ti-building"></i>
+                <span data-key="edu-item4-school">Future University</span>
+              </p>
+              <p class="timeline-description" data-key="edu-item4-desc">
+                Planning to pursue a Bachelor's degree in Computer Science.
+                Focus on software engineering, AI, and human‑computer
+                interaction.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">
+                  <i class="ti ti-target"></i>
+                  <span data-key="edu-badge-goal">Goal</span>
+                </span>
+                <span class="timeline-badge"
+                  ><i class="ti ti-brain"></i> AI &amp; ML</span
+                >
+              </div>
+              <div class="timeline-progress">
+                <span class="progress-label" data-key="edu-progress-prep"
+                  >Preparation</span
+                >
+                <div class="progress-track">
+                  <div class="fill" style="width: 20%"></div>
+                </div>
+                <span class="progress-percent">20%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div
+          class="contact-header"
+          data-aos="fade-down"
+          data-aos-once="true"
+          data-aos-duration="500"
+        >
+          <span
+            class="contact-tag"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+          >
+            <i class="ti ti-mail"></i>
+            <span data-key="contact-tag">Get in Touch</span>
+          </span>
+          <h2
+            class="contact-title"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+          >
+            <span data-key="contact-title-start">Let's</span>
+            <span class="gradient-text" data-key="contact-title-highlight"
+              >Connect</span
+            >
+          </h2>
+          <p
+            class="contact-subtitle"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="50"
+            data-key="contact-subtitle"
+          >
+            Have a project in mind or just want to say hello? I'd love to hear
+            from you!
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div
+            class="contact-info"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="500"
+          >
+            <div
+              class="info-card"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="400"
+              data-aos-delay="0"
+            >
+              <div class="info-icon"><i class="ti ti-mail"></i></div>
+              <div class="info-content">
+                <h4 data-key="contact-email-label">Email</h4>
+                <p>hamed@example.com</p>
+                <a href="mailto:hamed@example.com"
+                  ><span data-key="contact-send">Send Message</span> →</a
+                >
+              </div>
+            </div>
+            <div
+              class="info-card"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="400"
+              data-aos-delay="50"
+            >
+              <div class="info-icon"><i class="ti ti-brand-github"></i></div>
+              <div class="info-content">
+                <h4>GitHub</h4>
+                <p>github.com/hamed</p>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  ><span data-key="contact-follow">Follow</span> →</a
+                >
+              </div>
+            </div>
+            <div
+              class="info-card"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="400"
+              data-aos-delay="100"
+            >
+              <div class="info-icon"><i class="ti ti-brand-linkedin"></i></div>
+              <div class="info-content">
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/hamed</p>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  ><span data-key="contact-connect">Connect</span> →</a
+                >
+              </div>
+            </div>
+            <div
+              class="info-card"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="400"
+              data-aos-delay="150"
+            >
+              <div class="info-icon"><i class="ti ti-map-pin"></i></div>
+              <div class="info-content">
+                <h4 data-key="contact-location-label">Location</h4>
+                <p><span data-key="contact-location">Iran, Tehran</span></p>
+                <span data-key="contact-remote"
+                  >🌍 Available for remote work</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="social-links"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="500"
+            >
+              <a
+                href="#"
+                class="social-btn"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-duration="300"
+                data-aos-delay="0"
+                aria-label="Twitter"
+              >
+                <i class="ti ti-brand-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="social-btn"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-duration="300"
+                data-aos-delay="50"
+                aria-label="Instagram"
+              >
+                <i class="ti ti-brand-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="social-btn"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-duration="300"
+                data-aos-delay="100"
+                aria-label="YouTube"
+              >
+                <i class="ti ti-brand-youtube"></i>
+              </a>
+              <a
+                href="#"
+                class="social-btn"
+                data-aos="zoom-in"
+                data-aos-once="true"
+                data-aos-duration="300"
+                data-aos-delay="150"
+                aria-label="Discord"
+              >
+                <i class="ti ti-brand-discord"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="contact-form-wrapper"
+            data-aos="fade-left"
+            data-aos-once="true"
+            data-aos-duration="500"
+          >
+            <form class="contact-form" id="contactForm">
+              <div
+                class="form-group"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="0"
+              >
+                <label for="name"
+                  ><i class="ti ti-user"></i>
+                  <span data-key="contact-form-name">Your Name</span></label
+                >
+                <input type="text" id="name" placeholder="John Doe" required />
+              </div>
+              <div
+                class="form-group"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="50"
+              >
+                <label for="email"
+                  ><i class="ti ti-mail"></i>
+                  <span data-key="contact-form-email"
+                    >Email Address</span
+                  ></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div
+                class="form-group"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="100"
+              >
+                <label for="subject"
+                  ><i class="ti ti-tag"></i>
+                  <span data-key="contact-form-subject">Subject</span></label
+                >
+                <input type="text" id="subject" placeholder="Project Inquiry" />
+              </div>
+              <div
+                class="form-group"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="150"
+              >
+                <label for="message"
+                  ><i class="ti ti-message"></i>
+                  <span data-key="contact-form-message">Message</span></label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="submit-btn"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="500"
+                data-aos-delay="200"
+              >
+                <i class="ti ti-send"></i>
+                <span data-key="contact-form-send">Send Message</span>
+                <span class="btn-glow"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== دکمه بازگشت به بالا ===== -->
+    <div class="back-to-top" id="backToTop">
+      <button class="back-to-top-btn" aria-label="Back to top">
+        <i class="ti ti-arrow-up"></i>
+      </button>
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div
+            class="footer-brand"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="500"
+          >
+            <h2>Hamed<span>.</span></h2>
+            <p data-key="footer-desc">
+              UI/UX Designer &amp; Front-End Developer crafting beautiful,
+              responsive digital experiences with modern technologies.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >Available for work</span
+              >
+            </div>
+            <div class="footer-email">
+              <i class="ti ti-mail"></i>
+              <a href="mailto:Hamed@example.com">Hamed@example.com</a>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
+            <h4 class="footer-title" data-key="footer-quick-links">
+              Quick Links
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#home"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-home">Home</span></a
+                >
+              </li>
+              <li>
+                <a href="#about"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-about">About</span></a
+                >
+              </li>
+              <li>
+                <a href="#skills"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-skills">Skills</span></a
+                >
+              </li>
+              <li>
+                <a href="#portfolio"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-portfolio">Portfolio</span></a
+                >
+              </li>
+              <li>
+                <a href="#education"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-education">Education</span></a
+                >
+              </li>
+              <li>
+                <a href="#contact"
+                  ><i class="ti ti-chevron-right"></i>
+                  <span data-key="nav-contact">Contact</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="500"
+            data-aos-delay="50"
+          >
+            <h4 class="footer-title" data-key="footer-connect">
+              Connect With Me
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                ><i class="ti ti-brand-github"></i><span>GitHub</span></a
+              >
+              <a href="#" class="social-link twitter"
+                ><i class="ti ti-brand-twitter"></i><span>Twitter</span></a
+              >
+              <a href="#" class="social-link youtube"
+                ><i class="ti ti-brand-youtube"></i><span>YouTube</span></a
+              >
+              <a href="#" class="social-link discord"
+                ><i class="ti ti-brand-discord"></i><span>Discord</span></a
+              >
+            </div>
+          </div>
+
+          <div
+            data-aos="fade-left"
+            data-aos-once="true"
+            data-aos-duration="500"
+          >
+            <h4 class="footer-title" data-key="footer-newsletter">
+              Stay Updated
+            </h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              Subscribe to get the latest projects, articles, and design
+              insights.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">
+                <i class="ti ti-send"></i>
+                <span data-key="footer-subscribe">Subscribe</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="footer-bottom"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="500"
+        >
+          <p>
+            &copy; 2026 <strong>Hamed</strong>.
+            <span data-key="footer-crafted">Crafted with</span>
+            <span class="heart"><i class="ti ti-heart"></i></span>
+            <span data-key="footer-tech">using HTML, CSS &amp; JavaScript</span>
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">Privacy Policy</a>
+            <a href="#" data-key="footer-terms">Terms of Service</a>
+            <span class="footer-version">v3.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+         اسکریپت‌ها
+         ========================================= -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
