@@ -8,6 +8,20 @@
       name="description"
       content="مقالات تخصصی در زمینه طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی وب"
     />
+    <link
+      rel="canonical"
+      href="https://hj904549-wq.github.io/Hamed-Design/blog.html"
+    />
+
+    <meta property="og:title" content="وبلاگ | حامد - مقالات طراحی و توسعه" />
+    <meta
+      property="og:description"
+      content="مقالات تخصصی در زمینه طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی وب"
+    />
+    <meta
+      property="og:url"
+      content="https://hj904549-wq.github.io/Hamed-Design/blog.html"
+    />
 
     <!-- فونت‌ها -->
     <link
@@ -19,10 +33,10 @@
       rel="stylesheet"
     />
 
-    <!-- آیکون‌ها -->
+    <!-- ===== Remix Icon ===== -->
     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
     <!-- AOS -->
@@ -46,7 +60,7 @@
           aria-label="Toggle language"
         >
           <span class="lang-current" id="lang-current-label">FA</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="ri-arrow-down-s-line"></i>
         </button>
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-option active" data-lang="fa">
@@ -58,8 +72,8 @@
         </div>
       </div>
       <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
-        <i class="fas fa-moon theme-icon moon"></i>
-        <i class="fas fa-sun theme-icon sun"></i>
+        <i class="ri-moon-line theme-icon moon"></i>
+        <i class="ri-sun-line theme-icon sun"></i>
       </button>
     </div>
 
@@ -74,25 +88,27 @@
     <div class="mobile-menu-wrapper" id="mobile-menu">
       <div class="mobile-menu-inner">
         <a href="index.html" class="nav-link"
-          ><i class="fas fa-home"></i> <span data-key="nav-home">خانه</span></a
+          ><i class="ri-home-5-line"></i>
+          <span data-key="nav-home">خانه</span></a
         >
         <a href="index.html#services" class="nav-link"
-          ><i class="fas fa-cogs"></i>
+          ><i class="ri-settings-3-line"></i>
           <span data-key="nav-services">خدمات</span></a
         >
         <a href="portfolio.html" class="nav-link"
-          ><i class="fas fa-briefcase"></i>
+          ><i class="ri-briefcase-4-line"></i>
           <span data-key="nav-portfolio">نمونه کارها</span></a
         >
         <a href="index.html#pricing" class="nav-link"
-          ><i class="fas fa-box"></i>
+          ><i class="ri-coupon-3-line"></i>
           <span data-key="nav-packages">پلن‌ها</span></a
         >
         <a href="blog.html" class="nav-link active"
-          ><i class="fas fa-blog"></i> <span data-key="nav-blog">وبلاگ</span></a
+          ><i class="ri-article-line"></i>
+          <span data-key="nav-blog">وبلاگ</span></a
         >
         <a href="index.html#contact" class="nav-link"
-          ><i class="fas fa-envelope"></i>
+          ><i class="ri-mail-line"></i>
           <span data-key="nav-contact">تماس</span></a
         >
       </div>
@@ -102,7 +118,7 @@
     <!-- ===== هدر صفحه وبلاگ ===== -->
     <header class="blog-page-header" data-aos="fade-down">
       <a href="index.html" class="back-to-home">
-        <i class="fas fa-arrow-right"></i>
+        <i class="ri-arrow-right-line"></i>
         <span data-key="blog-back-home">بازگشت به صفحه اصلی</span>
       </a>
       <h1 data-key="blog-page-title">📝 وبلاگ تخصصی</h1>
@@ -162,19 +178,23 @@
       <!-- مقاله ۱ - UI/UX -->
       <article class="blog-page-card" data-category="uiux" data-aos="fade-up">
         <div class="blog-image">
-          <img src="./img/blog-1.jpg" alt="طراحی UI/UX" loading="lazy" />
+          <img
+            src="./img/blog-1.jpg"
+            alt="تصویر مقاله طراحی UI/UX"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-uiux">UI/UX</span>
         </div>
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-1"
-              ><i class="far fa-calendar-alt"></i> ۲۵ دی ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۲۵ دی ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-1"
-              ><i class="far fa-clock"></i> ۵ دقیقه</span
+              ><i class="ri-time-line"></i> ۵ دقیقه</span
             >
             <span data-key="blog-meta-views-1"
-              ><i class="far fa-eye"></i> ۱,۲۰۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۱,۲۰۰ بازدید</span
             >
           </div>
           <h3>
@@ -191,7 +211,7 @@
             href="blog-post.html?id=1"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -204,19 +224,23 @@
         data-aos-delay="100"
       >
         <div class="blog-image">
-          <img src="./img/blog-2.webp" alt="جاوااسکریپت" loading="lazy" />
+          <img
+            src="./img/blog-2.webp"
+            alt="تصویر مقاله فریم‌ورک‌های جاوااسکریپت"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-dev">توسعه</span>
         </div>
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-2"
-              ><i class="far fa-calendar-alt"></i> ۱۸ دی ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۱۸ دی ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-2"
-              ><i class="far fa-clock"></i> ۷ دقیقه</span
+              ><i class="ri-time-line"></i> ۷ دقیقه</span
             >
             <span data-key="blog-meta-views-2"
-              ><i class="far fa-eye"></i> ۹۵۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۹۵۰ بازدید</span
             >
           </div>
           <h3>
@@ -232,7 +256,7 @@
             href="blog-post.html?id=2"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -245,7 +269,11 @@
         data-aos-delay="200"
       >
         <div class="blog-image">
-          <img src="./img/blog-3.jpg" alt="بهینه‌سازی سرعت" loading="lazy" />
+          <img
+            src="./img/blog-3.jpg"
+            alt="تصویر مقاله بهینه‌سازی سرعت وب‌سایت"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-optimization"
             >بهینه‌سازی</span
           >
@@ -253,13 +281,13 @@
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-3"
-              ><i class="far fa-calendar-alt"></i> ۱۰ دی ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۱۰ دی ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-3"
-              ><i class="far fa-clock"></i> ۶ دقیقه</span
+              ><i class="ri-time-line"></i> ۶ دقیقه</span
             >
             <span data-key="blog-meta-views-3"
-              ><i class="far fa-eye"></i> ۲,۱۰۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۲,۱۰۰ بازدید</span
             >
           </div>
           <h3>
@@ -275,7 +303,7 @@
             href="blog-post.html?id=3"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -288,7 +316,11 @@
         data-aos-delay="300"
       >
         <div class="blog-image">
-          <img src="./img/blog-4.jpg" alt="وردپرس" loading="lazy" />
+          <img
+            src="./img/blog-4.jpg"
+            alt="تصویر مقاله مقایسه وردپرس و React"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-wordpress"
             >وردپرس</span
           >
@@ -296,13 +328,13 @@
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-4"
-              ><i class="far fa-calendar-alt"></i> ۵ دی ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۵ دی ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-4"
-              ><i class="far fa-clock"></i> ۴ دقیقه</span
+              ><i class="ri-time-line"></i> ۴ دقیقه</span
             >
             <span data-key="blog-meta-views-4"
-              ><i class="far fa-eye"></i> ۷۸۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۷۸۰ بازدید</span
             >
           </div>
           <h3>
@@ -318,7 +350,7 @@
             href="blog-post.html?id=4"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -331,19 +363,23 @@
         data-aos-delay="400"
       >
         <div class="blog-image">
-          <img src="./img/blog-5.jpg" alt="سئو" loading="lazy" />
+          <img
+            src="./img/blog-5.jpg"
+            alt="تصویر مقاله سئو فنی برای فرانت‌اند"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-seo">سئو</span>
         </div>
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-5"
-              ><i class="far fa-calendar-alt"></i> ۲۸ آذر ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۲۸ آذر ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-5"
-              ><i class="far fa-clock"></i> ۸ دقیقه</span
+              ><i class="ri-time-line"></i> ۸ دقیقه</span
             >
             <span data-key="blog-meta-views-5"
-              ><i class="far fa-eye"></i> ۱,۵۰۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۱,۵۰۰ بازدید</span
             >
           </div>
           <h3>
@@ -359,7 +395,7 @@
             href="blog-post.html?id=5"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -372,19 +408,23 @@
         data-aos-delay="500"
       >
         <div class="blog-image">
-          <img src="./img/blog-6.jpg" alt="انیمیشن" loading="lazy" />
+          <img
+            src="./img/blog-6.jpg"
+            alt="تصویر مقاله انیمیشن‌های تعاملی CSS و JS"
+            loading="lazy"
+          />
           <span class="blog-category" data-key="blog-category-uiux">UI/UX</span>
         </div>
         <div class="blog-content">
           <div class="blog-meta">
             <span data-key="blog-meta-date-6"
-              ><i class="far fa-calendar-alt"></i> ۲۰ آذر ۱۴۰۴</span
+              ><i class="ri-calendar-line"></i> ۲۰ آذر ۱۴۰۴</span
             >
             <span data-key="blog-meta-read-6"
-              ><i class="far fa-clock"></i> ۵ دقیقه</span
+              ><i class="ri-time-line"></i> ۵ دقیقه</span
             >
             <span data-key="blog-meta-views-6"
-              ><i class="far fa-eye"></i> ۶۴۰ بازدید</span
+              ><i class="ri-eye-line"></i> ۶۴۰ بازدید</span
             >
           </div>
           <h3>
@@ -400,7 +440,7 @@
             href="blog-post.html?id=6"
             class="read-more"
             data-key="blog-read-more"
-            >ادامه مطلب <i class="fas fa-arrow-left"></i
+            >ادامه مطلب <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </article>
@@ -430,66 +470,67 @@
           style="display: inline-flex; padding: 14px 32px; font-size: 0.95rem"
         >
           <span data-key="blog-sidebar-cta-btn">شروع همکاری</span>
-          <i class="fas fa-arrow-left"></i>
+          <i class="ri-arrow-left-line"></i>
         </a>
       </div>
 
-      <!-- دسته‌بندی‌ها با لینک فیلتر -->
+      <!-- دسته‌بندی‌ها -->
       <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
         <h3 data-key="blog-sidebar-categories">📂 دسته‌بندی مقالات</h3>
         <ul>
           <li>
             <a href="?category=uiux" data-key="blog-cat-1"
-              ><i class="fas fa-chevron-left"></i> UI/UX Design (۱۲)</a
+              ><i class="ri-arrow-left-s-line"></i> UI/UX Design (۱۲)</a
             >
           </li>
           <li>
             <a href="?category=development" data-key="blog-cat-2"
-              ><i class="fas fa-chevron-left"></i> توسعه فرانت‌اند (۸)</a
+              ><i class="ri-arrow-left-s-line"></i> توسعه فرانت‌اند (۸)</a
             >
           </li>
           <li>
             <a href="?category=wordpress" data-key="blog-cat-3"
-              ><i class="fas fa-chevron-left"></i> وردپرس (۶)</a
+              ><i class="ri-arrow-left-s-line"></i> وردپرس (۶)</a
             >
           </li>
           <li>
             <a href="?category=optimization" data-key="blog-cat-4"
-              ><i class="fas fa-chevron-left"></i> بهینه‌سازی (۱۰)</a
+              ><i class="ri-arrow-left-s-line"></i> بهینه‌سازی (۱۰)</a
             >
           </li>
           <li>
             <a href="?category=seo" data-key="blog-cat-5"
-              ><i class="fas fa-chevron-left"></i> سئو (۵)</a
+              ><i class="ri-arrow-left-s-line"></i> سئو (۵)</a
             >
           </li>
         </ul>
       </div>
 
-      <!-- پربازدیدها با لینک مستقیم -->
+      <!-- پربازدیدها -->
       <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
         <h3 data-key="blog-sidebar-popular">🔥 پربازدیدترین‌ها</h3>
         <ul>
           <li>
             <a href="blog-post.html?id=3" data-key="blog-popular-1"
-              ><i class="fas fa-chevron-left"></i> ۱۰ تکنیک طلایی برای افزایش
+              ><i class="ri-arrow-left-s-line"></i> ۱۰ تکنیک طلایی برای افزایش
               سرعت</a
             >
           </li>
           <li>
             <a href="blog-post.html?id=1" data-key="blog-popular-2"
-              ><i class="fas fa-chevron-left"></i> چگونه یک طراحی UI/UX عالی
+              ><i class="ri-arrow-left-s-line"></i> چگونه یک طراحی UI/UX عالی
               داشته باشیم؟</a
             >
           </li>
           <li>
             <a href="blog-post.html?id=5" data-key="blog-popular-3"
-              ><i class="fas fa-chevron-left"></i> سئو فنی برای توسعه‌دهندگان</a
+              ><i class="ri-arrow-left-s-line"></i> سئو فنی برای
+              توسعه‌دهندگان</a
             >
           </li>
           <li>
             <a href="blog-post.html?id=2" data-key="blog-popular-4"
-              ><i class="fas fa-chevron-left"></i> بهترین فریم‌ورک‌های
+              ><i class="ri-arrow-left-s-line"></i> بهترین فریم‌ورک‌های
               جاوااسکریپت</a
             >
           </li>
@@ -518,7 +559,7 @@
             data-key="blog-newsletter-placeholder"
           />
           <button type="submit">
-            <i class="fas fa-send"></i>
+            <i class="ri-send-plane-2-line"></i>
             <span data-key="blog-sidebar-subscribe">عضویت</span>
           </button>
         </form>
@@ -542,6 +583,7 @@
               >
             </div>
           </div>
+
           <div>
             <h4 class="footer-title" data-key="footer-quick-links">
               لینک‌های سریع
@@ -549,30 +591,31 @@
             <ul class="footer-links">
               <li>
                 <a href="index.html"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-home">خانه</span></a
                 >
               </li>
               <li>
                 <a href="portfolio.html"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-portfolio">نمونه کارها</span></a
                 >
               </li>
               <li>
                 <a href="blog.html"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-blog">وبلاگ</span></a
                 >
               </li>
               <li>
                 <a href="index.html#contact"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-contact">تماس</span></a
                 >
               </li>
             </ul>
           </div>
+
           <div>
             <h4 class="footer-title" data-key="footer-connect">
               شبکه‌های اجتماعی
@@ -582,17 +625,41 @@
                 href="https://github.com/hj904549-wq"
                 class="social-link github"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="گیت‌هاب"
               >
-                <i class="fab fa-github"></i> <span>گیت‌هاب</span>
+                <i class="ri-github-line"></i> <span>گیت‌هاب</span>
               </a>
-              <a href="#" class="social-link linkedin" target="_blank">
-                <i class="fab fa-linkedin-in"></i> <span>لینکدین</span>
+              <a
+                href="https://www.instagram.com/hamed176750/"
+                class="social-link instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="اینستاگرام"
+              >
+                <i class="ri-instagram-line"></i> <span>اینستاگرام</span>
               </a>
-              <a href="#" class="social-link twitter" target="_blank">
-                <i class="fab fa-twitter"></i> <span>توییتر</span>
+              <a
+                href="https://web.telegram.org/a/"
+                class="social-link telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="تلگرام"
+              >
+                <i class="ri-telegram-line"></i> <span>تلگرام</span>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCCxJGb3kewgx2W1T1ZjswbQ"
+                class="social-link youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="یوتیوب"
+              >
+                <i class="ri-youtube-line"></i> <span>یوتیوب</span>
               </a>
             </div>
           </div>
+
           <div>
             <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
             <p class="newsletter-text" data-key="footer-newsletter-desc">
@@ -606,17 +673,18 @@
                 data-key="footer-newsletter-placeholder"
               />
               <button type="submit">
-                <i class="fas fa-send"></i>
+                <i class="ri-send-plane-2-line"></i>
                 <span data-key="footer-subscribe">عضویت</span>
               </button>
             </form>
           </div>
         </div>
+
         <div class="footer-bottom">
           <p>
             &copy; ۲۰۲۶ <strong>حامد</strong>.
             <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
-            <span class="heart"><i class="fas fa-heart"></i></span>
+            <span class="heart"><i class="ri-heart-3-fill"></i></span>
           </p>
           <div class="footer-bottom-links">
             <a href="#" data-key="footer-privacy">حریم خصوصی</a>
@@ -627,10 +695,7 @@
       </div>
     </footer>
 
-    <!-- ===== اسکریپت‌ها ===== -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
-
-    
   </body>
 </html>

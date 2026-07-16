@@ -22,6 +22,7 @@
     transition: all 0.3s ease;
     margin-bottom: 30px;
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 .blog-post-header .back-to-home:hover {
@@ -92,12 +93,14 @@ html[dir="rtl"] .blog-post-header .back-to-home:hover {
     font-size: 1.8rem;
     margin: 40px 0 16px;
     color: var(--text-main);
+    font-weight: 700;
 }
 
 .blog-post-content h3 {
     font-size: 1.4rem;
     margin: 30px 0 12px;
     color: var(--text-main);
+    font-weight: 600;
 }
 
 .blog-post-content p {
@@ -109,10 +112,36 @@ html[dir="rtl"] .blog-post-header .back-to-home:hover {
     color: var(--text-muted);
     padding-right: 24px;
     margin-bottom: 20px;
+    list-style: none;
 }
 
 .blog-post-content ul li {
     margin-bottom: 8px;
+    position: relative;
+    padding-right: 24px;
+}
+
+.blog-post-content ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    font-weight: 700;
+}
+
+html[dir="ltr"] .blog-post-content ul {
+    padding-right: 0;
+    padding-left: 24px;
+}
+
+html[dir="ltr"] .blog-post-content ul li {
+    padding-right: 0;
+    padding-left: 24px;
+}
+
+html[dir="ltr"] .blog-post-content ul li::before {
+    right: auto;
+    left: 0;
 }
 
 .blog-post-content blockquote {
@@ -123,11 +152,28 @@ html[dir="rtl"] .blog-post-header .back-to-home:hover {
     border-radius: 8px;
     color: var(--text-main);
     font-style: italic;
+    position: relative;
+}
+
+.blog-post-content blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-family: Georgia, serif;
 }
 
 html[dir="ltr"] .blog-post-content blockquote {
     border-right: none;
     border-left: 4px solid var(--primary-color);
+}
+
+html[dir="ltr"] .blog-post-content blockquote::before {
+    right: auto;
+    left: 12px;
 }
 
 .blog-post-content .post-tags {
@@ -152,6 +198,71 @@ html[dir="ltr"] .blog-post-content blockquote {
 .blog-post-content .post-tags span:hover {
     border-color: var(--primary-color);
     color: var(--text-main);
+    cursor: default;
+}
+
+/* ----- دکمه اشتراک‌گذاری ----- */
+.post-share {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.post-share span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.post-share .share-links {
+    display: flex;
+    gap: 10px;
+}
+
+.post-share .share-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.post-share .share-links a:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.post-share .share-links a.twitter:hover {
+    background: #1da1f2;
+    color: #fff;
+    border-color: #1da1f2;
+}
+
+.post-share .share-links a.linkedin:hover {
+    background: #0a66c2;
+    color: #fff;
+    border-color: #0a66c2;
+}
+
+.post-share .share-links a.telegram:hover {
+    background: #0088cc;
+    color: #fff;
+    border-color: #0088cc;
+}
+
+.post-share .share-links a.whatsapp:hover {
+    background: #25d366;
+    color: #fff;
+    border-color: #25d366;
 }
 
 /* ----- صفحه Not Found ----- */
@@ -186,11 +297,66 @@ html[dir="ltr"] .blog-post-content blockquote {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .not-found .back-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+}
+
+/* ----- مقالات مرتبط ----- */
+.related-posts {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.related-posts h3 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.related-posts-grid .related-item {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.related-posts-grid .related-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+.related-posts-grid .related-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.related-posts-grid .related-item h4 {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.related-posts-grid .related-item .related-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 6px;
 }
 
 /* ===== لایت مود ===== */
@@ -199,6 +365,14 @@ body.light-mode .blog-post-content blockquote {
 }
 
 body.light-mode .blog-post-content .post-tags span {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .post-share .share-links a {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .related-posts-grid .related-item {
     background: rgba(255, 255, 255, 0.7);
 }
 
@@ -218,6 +392,9 @@ body.light-mode .blog-post-content .post-tags span {
     }
     .blog-post-container {
         padding: 20px 16px 60px;
+    }
+    .related-posts-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -241,5 +418,13 @@ body.light-mode .blog-post-content .post-tags span {
     }
     .blog-post-content blockquote {
         padding: 14px 16px;
+    }
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    .post-share {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }

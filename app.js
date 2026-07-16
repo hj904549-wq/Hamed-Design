@@ -216,7 +216,7 @@ const translations = {
         "post-title-5": "سئو فنی برای توسعه‌دهندگان فرانت‌اند",
         "post-title-6": "انیمیشن‌های تعاملی با CSS و JavaScript",
 
-        // ===== محتوای مقالات (برای صفحه مقاله - فارسی با RTL) =====
+        // ===== محتوای مقالات =====
         "post-content-1": `<div dir="rtl"><h2>مقدمه</h2><p>طراحی UI/UX یکی از مهم‌ترین عوامل موفقیت یک محصول دیجیتال است. در این مقاله به بررسی اصول کلیدی و تکنیک‌های عملی برای خلق تجربه کاربری عالی می‌پردازیم.</p><h2>۱. شناخت کاربر</h2><p>اولین و مهم‌ترین قدم در طراحی UI/UX، شناخت کامل کاربران هدف است. بدون درک نیازها، مشکلات و رفتارهای کاربران، هیچ طراحی نمی‌تواند موفق باشد.</p><h2>۲. سادگی و مینیمالیسم</h2><p>طراحی ساده و مینیمال همیشه بهترین گزینه است. حذف المان‌های اضافی و تمرکز بر محتوای اصلی، تجربه کاربری را بهبود می‌بخشد.</p><blockquote>"طراحی خوب یعنی وقتی کاربر متوجه آن نمی‌شود." - دیتر رمز</blockquote><h2>۳. بازخورد و تعامل</h2><p>کاربران باید همیشه بدانند که چه اتفاقی در حال رخ دادن است. بازخوردهای بصری و تعاملی، حس کنترل و اعتماد را به کاربر منتقل می‌کنند.</p><h2>۴. تست و بهبود مستمر</h2><p>طراحی UI/UX یک فرآیند مداوم است. با تست کردن طرح‌ها با کاربران واقعی و جمع‌آوری بازخورد، می‌توانید به طور مداوم تجربه کاربری را بهبود بخشید.</p><h2>نتیجه‌گیری</h2><p>طراحی UI/UX عالی نیازمند ترکیبی از مهارت‌های فنی، درک روانشناسی کاربر و خلاقیت است. با رعایت اصول مطرح شده در این مقاله، می‌توانید محصولاتی خلق کنید که کاربران عاشق آن‌ها شوند.</p></div>`,
         "post-content-2": `<div dir="rtl"><h2>مقدمه</h2><p>انتخاب فریم‌ورک مناسب جاوااسکریپت یکی از مهم‌ترین تصمیم‌هایی است که یک توسعه‌دهنده باید بگیرد. در این مقاله به مقایسه سه فریم‌ورک محبوب React، Vue و Angular می‌پردازیم.</p><h2>۱. React</h2><p>React توسط فیسبوک توسعه داده شده و امروزه پرطرفدارترین کتابخانه جاوااسکریپت برای ساخت رابط‌های کاربری است.</p><ul><li>✅ Virtual DOM برای عملکرد بالا</li><li>✅ JSX برای نوشتن کد تمیزتر</li><li>✅ اکوسیستم غنی و پشتیبانی عالی</li><li>✅ React Native برای ساخت اپلیکیشن موبایل</li></ul><h2>۲. Vue.js</h2><p>Vue.js یک فریم‌ورک پیشرو و انعطاف‌پذیر است که توسط Evan You توسعه داده شده.</p><ul><li>✅ منحنی یادگیری ملایم</li><li>✅ انعطاف‌پذیری بالا</li><li>✅ عملکرد عالی</li><li>✅ مستندات کامل و روان</li></ul><h2>۳. Angular</h2><p>Angular یک فریم‌ورک کامل و قدرتمند است که توسط گوگل توسعه داده شده.</p><ul><li>✅ معماری MVC</li><li>✅ تزریق وابستگی</li><li>✅ TypeScript به عنوان زبان اصلی</li><li>✅ ابزارهای قدرتمند برای پروژه‌های بزرگ</li></ul><h2>مقایسه نهایی</h2><p>انتخاب بین این سه فریم‌ورک بستگی به نیازهای پروژه شما دارد. React برای پروژه‌های بزرگ و پیچیده عالی است، Vue برای شروع سریع و پروژه‌های کوچک تا متوسط مناسب است، و Angular برای پروژه‌های سازمانی با تیم‌های بزرگ بهترین گزینه است.</p></div>`,
         "post-content-3": `<div dir="rtl"><h2>مقدمه</h2><p>سرعت وب‌سایت یکی از مهم‌ترین عوامل در تجربه کاربری و سئو است. در این مقاله ۱۰ تکنیک عملی و اثبات‌شده برای افزایش سرعت وب‌سایت خود را به شما آموزش می‌دهیم.</p><h2>۱. بهینه‌سازی تصاویر</h2><p>تصاویر سنگین یکی از اصلی‌ترین دلایل کندی وب‌سایت‌ها هستند. با فشرده‌سازی تصاویر و استفاده از فرمت‌های مدرن مانند WebP می‌توانید حجم تصاویر را به شدت کاهش دهید.</p><h2>۲. استفاده از CDN</h2><p>شبکه توزیع محتوا (CDN) با ذخیره‌سازی فایل‌های استاتیک در سرورهای مختلف جهان، سرعت بارگذاری را برای کاربران در نقاط مختلف افزایش می‌دهد.</p><h2>۳. کش کردن مرورگر</h2><p>با کش کردن فایل‌های استاتیک در مرورگر کاربر، در بازدیدهای بعدی نیازی به دانلود مجدد آن‌ها نیست و سرعت بارگذاری به شدت افزایش می‌یابد.</p><blockquote>"هر یک ثانیه تأخیر در بارگذاری صفحه، نرخ تبدیل را ۷٪ کاهش می‌دهد."</blockquote><h2>۴. مینیمایز کردن CSS و JavaScript</h2><p>حذف فاصله‌ها، کامنت‌ها و کاراکترهای غیرضروری از فایل‌های CSS و JavaScript می‌تواند حجم آن‌ها را تا ۳۰٪ کاهش دهد.</p><h2>۵. لود تنبل (Lazy Loading)</h2><p>با لود تنبل، تصاویر و محتوای خارج از صفحه نمایش فقط زمانی بارگذاری می‌شوند که کاربر به آن‌ها اسکرول کند.</p><h2>۶. بهینه‌سازی فونت‌ها</h2><p>فونت‌های سفارشی می‌توانند تأثیر زیادی بر سرعت داشته باشند. استفاده از فونت‌های سیستمی یا نمایش فونت‌ها با روش‌های بهینه شده را در نظر بگیرید.</p><h2>۷. کاهش درخواست‌های HTTP</h2><p>تعداد درخواست‌های HTTP را با ترکیب فایل‌های CSS و JavaScript و استفاده از Sprite برای تصاویر کاهش دهید.</p><h2>۸. استفاده از Gzip</h2><p>فشرده‌سازی فایل‌ها با Gzip می‌تواند حجم انتقال داده را تا ۷۰٪ کاهش دهد.</p><h2>۹. بهینه‌سازی پایگاه داده</h2><p>پایگاه داده‌های سنگین و بهینه‌نشده می‌توانند سرعت وب‌سایت را کاهش دهند. ایندکس‌گذاری مناسب و بهینه‌سازی کوئری‌ها را جدی بگیرید.</p><h2>۱۰. استفاده از HTTP/2</h2><p>پروتکل HTTP/2 با قابلیت‌هایی مانند Multiplexing و Server Push، سرعت بارگذاری را به طور قابل توجهی افزایش می‌دهد.</p></div>`,
@@ -237,7 +237,7 @@ const translations = {
         "portfolio-tech-node": "Node.js",
         "portfolio-tech-tailwind": "Tailwind",
 
-        // ===== بخش در حال ساخت (Coming Soon) =====
+        // ===== بخش در حال ساخت =====
         "coming-soon-title": "در حال ساخت",
         "coming-soon-title-highlight": "پروژه‌های جدید",
         "coming-soon-desc": "تیم من در حال طراحی و توسعه پروژه‌های جذاب و مدرن است. به زودی شاهد نمونه‌کارهای جدید و خلاقانه‌ای خواهید بود که با جدیدترین تکنولوژی‌های روز دنیا ساخته می‌شوند.",
@@ -496,7 +496,7 @@ const translations = {
         "blog-filter-wordpress": "WordPress",
         "blog-filter-seo": "SEO",
 
-        // ===== عنوان‌های مقالات برای صفحه مقاله (ترجمه شده) =====
+        // ===== Post Titles =====
         "post-title-1": "How to Create Great UI/UX Design?",
         "post-title-2": "Best JavaScript Frameworks for 2025",
         "post-title-3": "10 Golden Techniques to Speed Up Your Website",
@@ -504,7 +504,7 @@ const translations = {
         "post-title-5": "Technical SEO for Front-End Developers",
         "post-title-6": "Interactive Animations with CSS and JavaScript",
 
-        // ===== Post Content (English - LTR) =====
+        // ===== Post Content (English) =====
         "post-content-1": `<div dir="ltr"><h2>Introduction</h2><p>UI/UX design is one of the most important factors in the success of a digital product. In this article, we explore the key principles and practical techniques for creating an excellent user experience.</p><h2>1. Understanding the User</h2><p>The first and most important step in UI/UX design is understanding your target users. Without knowing their needs, problems, and behaviors, no design can be successful.</p><h2>2. Simplicity and Minimalism</h2><p>Simple and minimalist design is always the best choice. Removing unnecessary elements and focusing on the main content improves the user experience.</p><blockquote>"Good design is when the user doesn't notice it." - Dieter Rams</blockquote><h2>3. Feedback and Interaction</h2><p>Users should always know what is happening. Visual and interactive feedback gives users a sense of control and trust.</p><h2>4. Continuous Testing and Improvement</h2><p>UI/UX design is an ongoing process. By testing designs with real users and gathering feedback, you can continuously improve the user experience.</p><h2>Conclusion</h2><p>Great UI/UX design requires a combination of technical skills, understanding of user psychology, and creativity. By following the principles discussed in this article, you can create products that users will love.</p></div>`,
         "post-content-2": `<div dir="ltr"><h2>Introduction</h2><p>Choosing the right JavaScript framework is one of the most important decisions a developer can make. In this article, we compare three popular frameworks: React, Vue, and Angular.</p><h2>1. React</h2><p>React, developed by Facebook, is currently the most popular JavaScript library for building user interfaces.</p><ul><li>✅ Virtual DOM for high performance</li><li>✅ JSX for cleaner code</li><li>✅ Rich ecosystem and excellent support</li><li>✅ React Native for mobile apps</li></ul><h2>2. Vue.js</h2><p>Vue.js is a progressive and flexible framework developed by Evan You.</p><ul><li>✅ Gentle learning curve</li><li>✅ High flexibility</li><li>✅ Great performance</li><li>✅ Excellent documentation</li></ul><h2>3. Angular</h2><p>Angular is a complete and powerful framework developed by Google.</p><ul><li>✅ MVC architecture</li><li>✅ Dependency Injection</li><li>✅ TypeScript as the main language</li><li>✅ Powerful tools for large projects</li></ul><h2>Final Comparison</h2><p>Choosing between these frameworks depends on your project needs. React is great for large and complex projects, Vue is suitable for quick starts and small to medium projects, and Angular is the best choice for enterprise projects with large teams.</p></div>`,
         "post-content-3": `<div dir="ltr"><h2>Introduction</h2><p>Website speed is one of the most important factors in user experience and SEO. In this article, we teach you 10 practical and proven techniques to speed up your website.</p><h2>1. Image Optimization</h2><p>Heavy images are one of the main causes of slow websites. Compressing images and using modern formats like WebP can significantly reduce image size.</p><h2>2. Use CDN</h2><p>Content Delivery Network (CDN) stores static files on servers around the world, increasing loading speed for users in different locations.</p><h2>3. Browser Caching</h2><p>Caching static files in the user's browser eliminates the need to re-download them on subsequent visits.</p><blockquote>"Every second of delay in page loading reduces conversion rate by 7%."</blockquote><h2>4. Minify CSS and JavaScript</h2><p>Removing unnecessary spaces, comments, and characters from CSS and JavaScript files can reduce their size by up to 30%.</p><h2>5. Lazy Loading</h2><p>With lazy loading, images and content outside the viewport are only loaded when the user scrolls to them.</p><h2>6. Font Optimization</h2><p>Custom fonts can significantly impact speed. Consider using system fonts or optimized font loading methods.</p><h2>7. Reduce HTTP Requests</h2><p>Reduce the number of HTTP requests by combining CSS and JavaScript files and using sprites for images.</p><h2>8. Use Gzip</h2><p>Compressing files with Gzip can reduce data transfer size by up to 70%.</p><h2>9. Database Optimization</h2><p>Heavy and unoptimized databases can slow down your website. Proper indexing and query optimization are essential.</p><h2>10. Use HTTP/2</h2><p>HTTP/2 protocol with features like Multiplexing and Server Push significantly improves loading speed.</p></div>`,
@@ -657,7 +657,6 @@ const postsData = {
 // =========================================
 let currentLang = localStorage.getItem("language") || "fa";
 
-// تابع برای لود محتوای مقاله بر اساس زبان فعلی
 function loadPostContent() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
@@ -672,13 +671,11 @@ function loadPostContent() {
         const contentKey = 'post-content-' + postId;
         const titleKey = 'post-title-' + postId;
 
-        // دریافت عنوان ترجمه‌شده
         let translatedTitle = post.title;
         if (translations[lang] && translations[lang][titleKey]) {
             translatedTitle = translations[lang][titleKey];
         }
 
-        // دریافت محتوای ترجمه‌شده
         let content = '';
         if (translations[lang] && translations[lang][contentKey]) {
             content = translations[lang][contentKey];
@@ -686,22 +683,20 @@ function loadPostContent() {
             content = translations['fa'][contentKey] || '<p>محتوای مقاله یافت نشد</p>';
         }
 
-        // تنظیم دایرکشن بر اساس زبان
         const dir = lang === 'fa' ? 'rtl' : 'ltr';
 
-        // ساخت HTML مقاله با عنوان ترجمه‌شده
         container.innerHTML = `
             <header class="blog-post-header" data-aos="fade-down">
                 <a href="blog.html" class="back-to-home">
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="ri-arrow-right-line"></i>
                     <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
                 </a>
                 <span class="post-category">${post.category}</span>
                 <h1>${translatedTitle}</h1>
                 <div class="post-meta">
-                    <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
-                    <span><i class="far fa-clock"></i> ${post.readTime}</span>
-                    <span><i class="far fa-eye"></i> ${post.views}</span>
+                    <span><i class="ri-calendar-line"></i> ${post.date}</span>
+                    <span><i class="ri-time-line"></i> ${post.readTime}</span>
+                    <span><i class="ri-eye-line"></i> ${post.views}</span>
                 </div>
             </header>
 
@@ -718,11 +713,10 @@ function loadPostContent() {
             </div>
         `;
     } else {
-        // صفحه Not Found
         container.innerHTML = `
             <header class="blog-post-header" data-aos="fade-down">
                 <a href="blog.html" class="back-to-home">
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="ri-arrow-right-line"></i>
                     <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
                 </a>
             </header>
@@ -730,14 +724,13 @@ function loadPostContent() {
                 <h2>🔍 ${lang === 'fa' ? 'مقاله‌ای یافت نشد' : 'Article Not Found'}</h2>
                 <p>${lang === 'fa' ? 'متأسفیم، مقاله‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.' : 'Sorry, the article you are looking for does not exist or has been removed.'}</p>
                 <a href="blog.html" class="back-btn">
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="ri-arrow-right-line"></i>
                     ${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}
                 </a>
             </div>
         `;
     }
 
-    // فعال‌سازی AOS برای المان‌های جدید
     if (typeof AOS !== 'undefined') {
         setTimeout(() => AOS.refresh(), 100);
     }
@@ -779,7 +772,6 @@ function setLanguage(lang) {
 
     closeDropdown();
 
-    // ===== بارگذاری مجدد محتوای مقاله در صورت وجود =====
     if (document.getElementById('postContent')) {
         loadPostContent();
     }
@@ -1039,19 +1031,20 @@ if (contactForm) {
         const budget = document.getElementById('contact-budget').value;
         const message = document.getElementById('contact-message').value.trim();
         
+        // ===== اعتبارسنجی =====
         if (!name || !email || !message) {
-            showToast('❌ Please fill in all required fields');
+            showToast('❌ لطفاً تمام فیلدهای ضروری (نام، ایمیل، پیام) را پر کنید');
             return;
         }
         
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            showToast('❌ Please enter a valid email');
+            showToast('❌ لطفاً یک ایمیل معتبر وارد کنید');
             return;
         }
         
         const submitBtn = contactForm.querySelector('.submit-btn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> در حال ارسال...';
         submitBtn.disabled = true;
         
         try {
@@ -1071,30 +1064,12 @@ if (contactForm) {
                 templateParams
             );
             
-            const contactData = {
-                name,
-                email,
-                projectType,
-                budget,
-                message,
-                date: new Date().toLocaleString('fa-IR'),
-                status: 'sent'
-            };
-            
-            try {
-                const contacts = JSON.parse(localStorage.getItem('webilio_contacts') || '[]');
-                contacts.push(contactData);
-                localStorage.setItem('webilio_contacts', JSON.stringify(contacts));
-            } catch (error) {
-                console.error('❌ Error saving to localStorage:', error);
-            }
-            
-            showToast(`✅ Thank you ${name}! Your message was sent successfully. I'll get back to you soon.`);
+            showToast(`✅ تشکر ${name}! پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیرم.`);
             contactForm.reset();
             
         } catch (error) {
             console.error('❌ Error sending email:', error);
-            showToast('❌ An error occurred while sending your message. Please try again.');
+            showToast('❌ خطا در ارسال پیام. لطفاً دوباره تلاش کنید.');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
@@ -1106,27 +1081,30 @@ if (contactForm) {
 // 13. خبرنامه (با EmailJS)
 // =========================================
 const newsletterForm = document.getElementById('newsletterForm');
+const newsletterForms = document.querySelectorAll('.newsletter-form');
 
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', async function(e) {
+newsletterForms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        const input = this.querySelector('input');
+        const input = this.querySelector('input[type="email"]');
+        if (!input) return;
+        
         const email = input.value.trim();
         const submitBtn = this.querySelector('button');
         const originalText = submitBtn.innerHTML;
         
         if (!email) {
-            showToast('❌ Please enter your email');
+            showToast('❌ لطفاً ایمیل خود را وارد کنید');
             return;
         }
         
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            showToast('❌ Please enter a valid email');
+            showToast('❌ لطفاً یک ایمیل معتبر وارد کنید');
             return;
         }
         
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i>';
         submitBtn.disabled = true;
         
         try {
@@ -1143,18 +1121,18 @@ if (newsletterForm) {
                 templateParams
             );
             
-            showToast('✅ Successfully subscribed! 🎉');
+            showToast('✅ با موفقیت عضو شدید! 🎉');
             input.value = '';
             
         } catch (error) {
             console.error('❌ Newsletter subscription error:', error);
-            showToast('❌ Error subscribing. Please try again.');
+            showToast('❌ خطا در عضویت. لطفاً دوباره تلاش کنید.');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }
     });
-}
+});
 
 // =========================================
 // 14. دکمه‌های سفارش
@@ -1368,5 +1346,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// =========================================
+// 22. کنسول لاگ با ایمیل اصلاح‌شده
+// =========================================
 console.log('🚀 Hamed - Professional Web Design & Development');
-console.log('📞 Contact us for projects: hamed@example.com');
+console.log('📞 Contact us for projects: hj904549@gmail.com');

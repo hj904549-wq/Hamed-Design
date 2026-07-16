@@ -8,7 +8,7 @@
       name="description"
       content="طراحی و توسعه وب‌سایت‌های حرفه‌ای، فروشگاه اینترنتی و اپلیکیشن‌های مدرن با React و Next.js"
     />
-    <link rel="canonical" href="https://yourdomain.com/" />
+    <link rel="canonical" href="https://hj904549-wq.github.io/Hamed-Design/" />
 
     <meta
       property="og:title"
@@ -19,10 +19,13 @@
       content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta
+      property="og:url"
+      content="https://hj904549-wq.github.io/Hamed-Design/"
+    />
     <meta
       property="og:image"
-      content="https://yourdomain.com/img/og-image.jpg"
+      content="https://hj904549-wq.github.io/Hamed-Design/img/og-image.webp"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -35,36 +38,36 @@
       content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
     />
 
+    <!-- ===== Structured Data (JSON-LD) ===== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "حامد",
         "jobTitle": "UI/UX Designer & Front-End Developer",
-        "url": "https://yourdomain.com/",
-        "sameAs": ["https://github.com/hj904549-wq"],
-        "worksFor": {
-          "@type": "ProfessionalService",
-          "name": "خدمات طراحی و توسعه حامد",
-          "description": "طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی سئو"
-        }
+        "url": "https://hj904549-wq.github.io/Hamed-Design/",
+        "email": "hj904549@gmail.com",
+        "sameAs": ["https://github.com/hj904549-wq"]
       }
     </script>
 
+    <!-- ===== فونت‌ها ===== -->
     <link
       href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ===== Remix Icon ===== -->
     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- ===== AOS ===== -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
@@ -88,7 +91,7 @@
           aria-label="Toggle language"
         >
           <span class="lang-current" id="lang-current-label">FA</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="ri-arrow-down-s-line"></i>
         </button>
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-option active" data-lang="fa">
@@ -100,8 +103,8 @@
         </div>
       </div>
       <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
-        <i class="fas fa-moon theme-icon moon"></i>
-        <i class="fas fa-sun theme-icon sun"></i>
+        <i class="ri-moon-line theme-icon moon"></i>
+        <i class="ri-sun-line theme-icon sun"></i>
       </button>
     </div>
 
@@ -115,16 +118,21 @@
     <!-- ===== کپسول ناوبری ===== -->
     <nav class="capsule-nav">
       <div class="desktop-menu">
-        <a href="#home" class="nav-link active"><i class="fas fa-home"></i></a>
-        <a href="#services" class="nav-link"><i class="fas fa-cogs"></i></a>
-        <a href="#portfolio" class="nav-link"
-          ><i class="fas fa-briefcase"></i
+        <a href="#home" class="nav-link active"
+          ><i class="ri-home-5-line"></i
         ></a>
-        <a href="#process" class="nav-link"><i class="fas fa-sync-alt"></i></a>
-        <a href="#pricing" class="nav-link"><i class="fas fa-box"></i></a>
-
-        <a href="#blog" class="nav-link"><i class="fas fa-blog"></i></a>
-        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i></a>
+        <a href="#services" class="nav-link"
+          ><i class="ri-settings-3-line"></i
+        ></a>
+        <a href="#portfolio" class="nav-link"
+          ><i class="ri-briefcase-4-line"></i
+        ></a>
+        <a href="#process" class="nav-link"
+          ><i class="ri-loop-right-line"></i
+        ></a>
+        <a href="#pricing" class="nav-link"><i class="ri-coupon-3-line"></i></a>
+        <a href="#blog" class="nav-link"><i class="ri-article-line"></i></a>
+        <a href="#contact" class="nav-link"><i class="ri-mail-line"></i></a>
       </div>
     </nav>
 
@@ -132,29 +140,31 @@
     <div class="mobile-menu-wrapper" id="mobile-menu">
       <div class="mobile-menu-inner">
         <a href="#home" class="nav-link active"
-          ><i class="fas fa-home"></i> <span data-key="nav-home">خانه</span></a
+          ><i class="ri-home-5-line"></i>
+          <span data-key="nav-home">خانه</span></a
         >
         <a href="#services" class="nav-link"
-          ><i class="fas fa-cogs"></i>
+          ><i class="ri-settings-3-line"></i>
           <span data-key="nav-services">خدمات</span></a
         >
         <a href="#portfolio" class="nav-link"
-          ><i class="fas fa-briefcase"></i>
+          ><i class="ri-briefcase-4-line"></i>
           <span data-key="nav-portfolio">نمونه کارها</span></a
         >
         <a href="#pricing" class="nav-link"
-          ><i class="fas fa-box"></i>
+          ><i class="ri-coupon-3-line"></i>
           <span data-key="nav-packages">پلن‌ها</span></a
         >
         <a href="#process" class="nav-link"
-          ><i class="fas fa-sync-alt"></i>
+          ><i class="ri-loop-right-line"></i>
           <span data-key="nav-process">فرآیند کار</span></a
         >
         <a href="#blog" class="nav-link"
-          ><i class="fas fa-blog"></i> <span data-key="nav-blog">وبلاگ</span></a
+          ><i class="ri-article-line"></i>
+          <span data-key="nav-blog">وبلاگ</span></a
         >
         <a href="#contact" class="nav-link"
-          ><i class="fas fa-envelope"></i>
+          ><i class="ri-mail-line"></i>
           <span data-key="nav-contact">تماس</span></a
         >
       </div>
@@ -172,9 +182,11 @@
           <div class="avatar-ring"></div>
           <img
             src="./img/Profile-image.jpg"
-            alt="حامد"
+            alt="عکس پروفایل حامد، طراح UI/UX و توسعه‌دهنده فرانت‌اند"
             class="avatar-img"
-            loading="lazy"
+            loading="eager"
+            width="140"
+            height="140"
           />
         </div>
         <h1>
@@ -232,13 +244,13 @@
         <div class="hero-tech">
           <span data-key="hero-tech-label">تکنولوژی‌های من:</span>
           <div class="tech-icons">
-            <i class="fab fa-html5" title="HTML5"></i>
-            <i class="fab fa-css3-alt" title="CSS3"></i>
-            <i class="fab fa-js" title="JavaScript"></i>
-            <i class="fab fa-react" title="React"></i>
-            <i class="fab fa-vuejs" title="Vue.js"></i>
-            <i class="fab fa-wordpress" title="WordPress"></i>
-            <i class="fab fa-git-alt" title="Git"></i>
+            <i class="ri-html5-line" title="HTML5"></i>
+            <i class="ri-css3-line" title="CSS3"></i>
+            <i class="ri-javascript-line" title="JavaScript"></i>
+            <i class="ri-reactjs-line" title="React"></i>
+            <i class="ri-vuejs-line" title="Vue.js"></i>
+            <i class="ri-wordpress-line" title="WordPress"></i>
+            <i class="ri-git-branch-line" title="Git"></i>
           </div>
         </div>
       </section>
@@ -251,7 +263,7 @@
       <div class="services-container">
         <div class="services-header" data-aos="fade-down">
           <span class="services-tag"
-            ><i class="fas fa-cogs"></i>
+            ><i class="ri-settings-3-line"></i>
             <span data-key="services-tag">خدمات من</span></span
           >
           <h2 class="services-title">
@@ -266,7 +278,7 @@
 
         <div class="services-grid">
           <div class="service-card" data-aos="flip-up" data-aos-delay="0">
-            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="service-icon"><i class="ri-paint-brush-line"></i></div>
             <h3 data-key="service-1-title">طراحی UI/UX</h3>
             <p data-key="service-1-desc">
               طراحی رابط کاربری جذاب و تجربه کاربری روان که مشتریان شما را مجذوب
@@ -274,7 +286,7 @@
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-1">۲-۳ هفته</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -284,14 +296,14 @@
           </div>
 
           <div class="service-card" data-aos="flip-up" data-aos-delay="100">
-            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <div class="service-icon"><i class="ri-code-line"></i></div>
             <h3 data-key="service-2-title">توسعه فرانت‌اند</h3>
             <p data-key="service-2-desc">
               کدنویسی تمیز و بهینه با استفاده از مدرن‌ترین تکنولوژی‌های وب.
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-2">۳-۴ هفته</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -301,14 +313,14 @@
           </div>
 
           <div class="service-card" data-aos="flip-up" data-aos-delay="200">
-            <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+            <div class="service-icon"><i class="ri-wordpress-line"></i></div>
             <h3 data-key="service-3-title">وردپرس حرفه‌ای</h3>
             <p data-key="service-3-desc">
               ساخت و بهینه‌سازی وب‌سایت‌های وردپرسی با سرعت لود فوق‌العاده.
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-3">۱-۲ هفته</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -318,14 +330,14 @@
           </div>
 
           <div class="service-card" data-aos="flip-up" data-aos-delay="300">
-            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <div class="service-icon"><i class="ri-flashlight-line"></i></div>
             <h3 data-key="service-4-title">بهینه‌سازی سرعت و سئو</h3>
             <p data-key="service-4-desc">
               افزایش سرعت لود و بهبود رتبه سایت شما در نتایج جستجوی گوگل.
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-4">۱ هفته</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -335,14 +347,16 @@
           </div>
 
           <div class="service-card" data-aos="flip-up" data-aos-delay="400">
-            <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="service-icon">
+              <i class="ri-shopping-cart-2-line"></i>
+            </div>
             <h3 data-key="service-5-title">فروشگاه اینترنتی</h3>
             <p data-key="service-5-desc">
               راه‌اندازی فروشگاه آنلاین کامل با درگاه پرداخت و مدیریت آسان.
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-5">۳-۵ هفته</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -352,14 +366,14 @@
           </div>
 
           <div class="service-card" data-aos="flip-up" data-aos-delay="500">
-            <div class="service-icon"><i class="fas fa-headset"></i></div>
+            <div class="service-icon"><i class="ri-headphone-line"></i></div>
             <h3 data-key="service-6-title">پشتیبانی و نگهداری</h3>
             <p data-key="service-6-desc">
               پشتیبانی ۲۴ ساعته، بروزرسانی و نگهداری وب‌سایت شما.
             </p>
             <div class="service-meta">
               <span class="service-time"
-                ><i class="far fa-clock"></i>
+                ><i class="ri-time-line"></i>
                 <span data-key="service-time-6">ماهانه</span></span
               >
               <a href="#contact" class="service-cta" data-key="service-cta"
@@ -436,9 +450,11 @@
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
-            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
           </div>
           <h3 class="card-title">KICKS</h3>
           <p class="card-description" data-key="portfolio-desc-1">
@@ -450,7 +466,7 @@
               target="_blank"
               class="btn-card btn-primary"
             >
-              <i class="fas fa-external-link-alt"></i>
+              <i class="ri-external-link-line"></i>
               <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
@@ -458,7 +474,7 @@
               target="_blank"
               class="btn-card btn-ghost"
             >
-              <i class="fab fa-github"></i>
+              <i class="ri-github-line"></i>
               <span data-key="portfolio-btn-source">کد</span>
             </a>
           </div>
@@ -479,9 +495,11 @@
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
-            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
           </div>
           <h3 class="card-title">Cafe Land</h3>
           <p class="card-description" data-key="portfolio-desc-2">
@@ -493,7 +511,7 @@
               target="_blank"
               class="btn-card btn-primary"
             >
-              <i class="fas fa-external-link-alt"></i>
+              <i class="ri-external-link-line"></i>
               <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
@@ -501,7 +519,7 @@
               target="_blank"
               class="btn-card btn-ghost"
             >
-              <i class="fab fa-github"></i>
+              <i class="ri-github-line"></i>
               <span data-key="portfolio-btn-source">کد</span>
             </a>
           </div>
@@ -522,9 +540,11 @@
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
-            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
           </div>
           <h3 class="card-title">Motoride</h3>
           <p class="card-description" data-key="portfolio-desc-3">
@@ -536,7 +556,7 @@
               target="_blank"
               class="btn-card btn-primary"
             >
-              <i class="fas fa-external-link-alt"></i>
+              <i class="ri-external-link-line"></i>
               <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
@@ -544,7 +564,7 @@
               target="_blank"
               class="btn-card btn-ghost"
             >
-              <i class="fab fa-github"></i>
+              <i class="ri-github-line"></i>
               <span data-key="portfolio-btn-source">کد</span>
             </a>
           </div>
@@ -554,7 +574,7 @@
       <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
         <a href="./portfolio.html" class="view"
           ><span data-key="portfolio-view-all">مشاهده همه نمونه کارها</span>
-          <i class="fas fa-arrow-left"></i
+          <i class="ri-arrow-left-line"></i
         ></a>
       </div>
     </section>
@@ -566,7 +586,7 @@
       <div class="process-container">
         <div class="process-header" data-aos="fade-down">
           <span class="process-tag"
-            ><i class="fas fa-sync-alt"></i>
+            ><i class="ri-loop-right-line"></i>
             <span data-key="process-tag">فرآیند کار</span></span
           >
           <h2>
@@ -634,7 +654,7 @@
       <div class="pricing-container">
         <div class="pricing-header" data-aos="fade-down">
           <span class="pricing-tag"
-            ><i class="fas fa-box"></i>
+            ><i class="ri-coupon-3-line"></i>
             <span data-key="pricing-tag">پلن‌های همکاری</span></span
           >
           <h2><span data-key="pricing-title">پکیج‌های طلایی من</span></h2>
@@ -655,23 +675,23 @@
             </p>
             <ul class="pricing-features">
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-1-f1">طراحی اختصاصی UI/UX</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-1-f2">پیاده‌سازی با وردپرس</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-1-f3">کاملاً واکنش‌گرا</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-1-f4">امنیت استاندارد</span>
               </li>
               <li class="disabled">
-                <i class="fas fa-times"></i>
+                <i class="ri-close-line"></i>
                 <span data-key="pkg-1-f5">درگاه پرداخت آنلاین</span>
               </li>
             </ul>
@@ -701,23 +721,23 @@
             </p>
             <ul class="pricing-features">
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-2-f1">طراحی اختصاصی UI/UX</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-2-f2">اتصال به درگاه پرداخت</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-2-f3">بهینه‌سازی سرعت تخصصی</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-2-f4">پنل مدیریت فارسی</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-2-f5">پشتیبانی ۳ ماهه</span>
               </li>
             </ul>
@@ -741,23 +761,23 @@
             </p>
             <ul class="pricing-features">
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-3-f1">توسعه با React / Next.js</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-3-f2">سرعت لود خارق‌العاده</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-3-f3">امنیت سازمانی</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-3-f4">انیمیشن‌های تعاملی</span>
               </li>
               <li>
-                <i class="fas fa-check"></i>
+                <i class="ri-check-line"></i>
                 <span data-key="pkg-3-f5">پشتیبانی ۶ ماهه</span>
               </li>
             </ul>
@@ -780,7 +800,7 @@
       <div class="faq-container">
         <div class="faq-header" data-aos="fade-down">
           <span class="faq-tag"
-            ><i class="fas fa-question-circle"></i>
+            ><i class="ri-question-line"></i>
             <span data-key="faq-tag">سوالات متداول</span></span
           >
           <h2><span data-key="faq-title">پاسخ به سوالات شما</span></h2>
@@ -792,7 +812,7 @@
               <span data-key="faq-q1"
                 >چقدر زمان برای طراحی و توسعه سایت نیاز است؟</span
               >
-              <i class="fas fa-chevron-down"></i>
+              <i class="ri-arrow-down-s-line"></i>
             </div>
             <div class="faq-answer">
               <p data-key="faq-a1">
@@ -808,7 +828,7 @@
               <span data-key="faq-q2"
                 >آیا امکان تغییرات در حین پروژه وجود دارد؟</span
               >
-              <i class="fas fa-chevron-down"></i>
+              <i class="ri-arrow-down-s-line"></i>
             </div>
             <div class="faq-answer">
               <p data-key="faq-a2">
@@ -824,7 +844,7 @@
               <span data-key="faq-q3"
                 >آیا پشتیبانی پس از تحویل پروژه دارید؟</span
               >
-              <i class="fas fa-chevron-down"></i>
+              <i class="ri-arrow-down-s-line"></i>
             </div>
             <div class="faq-answer">
               <p data-key="faq-a3">
@@ -837,7 +857,7 @@
           <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
             <div class="faq-question" onclick="toggleFaq(this)">
               <span data-key="faq-q4">آیا پروژه بهینه‌سازی سئو هم می‌شود؟</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="ri-arrow-down-s-line"></i>
             </div>
             <div class="faq-answer">
               <p data-key="faq-a4">
@@ -849,6 +869,7 @@
         </div>
       </div>
     </section>
+
     <!-- ============================================================ -->
     <!-- ===== BLOG ===== -->
     <!-- ============================================================ -->
@@ -856,7 +877,7 @@
       <div class="blog-container">
         <div class="blog-header" data-aos="fade-down">
           <span class="blog-tag"
-            ><i class="fas fa-blog"></i>
+            ><i class="ri-article-line"></i>
             <span data-key="blog-tag">وبلاگ</span></span
           >
           <h2><span data-key="blog-title">آخرین مقالات و مطالب</span></h2>
@@ -874,8 +895,8 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta">
-                <span><i class="far fa-calendar-alt"></i> ۲۵ دی ۱۴۰۴</span>
-                <span><i class="far fa-clock"></i> ۵ دقیقه</span>
+                <span><i class="ri-calendar-line"></i> ۲۵ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۵ دقیقه</span>
               </div>
               <h3>
                 <a href="blog-post.html?id=1" data-key="blog-title-1"
@@ -890,7 +911,7 @@
                 href="blog-post.html?id=1"
                 class="blog-read-more"
                 data-key="blog-read-more"
-                >ادامه مطلب <i class="fas fa-arrow-left"></i
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
               ></a>
             </div>
           </article>
@@ -903,8 +924,8 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta">
-                <span><i class="far fa-calendar-alt"></i> ۱۸ دی ۱۴۰۴</span>
-                <span><i class="far fa-clock"></i> ۷ دقیقه</span>
+                <span><i class="ri-calendar-line"></i> ۱۸ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۷ دقیقه</span>
               </div>
               <h3>
                 <a href="blog-post.html?id=2" data-key="blog-title-2"
@@ -919,7 +940,7 @@
                 href="blog-post.html?id=2"
                 class="blog-read-more"
                 data-key="blog-read-more"
-                >ادامه مطلب <i class="fas fa-arrow-left"></i
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
               ></a>
             </div>
           </article>
@@ -938,8 +959,8 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta">
-                <span><i class="far fa-calendar-alt"></i> ۱۰ دی ۱۴۰۴</span>
-                <span><i class="far fa-clock"></i> ۶ دقیقه</span>
+                <span><i class="ri-calendar-line"></i> ۱۰ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۶ دقیقه</span>
               </div>
               <h3>
                 <a href="blog-post.html?id=3" data-key="blog-title-3"
@@ -953,7 +974,7 @@
                 href="blog-post.html?id=3"
                 class="blog-read-more"
                 data-key="blog-read-more"
-                >ادامه مطلب <i class="fas fa-arrow-left"></i
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
               ></a>
             </div>
           </article>
@@ -962,7 +983,7 @@
         <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
           <a href="./blog.html" class="view"
             ><span data-key="blog-view-all">مشاهده همه مقالات</span>
-            <i class="fas fa-arrow-left"></i
+            <i class="ri-arrow-left-line"></i
           ></a>
         </div>
       </div>
@@ -975,7 +996,7 @@
       <div class="contact-container">
         <div class="contact-header" data-aos="fade-down">
           <span class="contact-tag"
-            ><i class="fas fa-envelope"></i>
+            ><i class="ri-mail-line"></i>
             <span data-key="contact-tag">تماس با من</span></span
           >
           <h2>
@@ -992,15 +1013,15 @@
         <div class="contact-wrapper">
           <div class="contact-info">
             <div class="info-card" data-aos="fade-up">
-              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div class="info-icon"><i class="ri-mail-line"></i></div>
               <div class="info-content">
                 <h4 data-key="contact-email-label">ایمیل</h4>
-                <a href="mailto:hamed@example.com">hj904549@gmail.com</a>
+                <a href="mailto:hj904549@gmail.com">hj904549@gmail.com</a>
               </div>
             </div>
 
             <div class="info-card" data-aos="fade-up" data-aos-delay="50">
-              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div class="info-icon"><i class="ri-phone-line"></i></div>
               <div class="info-content">
                 <h4 data-key="contact-phone-label">شماره تماس</h4>
                 <p>+98 902 679 8406</p>
@@ -1008,7 +1029,7 @@
             </div>
 
             <div class="info-card" data-aos="fade-up" data-aos-delay="100">
-              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info-icon"><i class="ri-map-pin-line"></i></div>
               <div class="info-content">
                 <h4 data-key="contact-location-label">موقعیت</h4>
                 <p data-key="contact-location">ایران، تهران</p>
@@ -1023,19 +1044,22 @@
                 href="https://github.com/hj904549-wq"
                 class="social-btn"
                 target="_blank"
-                ><i class="fab fa-github"></i
+                aria-label="گیت‌هاب"
+                ><i class="ri-github-line"></i
               ></a>
-              <a href="#" class="social-btn" target="_blank"
-                ><i class="fab fa-linkedin-in"></i
+              <a
+                href="#"
+                class="social-btn"
+                target="_blank"
+                aria-label="اینستاگرام"
+                ><i class="ri-instagram-line"></i
               ></a>
-              <a href="#" class="social-btn" target="_blank"
-                ><i class="fab fa-twitter"></i
+            
+              <a href="https://web.telegram.org/a/" class="social-btn" target="_blank" aria-label="تلگرام"
+                ><i class="ri-telegram-line"></i
               ></a>
-              <a href="#" class="social-btn" target="_blank"
-                ><i class="fab fa-telegram-plane"></i
-              ></a>
-              <a href="#" class="social-btn" target="_blank"
-                ><i class="fab fa-youtube"></i
+              <a href="https://www.youtube.com/channel/UCCxJGb3kewgx2W1T1ZjswbQ" class="social-btn" target="_blank" aria-label="یوتیوب"
+                ><i class="ri-youtube-line"></i
               ></a>
             </div>
           </div>
@@ -1044,7 +1068,7 @@
             <form id="contact-form" class="contact-form">
               <div class="form-group">
                 <label for="contact-name"
-                  ><i class="fas fa-user"></i>
+                  ><i class="ri-user-line"></i>
                   <span data-key="form-name">نام و نام خانوادگی</span></label
                 >
                 <input
@@ -1056,7 +1080,7 @@
               </div>
               <div class="form-group">
                 <label for="contact-email"
-                  ><i class="fas fa-envelope"></i>
+                  ><i class="ri-mail-line"></i>
                   <span data-key="form-email">ایمیل</span></label
                 >
                 <input
@@ -1068,7 +1092,7 @@
               </div>
               <div class="form-group">
                 <label for="contact-project-type"
-                  ><i class="fas fa-box"></i>
+                  ><i class="ri-coupon-3-line"></i>
                   <span data-key="form-package">نوع پروژه</span></label
                 >
                 <select id="contact-project-type">
@@ -1091,7 +1115,7 @@
               </div>
               <div class="form-group">
                 <label for="contact-budget"
-                  ><i class="fas fa-money-bill"></i>
+                  ><i class="ri-money-dollar-circle-line"></i>
                   <span data-key="form-budget">بودجه تقریبی</span></label
                 >
                 <select id="contact-budget">
@@ -1111,7 +1135,7 @@
               </div>
               <div class="form-group">
                 <label for="contact-message"
-                  ><i class="fas fa-align-left"></i>
+                  ><i class="ri-message-3-line"></i>
                   <span data-key="contact-message-label">پیام</span></label
                 >
                 <textarea
@@ -1121,7 +1145,7 @@
                 ></textarea>
               </div>
               <button type="submit" class="submit-btn">
-                <i class="fas fa-paper-plane"></i>
+                <i class="ri-send-plane-2-line"></i>
                 <span data-key="contact-send">ارسال پیام</span>
               </button>
             </form>
@@ -1135,7 +1159,7 @@
     <!-- ============================================================ -->
     <div class="back-to-top" id="backToTop">
       <button class="back-to-top-btn" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+        <i class="ri-arrow-up-line"></i>
       </button>
     </div>
 
@@ -1158,8 +1182,8 @@
               >
             </div>
             <div class="footer-email">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:hamed@example.com">hj904549@gmail.com</a>
+              <i class="ri-mail-line"></i>
+              <a href="mailto:hj904549@gmail.com">hj904549@gmail.com</a>
             </div>
           </div>
 
@@ -1170,37 +1194,37 @@
             <ul class="footer-links">
               <li>
                 <a href="#home"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-home">خانه</span></a
                 >
               </li>
               <li>
                 <a href="#services"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-services">خدمات</span></a
                 >
               </li>
               <li>
                 <a href="#portfolio"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-portfolio">نمونه کارها</span></a
                 >
               </li>
               <li>
                 <a href="#pricing"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-packages">پلن‌ها</span></a
                 >
               </li>
               <li>
                 <a href="#blog"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-blog">وبلاگ</span></a
                 >
               </li>
               <li>
                 <a href="#contact"
-                  ><i class="fas fa-chevron-left"></i>
+                  ><i class="ri-arrow-left-s-line"></i>
                   <span data-key="nav-contact">تماس</span></a
                 >
               </li>
@@ -1216,20 +1240,28 @@
                 href="https://github.com/hj904549-wq"
                 class="social-link github"
                 target="_blank"
+                aria-label="گیت‌هاب"
               >
-                <i class="fab fa-github"></i>
+                <i class="ri-github-line"></i>
                 <span>گیت‌هاب</span>
               </a>
-              <a href="#" class="social-link linkedin" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-                <span>لینکدین</span>
+              <a
+                href="https://www.instagram.com/hamed176750/?hl=en"
+                class="social-link instagram"
+                target="_blank"
+                aria-label="instagram"
+              >
+                <i class="ri-instagram-line"></i>
+                <span>اینستاگرام</span>
               </a>
-              <a href="#" class="social-link twitter" target="_blank">
-                <i class="fab fa-twitter"></i>
-                <span>توییتر</span>
-              </a>
-              <a href="#" class="social-link telegram" target="_blank">
-                <i class="fab fa-telegram-plane"></i>
+
+              <a
+                href="https://web.telegram.org/a/"
+                class="social-link telegram"
+                target="_blank"
+                aria-label="تلگرام"
+              >
+                <i class="ri-telegram-line"></i>
                 <span>تلگرام</span>
               </a>
             </div>
@@ -1248,7 +1280,7 @@
                 required
               />
               <button type="submit">
-                <i class="fas fa-send"></i>
+                <i class="ri-send-plane-2-line"></i>
                 <span data-key="footer-subscribe">عضویت</span>
               </button>
             </form>
@@ -1259,7 +1291,7 @@
           <p>
             &copy; ۲۰۲۶ <strong>حامد</strong>.
             <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
-            <span class="heart"><i class="fas fa-heart"></i></span>
+            <span class="heart"><i class="ri-heart-3-fill"></i></span>
             <span data-key="footer-tech"
               >با استفاده از HTML، CSS و JavaScript</span
             >
