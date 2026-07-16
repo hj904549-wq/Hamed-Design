@@ -1,0 +1,533 @@
+/* =========================================
+   نمونه کارها - استایل‌های اختصاصی
+   ========================================= */
+
+/* ----- هدر صفحه نمونه کارها ----- */
+.portfolio-page-header {
+    padding: 140px 20px 60px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-page-header h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+}
+
+.portfolio-page-header p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ----- دکمه بازگشت ----- */
+.back-to-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 30px;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.back-to-home:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateX(-4px);
+}
+
+html[dir="rtl"] .back-to-home:hover {
+    transform: translateX(4px);
+}
+
+/* ----- آمار ----- */
+.portfolio-stats {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-stat-item {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.portfolio-stat-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+.portfolio-stat-item .number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolio-stat-item .label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ----- گرید پروژه‌ها ----- */
+.portfolio-page-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-page-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 20px;
+}
+
+.portfolio-page-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 50px rgba(79, 70, 229, 0.15);
+}
+
+.portfolio-page-card .card-image {
+    position: relative;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a2a3a;
+}
+
+.portfolio-page-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-page-card:hover .card-image img {
+    transform: scale(1.03);
+}
+
+.portfolio-page-card .project-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 4px 14px 4px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    color: #4ade80;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.portfolio-page-card .project-status .dot {
+    width: 6px;
+    height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+.portfolio-page-card .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 12px;
+}
+
+.portfolio-page-card .tech-stack span {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-glass);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.portfolio-page-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.portfolio-page-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.portfolio-page-card .action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.portfolio-page-card .action-buttons a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.portfolio-page-card .action-buttons .btn-primary {
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+}
+
+.portfolio-page-card .action-buttons .btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+}
+
+.portfolio-page-card .action-buttons .btn-ghost {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+}
+
+.portfolio-page-card .action-buttons .btn-ghost:hover {
+    border-color: #4f46e5;
+    color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   بخش در حال ساخت (Coming Soon)
+   ========================================= */
+.coming-soon-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.coming-soon-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    padding: 50px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(79, 70, 229, 0.1);
+}
+
+.coming-soon-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(99, 102, 241, 0.03),
+        transparent,
+        rgba(99, 102, 241, 0.03),
+        transparent
+    );
+    animation: spin-ring 20s linear infinite;
+    pointer-events: none;
+}
+
+.coming-soon-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+    animation: pulse-icon 2s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse-icon {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.coming-soon-card h2 {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon-card h2 .highlight {
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.coming-soon-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon-projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon-projects .project-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-glass);
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.coming-soon-projects .project-badge:hover {
+    border-color: var(--primary-color);
+    color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+.coming-soon-projects .project-badge i {
+    color: var(--primary-color);
+}
+
+.coming-soon-projects .project-badge .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+    animation: pulse-dot 2s infinite;
+}
+
+/* ----- CTA پایین صفحه ----- */
+.portfolio-cta-wrapper {
+    text-align: center;
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== لایت مود ===== */
+body.light-mode .portfolio-page-card {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .portfolio-stat-item {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .portfolio-page-card .tech-stack span {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.06);
+    color: #1f3a57;
+}
+
+body.light-mode .portfolio-page-card .action-buttons .btn-ghost {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+    color: #1a314a;
+}
+
+body.light-mode .portfolio-page-card .action-buttons .btn-ghost:hover {
+    background: rgba(79, 70, 229, 0.08);
+}
+
+body.light-mode .coming-soon-card {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .coming-soon-projects .project-badge {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .coming-soon-projects .project-badge:hover {
+    background: rgba(79, 70, 229, 0.06);
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1024px) {
+    .portfolio-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .portfolio-page-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-page-header h1 {
+        font-size: 2rem;
+    }
+    .portfolio-page-header {
+        padding: 100px 20px 40px;
+    }
+    .portfolio-stat-item .number {
+        font-size: 2rem;
+    }
+
+    .coming-soon-card {
+        padding: 30px 20px;
+    }
+    .coming-soon-card h2 {
+        font-size: 1.5rem;
+    }
+    .coming-soon-card p {
+        font-size: 0.95rem;
+    }
+    .coming-soon-icon {
+        font-size: 3rem;
+    }
+    .coming-soon-projects {
+        gap: 14px;
+    }
+    .coming-soon-projects .project-badge {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .portfolio-stat-item {
+        padding: 16px;
+    }
+    .portfolio-stat-item .number {
+        font-size: 1.6rem;
+    }
+    .portfolio-stat-item .label {
+        font-size: 0.7rem;
+    }
+    .portfolio-page-card .card-image {
+        height: 180px;
+    }
+    .portfolio-page-card h3 {
+        font-size: 1.2rem;
+    }
+    .portfolio-page-card .action-buttons {
+        flex-direction: column;
+    }
+    .portfolio-page-card {
+        padding: 16px;
+    }
+
+    .coming-soon-card {
+        padding: 24px 16px;
+    }
+    .coming-soon-card h2 {
+        font-size: 1.2rem;
+    }
+    .coming-soon-card p {
+        font-size: 0.85rem;
+    }
+    .coming-soon-icon {
+        font-size: 2.5rem;
+    }
+    .coming-soon-projects {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .coming-soon-projects .project-badge {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+/* ===== انیمیشن‌های مشترک ===== */
+@keyframes pulse-dot {
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes spin-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

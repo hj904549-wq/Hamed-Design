@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نمونه کارها | حامد - پروژه‌های طراحی و توسعه</title>
+    <meta
+      name="description"
+      content="نمونه پروژه‌های طراحی UI/UX، توسعه فرانت‌اند و وب‌سایت‌های حرفه‌ای"
+    />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- آیکون‌ها -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+  <body>
+    <!-- پس‌زمینه -->
+    <div class="bg-gradient"></div>
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های کنترل ===== -->
+    <div class="header-controls">
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="fas fa-moon theme-icon moon"></i>
+        <i class="fas fa-sun theme-icon sun"></i>
+      </button>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="nav-link"
+          ><i class="fas fa-home"></i> <span data-key="nav-home">خانه</span></a
+        >
+        <a href="index.html#services" class="nav-link"
+          ><i class="fas fa-cogs"></i>
+          <span data-key="nav-services">خدمات</span></a
+        >
+        <a href="portfolio.html" class="nav-link active"
+          ><i class="fas fa-briefcase"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
+        >
+        <a href="index.html#pricing" class="nav-link"
+          ><i class="fas fa-box"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="blog.html" class="nav-link"
+          ><i class="fas fa-blog"></i> <span data-key="nav-blog">وبلاگ</span></a
+        >
+        <a href="index.html#contact" class="nav-link"
+          ><i class="fas fa-envelope"></i>
+          <span data-key="nav-contact">تماس</span></a
+        >
+      </div>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="portfolio-page-header" data-aos="fade-down">
+      <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-right"></i>
+        <span data-key="portfolio-back-home">بازگشت به صفحه اصلی</span>
+      </a>
+      <h1 data-key="portfolio-page-title">🚀 نمونه کارهای من</h1>
+      <p data-key="portfolio-page-desc">
+        پروژه‌هایی که با عشق و تخصص طراحی و توسعه داده‌ام
+      </p>
+    </header>
+
+    <!-- ===== آمار ===== -->
+    <div class="portfolio-stats">
+      <div class="portfolio-stat-item" data-aos="fade-up">
+        <div class="number">۳+</div>
+        <div class="label" data-key="hero-stat-exp-label">سال تجربه</div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="number">۲۵+</div>
+        <div class="label" data-key="hero-stat-projects-label">
+          پروژه انجام شده
+        </div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="number">۱۸</div>
+        <div class="label" data-key="hero-stat-clients-label">مشتری راضی</div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="number">۱۰۰%</div>
+        <div class="label" data-key="portfolio-stat-satisfaction"></div>
+          رضایت مشتری
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== گرید پروژه‌ها ===== -->
+    <div class="portfolio-page-grid">
+      <!-- پروژه ۱ - KICKS -->
+      <div class="portfolio-page-card" data-aos="flip-up">
+        <div class="card-image">
+          <img
+            src="./img/Screenshot 2026-07-06 153718.png"
+            alt="KICKS Store"
+            loading="lazy"
+          />
+          <div class="project-status">
+            <span class="dot"></span>
+            <span data-key="portfolio-status-online">آنلاین</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+          <span><i class="fab fa-html5"></i> HTML</span>
+          <span><i class="fab fa-css3-alt"></i> CSS</span>
+          <span><i class="fab fa-js"></i> JS</span>
+        </div>
+        <h3>KICKS</h3>
+        <p data-key="portfolio-desc-1">
+          فروشگاه تخصصی کفش با فیلترهای پویا، سبد خرید و فرم تماس پیشرفته.
+        </p>
+        <div class="action-buttons">
+          <a
+            href="https://hj904549-wq.github.io/-KICKS./"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fas fa-external-link-alt"></i>
+            <span data-key="portfolio-btn-demo">مشاهده</span>
+          </a>
+          <a
+            href="https://github.com/hj904549-wq/-KICKS."
+            target="_blank"
+            class="btn-ghost"
+          >
+            <i class="fab fa-github"></i>
+            <span data-key="portfolio-btn-source">کد</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- پروژه ۲ - Cafe Land -->
+      <div class="portfolio-page-card" data-aos="flip-up" data-aos-delay="100">
+        <div class="card-image">
+          <img src="./img/Coffee-Land.png" alt="Cafe Land" loading="lazy" />
+          <div class="project-status">
+            <span class="dot"></span>
+            <span data-key="portfolio-status-online">آنلاین</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+          <span><i class="fab fa-html5"></i> HTML</span>
+          <span><i class="fab fa-css3-alt"></i> CSS</span>
+          <span><i class="fab fa-js"></i> JS</span>
+        </div>
+        <h3>Cafe Land</h3>
+        <p data-key="portfolio-desc-2">
+          وب‌سایت کافه با منوی تعاملی، سبد خرید و ذخیره‌سازی محلی.
+        </p>
+        <div class="action-buttons">
+          <a
+            href="https://hj904549-wq.github.io/Cafe-Noir/"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fas fa-external-link-alt"></i>
+            <span data-key="portfolio-btn-demo">مشاهده</span>
+          </a>
+          <a
+            href="https://github.com/hj904549-wq/Cafe-Noir-"
+            target="_blank"
+            class="btn-ghost"
+          >
+            <i class="fab fa-github"></i>
+            <span data-key="portfolio-btn-source">کد</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- پروژه ۳ - Motoride -->
+      <div class="portfolio-page-card" data-aos="flip-up" data-aos-delay="200">
+        <div class="card-image">
+          <img src="./img/motor-sit.png" alt="Motoride" loading="lazy" />
+          <div class="project-status">
+            <span class="dot"></span>
+            <span data-key="portfolio-status-online">آنلاین</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+          <span><i class="fab fa-html5"></i> HTML</span>
+          <span><i class="fab fa-css3-alt"></i> CSS</span>
+          <span><i class="fab fa-js"></i> JS</span>
+        </div>
+        <h3>Motoride</h3>
+        <p data-key="portfolio-desc-3">
+          پلتفرم اجاره موتور با لیست پویا، سبد خرید و اسلایدر جذاب.
+        </p>
+        <div class="action-buttons">
+          <a
+            href="https://hj904549-wq.github.io/MOTORIDE/"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fas fa-external-link-alt"></i>
+            <span data-key="portfolio-btn-demo">مشاهده</span>
+          </a>
+          <a
+            href="https://github.com/hj904549-wq/MOTORIDE"
+            target="_blank"
+            class="btn-ghost"
+          >
+            <i class="fab fa-github"></i>
+            <span data-key="portfolio-btn-source">کد</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- پروژه ۴ - Black Coffee  -->
+      <div class="portfolio-page-card" data-aos="flip-up" data-aos-delay="300">
+        <div class="card-image">
+          <img src="./img/black-coffee.png" alt="Black Coffee" loading="lazy" />
+          <div class="project-status">
+            <span class="dot"></span>
+            <span data-key="portfolio-status-dev">در حال توسعه</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+           <span><i class="fab fa-html5"></i> HTML</span>
+          <span><i class="fab fa-css3-alt"></i> CSS</span>
+          <span><i class="fab fa-js"></i> JS</span>
+       
+        </div>
+        <h3 data-key="portfolio-project-4-title">Black Coffee</h3>
+        <p data-key="portfolio-project-4-desc">
+          وب‌سایت مدرن و مینیمال برای کافی‌شاپ با طراحی جذاب و تجربه کاربری
+          عالی.
+        </p>
+        <div class="action-buttons">
+          <a href="#" class="btn-primary">
+            <i class="fas fa-external-link-alt"></i>
+            <span data-key="portfolio-btn-demo">مشاهده</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fab fa-github"></i>
+            <span data-key="portfolio-btn-source">کد</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== بخش در حال ساخت (Coming Soon) ===== -->
+<div class="coming-soon-section" data-aos="fade-up">
+  <div class="coming-soon-card">
+    <span class="coming-soon-icon">🚀</span>
+    <h2>
+      <span data-key="coming-soon-title">در حال ساخت</span>
+      <span class="highlight" data-key="coming-soon-title-highlight">پروژه‌های جدید</span>
+    </h2>
+    <p data-key="coming-soon-desc">
+      تیم من در حال طراحی و توسعه پروژه‌های جذاب و مدرن است. به زودی شاهد نمونه‌کارهای جدید و خلاقانه‌ای خواهید بود که با جدیدترین تکنولوژی‌های روز دنیا ساخته می‌شوند.
+    </p>
+    <div class="coming-soon-projects">
+      <span class="project-badge">
+        <span class="badge-dot"></span>
+        <span data-key="coming-soon-project-1">فروشگاه آنلاین هوشمند</span>
+      </span>
+      <span class="project-badge">
+        <span class="badge-dot"></span>
+        <span data-key="coming-soon-project-2">اپلیکیشن مدیریت پروژه</span>
+      </span>
+      <span class="project-badge">
+        <span class="badge-dot"></span>
+        <span data-key="coming-soon-project-3">وب‌سایت شرکتی حرفه‌ای</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+    <!-- ===== CTA پایین صفحه ===== -->
+    <div class="portfolio-cta-wrapper" data-aos="fade-up">
+      <a
+        href="index.html#contact"
+        class="view"
+        style="display: inline-flex; padding: 18px 48px; font-size: 1.05rem"
+      >
+        <span data-key="portfolio-cta-title"
+          >✨ آماده همکاری هستید؟ با من تماس بگیرید</span
+        >
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2>حامد<span>.</span></h2>
+            <p data-key="footer-desc">
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >پذیرش پروژه‌های جدید</span
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-quick-links">
+              لینک‌های سریع
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-home">خانه</span></a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-contact">تماس</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-connect">
+              شبکه‌های اجتماعی
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i> <span>گیت‌هاب</span>
+              </a>
+              <a href="#" class="social-link linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i> <span>لینکدین</span>
+              </a>
+              <a href="#" class="social-link twitter" target="_blank">
+                <i class="fab fa-twitter"></i> <span>توییتر</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              با عضویت در خبرنامه، از آخرین مقالات و آموزش‌ها مطلع شوید.
+            </p>
+            <form class="newsletter-form" id="newsletterFormFooter2">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+              />
+              <button type="submit">
+                <i class="fas fa-send"></i>
+                <span data-key="footer-subscribe">عضویت</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="fas fa-heart"></i></span>
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+            <span class="footer-version">v4.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

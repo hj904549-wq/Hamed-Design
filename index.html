@@ -1,37 +1,70 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hamed - UI/UX Designer & Front-End Developer</title>
+    <title>حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند</title>
+    <meta
+      name="description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای، فروشگاه اینترنتی و اپلیکیشن‌های مدرن با React و Next.js"
+    />
+    <link rel="canonical" href="https://yourdomain.com/" />
 
-    <!-- فونت Poppins -->
+    <meta
+      property="og:title"
+      content="حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند"
+    />
+    <meta
+      property="og:description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/img/og-image.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند"
+    />
+    <meta
+      name="twitter:description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "حامد",
+        "jobTitle": "UI/UX Designer & Front-End Developer",
+        "url": "https://yourdomain.com/",
+        "sameAs": ["https://github.com/hj904549-wq"],
+        "worksFor": {
+          "@type": "ProfessionalService",
+          "name": "خدمات طراحی و توسعه حامد",
+          "description": "طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی سئو"
+        }
+      }
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- فونت وزیرمتن برای فارسی -->
-    <link
-      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
-      rel="stylesheet"
-    />
-
-    <!-- آیکون‌های Tabler -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css"
-    />
-
-    <!-- Font Awesome 6 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- ===== AOS ===== -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
@@ -40,49 +73,36 @@
     <!-- ===== نوار پیشرفت اسکرول ===== -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- ===== پس‌زمینه موج‌ها ===== -->
-    <div class="wave-bg">
-      <div class="wave wave-1"></div>
-      <div class="wave wave-2"></div>
-      <div class="wave wave-3"></div>
-    </div>
+    <!-- ===== پس‌زمینه ===== -->
+    <div class="bg-gradient"></div>
 
     <!-- ===== کانتینر ذرات ===== -->
     <div class="particle-container" id="particleContainer"></div>
 
-    <!-- ===== دکمه‌های بالا سمت راست ===== -->
+    <!-- ===== دکمه‌های بالا ===== -->
     <div class="header-controls">
-      <!-- دکمه تغییر زبان -->
       <div class="language-selector">
         <button
           id="lang-toggle-btn"
           class="lang-btn"
           aria-label="Toggle language"
         >
-          <span class="lang-current">EN</span>
-          <i class="ti ti-chevron-down"></i>
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="fas fa-chevron-down"></i>
         </button>
         <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
           <button class="lang-option" data-lang="en">
             <span class="lang-flag">🇬🇧</span> English
           </button>
-          <button class="lang-option" data-lang="fa">
-            <span class="lang-flag">🇮🇷</span> فارسی
-          </button>
         </div>
       </div>
-
-      <!-- دکمه تغییر تم -->
       <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
-        <i class="ti ti-sun theme-icon sun"></i>
-        <i class="ti ti-moon theme-icon moon"></i>
+        <i class="fas fa-moon theme-icon moon"></i>
+        <i class="fas fa-sun theme-icon sun"></i>
       </button>
-    </div>
-
-    <!-- ===== نشان وضعیت ===== -->
-    <div class="status-badge">
-      <span class="status-dot"></span>
-      <span class="status-text" data-key="status">Available for work</span>
     </div>
 
     <!-- ===== دکمه همبرگر ===== -->
@@ -92,19 +112,19 @@
       <span class="bar"></span>
     </button>
 
-    <!-- ===== کپسول نوار کناری ===== -->
+    <!-- ===== کپسول ناوبری ===== -->
     <nav class="capsule-nav">
       <div class="desktop-menu">
-        <a href="#home" class="nav-link active"><i class="ti ti-home"></i></a>
-        <a href="#about" class="nav-link"><i class="ti ti-user"></i></a>
-        <a href="#skills" class="nav-link"
-          ><i class="ti ti-language-katakana"></i
-        ></a>
+        <a href="#home" class="nav-link active"><i class="fas fa-home"></i></a>
+        <a href="#services" class="nav-link"><i class="fas fa-cogs"></i></a>
         <a href="#portfolio" class="nav-link"
-          ><i class="ti ti-layout-navbar"></i
+          ><i class="fas fa-briefcase"></i
         ></a>
-        <a href="#education" class="nav-link"><i class="ti ti-school"></i></a>
-        <a href="#contact" class="nav-link"><i class="ti ti-mail"></i></a>
+        <a href="#process" class="nav-link"><i class="fas fa-sync-alt"></i></a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-box"></i></a>
+
+        <a href="#blog" class="nav-link"><i class="fas fa-blog"></i></a>
+        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i></a>
       </div>
     </nav>
 
@@ -112,26 +132,30 @@
     <div class="mobile-menu-wrapper" id="mobile-menu">
       <div class="mobile-menu-inner">
         <a href="#home" class="nav-link active"
-          ><i class="ti ti-home"></i> <span data-key="nav-home">Home</span></a
+          ><i class="fas fa-home"></i> <span data-key="nav-home">خانه</span></a
         >
-        <a href="#about" class="nav-link"
-          ><i class="ti ti-user"></i> <span data-key="nav-about">About</span></a
-        >
-        <a href="#skills" class="nav-link"
-          ><i class="ti ti-language-katakana"></i>
-          <span data-key="nav-skills">Skills</span></a
+        <a href="#services" class="nav-link"
+          ><i class="fas fa-cogs"></i>
+          <span data-key="nav-services">خدمات</span></a
         >
         <a href="#portfolio" class="nav-link"
-          ><i class="ti ti-layout-navbar"></i>
-          <span data-key="nav-portfolio">Portfolio</span></a
+          ><i class="fas fa-briefcase"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
         >
-        <a href="#education" class="nav-link"
-          ><i class="ti ti-school"></i>
-          <span data-key="nav-education">Education</span></a
+        <a href="#pricing" class="nav-link"
+          ><i class="fas fa-box"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="#process" class="nav-link"
+          ><i class="fas fa-sync-alt"></i>
+          <span data-key="nav-process">فرآیند کار</span></a
+        >
+        <a href="#blog" class="nav-link"
+          ><i class="fas fa-blog"></i> <span data-key="nav-blog">وبلاگ</span></a
         >
         <a href="#contact" class="nav-link"
-          ><i class="ti ti-mail"></i>
-          <span data-key="nav-contact">Contact</span></a
+          ><i class="fas fa-envelope"></i>
+          <span data-key="nav-contact">تماس</span></a
         >
       </div>
     </div>
@@ -139,1153 +163,966 @@
     <!-- ===== اوورلی ===== -->
     <div class="menu-overlay" id="menu-overlay"></div>
 
-    <!-- =========================================
-         محتوای اصلی
-         ========================================= -->
-
+    <!-- ============================================================ -->
     <!-- ===== HERO ===== -->
+    <!-- ============================================================ -->
     <main class="content-area" id="home">
       <section class="hero-content">
         <div class="avatar-container">
+          <div class="avatar-ring"></div>
           <img
             src="./img/Profile-image.jpg"
-            alt="Hamed"
+            alt="حامد"
             class="avatar-img"
             loading="lazy"
           />
         </div>
         <h1>
-          <span data-key="hero-greeting">Hi, I'm</span>
-          <span class="highlight-text">Hamed</span>
+          <span data-key="hero-greeting">سلام، من</span>
+          <span class="highlight-text" id="hero-name">حامد</span>
         </h1>
-        <h2 class="subtitle" data-key="hero-title">I'm a UI/UX Designer</h2>
+        <h2 class="subtitle" data-key="hero-title">
+          طراح UI/UX و توسعه‌دهنده فرانت‌اند
+        </h2>
         <p data-key="hero-desc">
-          I create beautiful, responsive web experiences using modern
-          technologies.
+          من با تخصص در <strong>طراحی UI/UX</strong>،
+          <strong>توسعه فرانت‌اند</strong> و <strong>بهینه‌سازی وردپرس</strong>،
+          به کسب‌وکارها کمک می‌کنم تا در فضای آنلاین بدرخشند.
         </p>
-        <div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-exp">۳+</span>
+            <span class="hero-stat-label" data-key="hero-stat-exp-label"
+              >سال تجربه</span
+            >
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-projects"
+              >۲۵+</span
+            >
+            <span class="hero-stat-label" data-key="hero-stat-projects-label"
+              >پروژه</span
+            >
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-clients"
+              >۱۸</span
+            >
+            <span class="hero-stat-label" data-key="hero-stat-clients-label"
+              >مشتری</span
+            >
+          </div>
+        </div>
+
+        <div class="hero-actions">
           <a href="#portfolio" class="hero-btn primary" data-key="hero-btn-work"
-            >View My Work</a
+            >مشاهده پروژه‌ها</a
           >
           <a href="#contact" class="hero-btn" data-key="hero-btn-talk"
-            >Let's Talk</a
+            >شروع همکاری</a
           >
+          <a href="#pricing" class="hero-btn ghost" data-key="hero-btn-pricing"
+            >مشاهده پلن‌ها</a
+          >
+        </div>
+
+        <div class="hero-tech">
+          <span data-key="hero-tech-label">تکنولوژی‌های من:</span>
+          <div class="tech-icons">
+            <i class="fab fa-html5" title="HTML5"></i>
+            <i class="fab fa-css3-alt" title="CSS3"></i>
+            <i class="fab fa-js" title="JavaScript"></i>
+            <i class="fab fa-react" title="React"></i>
+            <i class="fab fa-vuejs" title="Vue.js"></i>
+            <i class="fab fa-wordpress" title="WordPress"></i>
+            <i class="fab fa-git-alt" title="Git"></i>
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="about" id="about">
-      <div class="about-container">
-        <div class="about-header" data-aos="fade-down" data-aos-once="true">
-          <h2 class="about-title">
-            <span class="highlight-about" data-key="about-title-highlight"
-              >About</span
-            >
-            <span data-key="about-title">Me</span>
-          </h2>
-          <div
-            class="about-subtitle-line"
-            data-aos="zoom-in"
-            data-aos-once="true"
-            data-aos-delay="100"
-          ></div>
-          <p
-            class="about-subtitle-text"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-delay="200"
-            data-key="about-subtitle"
+    <!-- ============================================================ -->
+    <!-- ===== SERVICES ===== -->
+    <!-- ============================================================ -->
+    <section class="services-section" id="services">
+      <div class="services-container">
+        <div class="services-header" data-aos="fade-down">
+          <span class="services-tag"
+            ><i class="fas fa-cogs"></i>
+            <span data-key="services-tag">خدمات من</span></span
           >
-            Designer &amp; Developer with a passion for clean, human-centered
-            interfaces
+          <h2 class="services-title">
+            <span data-key="services-title"
+              >چیزی که من برای شما انجام می‌دهم</span
+            >
+          </h2>
+          <p class="services-subtitle" data-key="services-subtitle">
+            از طراحی تا پیاده‌سازی، همه‌چیز در یک جا
           </p>
         </div>
 
-        <div class="about-grid">
-          <div
-            class="about-image-wrapper"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-delay="100"
-          >
-            <div class="about-image-card">
-              <div class="about-image-frame">
-                <img
-                  src="./img/Profile-image.jpg"
-                  alt="Hamed"
-                  class="about-avatar"
-                  loading="lazy"
-                />
-                <div class="about-ring"></div>
-              </div>
-              <div
-                class="about-stats-card"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-delay="200"
+        <div class="services-grid">
+          <div class="service-card" data-aos="flip-up" data-aos-delay="0">
+            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <h3 data-key="service-1-title">طراحی UI/UX</h3>
+            <p data-key="service-1-desc">
+              طراحی رابط کاربری جذاب و تجربه کاربری روان که مشتریان شما را مجذوب
+              می‌کند.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-1">۲-۳ هفته</span></span
               >
-                <div class="stat-about-item">
-                  <span class="stat-number">3+</span>
-                  <span class="stat-label" data-key="about-stat-exp"
-                    >Years Experience</span
-                  >
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-about-item">
-                  <span class="stat-number">20+</span>
-                  <span class="stat-label" data-key="about-stat-projects"
-                    >Projects Done</span
-                  >
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-about-item">
-                  <span class="stat-number">12</span>
-                  <span class="stat-label" data-key="about-stat-clients"
-                    >Happy Clients</span
-                  >
-                </div>
-              </div>
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
             </div>
           </div>
 
-          <div
-            class="content-about"
-            data-aos="fade-left"
-            data-aos-once="true"
-            data-aos-delay="200"
-          >
-            <span class="about-badge" data-aos="fade-up" data-aos-once="true">
-              <i class="ti ti-user-check"></i
-              ><span data-key="about-badge">Who I Am</span>
-            </span>
-            <h2
-              class="heading"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="50"
-              data-key="about-heading"
-            >
-              UI/UX Designer &amp; Front-End Developer
-            </h2>
-            <p
-              class="paragraph"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="100"
-              data-key="about-p1"
-            >
-              I'm Hamed, a creative UI/UX designer and front-end developer based
-              in Iran. With over 3 years of experience, I specialize in crafting
-              beautiful, responsive, and user-friendly digital experiences.
+          <div class="service-card" data-aos="flip-up" data-aos-delay="100">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3 data-key="service-2-title">توسعه فرانت‌اند</h3>
+            <p data-key="service-2-desc">
+              کدنویسی تمیز و بهینه با استفاده از مدرن‌ترین تکنولوژی‌های وب.
             </p>
-            <p
-              class="paragraph"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="150"
-              data-key="about-p2"
-            >
-              From concept to pixel-perfect implementation, I combine design
-              thinking with modern web technologies to build products that
-              people love to use.
-            </p>
-            <div
-              class="about-features"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="200"
-            >
-              <div
-                class="feature-item"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-delay="50"
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-2">۳-۴ هفته</span></span
               >
-                <i class="ti ti-brand-figma"></i>
-                <span data-key="about-feature-1">UI/UX Design</span>
-              </div>
-              <div
-                class="feature-item"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-delay="100"
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
               >
-                <i class="ti ti-code"></i>
-                <span data-key="about-feature-2">Front-End Dev</span>
-              </div>
-              <div
-                class="feature-item"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-delay="150"
-              >
-                <i class="ti ti-device-mobile"></i>
-                <span data-key="about-feature-3">Responsive Design</span>
-              </div>
-              <div
-                class="feature-item"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-delay="200"
-              >
-                <i class="ti ti-brand-react"></i>
-                <span data-key="about-feature-4">React / Vue</span>
-              </div>
             </div>
-            <div
-              class="about-actions"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="250"
-            >
-              <a href="#contact" class="about-btn primary-btn">
-                <i class="ti ti-message"></i>
-                <span data-key="about-btn-talk">Let's Talk</span>
-              </a>
-              <a href="#" class="about-btn ghost-btn">
-                <i class="ti ti-file-text"></i>
-                <span data-key="about-btn-resume">My Resume</span>
-              </a>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="200">
+            <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+            <h3 data-key="service-3-title">وردپرس حرفه‌ای</h3>
+            <p data-key="service-3-desc">
+              ساخت و بهینه‌سازی وب‌سایت‌های وردپرسی با سرعت لود فوق‌العاده.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-3">۱-۲ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="300">
+            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <h3 data-key="service-4-title">بهینه‌سازی سرعت و سئو</h3>
+            <p data-key="service-4-desc">
+              افزایش سرعت لود و بهبود رتبه سایت شما در نتایج جستجوی گوگل.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-4">۱ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="400">
+            <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+            <h3 data-key="service-5-title">فروشگاه اینترنتی</h3>
+            <p data-key="service-5-desc">
+              راه‌اندازی فروشگاه آنلاین کامل با درگاه پرداخت و مدیریت آسان.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-5">۳-۵ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="500">
+            <div class="service-icon"><i class="fas fa-headset"></i></div>
+            <h3 data-key="service-6-title">پشتیبانی و نگهداری</h3>
+            <p data-key="service-6-desc">
+              پشتیبانی ۲۴ ساعته، بروزرسانی و نگهداری وب‌سایت شما.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="far fa-clock"></i>
+                <span data-key="service-time-6">ماهانه</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section class="skills-section" id="skills">
-      <div class="skills-container">
-        <!-- سمت چپ: تصاویر بزرگ و شناور (با انیمیشن نرم) -->
-        <div class="skills-visual" data-aos="fade-right" data-aos-once="true">
-          <div class="robot-hands-wrapper">
-            <!-- دایره‌های اصلی با عکس‌های خودتان -->
-            <div
-              class="robot-hand hand-back"
-              data-aos="zoom-in"
-              data-aos-once="true"
-              data-aos-delay="100"
-            >
-              <img src="./img/physics.png" alt="React Icon" loading="lazy" />
-            </div>
-            <div
-              class="robot-hand hand-mid"
-              data-aos="zoom-in"
-              data-aos-once="true"
-              data-aos-delay="200"
-            >
-              <img
-                src="./img/java-script.png"
-                alt="JavaScript Icon"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="robot-hand hand-front"
-              data-aos="zoom-in"
-              data-aos-once="true"
-              data-aos-delay="300"
-            >
-              <img src="./img/css-3.png" alt="CSS3 Icon" loading="lazy" />
-            </div>
-
-            <!-- آیکون‌های شناور (با گرادینت) -->
-            <div
-              class="floating-icon float-1"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="100"
-            >
-              <i class="fas fa-brain icon-grad-brain"></i>
-            </div>
-            <div
-              class="floating-icon float-2"
-              data-aos="fade-down"
-              data-aos-once="true"
-              data-aos-delay="200"
-            >
-              <i class="fas fa-paint-roller icon-grad-paint"></i>
-            </div>
-            <div
-              class="floating-icon float-3"
-              data-aos="fade-left"
-              data-aos-once="true"
-              data-aos-delay="300"
-            >
-              <i class="fas fa-code icon-grad-code"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- سمت راست: لیست مهارت‌ها (با عکس‌های خودتان) -->
-        <div class="skills-content" data-aos="fade-left" data-aos-once="true">
-          <h2 class="skills-title">
-            <span class="title-icon-wrapper"
-              ><i class="fas fa-microchip"></i
-            ></span>
-            <span data-key="skills-title">My Skills</span>
-          </h2>
-
-          <p class="skills-description" data-key="skills-desc">
-            I'm a passionate web developer with over 3 years of experience
-            creating modern, responsive and pixel-perfect UI experiences.
-          </p>
-
-          <div class="skills-list">
-            <!-- React -->
-            <div
-              class="skill-item"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="50"
-            >
-              <div class="skill-icon-wrapper">
-                <img src="./img/physics.png" alt="React" loading="lazy" />
-              </div>
-              <span class="skill-name">React</span>
-              <div class="progress-bar">
-                <div class="progress-fill fill-90"></div>
-              </div>
-              <span class="skill-percent">90%</span>
-            </div>
-
-            <!-- JavaScript -->
-            <div
-              class="skill-item"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="100"
-            >
-              <div class="skill-icon-wrapper">
-                <img
-                  src="./img/java-script.png"
-                  alt="JavaScript"
-                  loading="lazy"
-                />
-              </div>
-              <span class="skill-name">JavaScript</span>
-              <div class="progress-bar">
-                <div class="progress-fill fill-85"></div>
-              </div>
-              <span class="skill-percent">85%</span>
-            </div>
-
-            <!-- TypeScript -->
-            <div
-              class="skill-item"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="150"
-            >
-              <div class="skill-icon-wrapper">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <span class="skill-name">TypeScript</span>
-              <div class="progress-bar">
-                <div class="progress-fill fill-80"></div>
-              </div>
-              <span class="skill-percent">80%</span>
-            </div>
-
-            <!-- Vue.js -->
-            <div
-              class="skill-item"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="200"
-            >
-              <div class="skill-icon-wrapper">
-                <i class="fas fa-brain"></i>
-              </div>
-              <span class="skill-name">Vue.js</span>
-              <div class="progress-bar">
-                <div class="progress-fill fill-75"></div>
-              </div>
-              <span class="skill-percent">75%</span>
-            </div>
-
-            <!-- UI/UX Design -->
-            <div
-              class="skill-item"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="250"
-            >
-              <div class="skill-icon-wrapper">
-                <i class="fas fa-paint-roller"></i>
-              </div>
-              <span class="skill-name" data-key="skill-uiux">UI/UX Design</span>
-              <div class="progress-bar">
-                <div class="progress-fill fill-95"></div>
-              </div>
-              <span class="skill-percent">95%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- ============================================================ -->
     <!-- ===== PORTFOLIO ===== -->
+    <!-- ============================================================ -->
     <section class="portfolio" id="portfolio">
-      <h2
-        class="titel-portfolio"
-        data-aos="fade-down"
-        data-aos-once="true"
-        data-aos-duration="500"
-      >
-        <span data-key="portfolio-title-highlight">My</span>
-        <span data-key="portfolio-title">Portfolio</span>
+      <h2 class="titel-portfolio" data-aos="fade-down">
+        <span data-key="portfolio-title-highlight">نمونه</span>
+        <span class="highlight-about" data-key="portfolio-title"
+          >کارهای من</span
+        >
       </h2>
 
+      <div class="portfolio-filters" data-aos="fade-up">
+        <button
+          class="filter-btn active"
+          data-filter="all"
+          data-key="filter-all"
+        >
+          همه
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="landing"
+          data-key="filter-landing"
+        >
+          لندینگ
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="ecommerce"
+          data-key="filter-ecommerce"
+        >
+          فروشگاهی
+        </button>
+        <button class="filter-btn" data-filter="ui" data-key="filter-ui">
+          UI/UX
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="webapp"
+          data-key="filter-webapp"
+        >
+          اپلیکیشن
+        </button>
+      </div>
+
       <div class="portfolio-grid">
+        <!-- کارت ۱ -->
         <div
           class="portfolio-card"
+          data-category="ecommerce"
           data-aos="flip-up"
-          data-aos-once="true"
-          data-aos-duration="500"
           data-aos-delay="0"
         >
           <div class="card-image">
             <img
               src="./img/Screenshot 2026-07-06 153718.png"
-              alt="KICKS"
+              alt="KICKS Store"
               loading="lazy"
             />
             <div class="project-status">
               <span class="status-dot"></span>
-              <span data-key="portfolio-status-online">Online</span>
+              <span data-key="portfolio-status-online">آنلاین</span>
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"
-              ><i class="ti ti-file-type-html"></i> HTML</span
-            >
-            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
-            <span class="tech-badge"
-              ><i class="ti ti-brand-javascript"></i> JS</span
-            >
+            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
+            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
           </div>
-          <h3 class="card-title">KICKS Website</h3>
+          <h3 class="card-title">KICKS</h3>
           <p class="card-description" data-key="portfolio-desc-1">
-            Premium Footwear E-Commerce with dynamic product showcase, cart
-            system, favorites, and contact form. Built with HTML/CSS/JavaScript
-            featuring Swiper.js.
+            فروشگاه تخصصی کفش با فیلترهای پویا، سبد خرید و فرم تماس.
           </p>
           <div class="action-buttons">
             <a
               href="https://hj904549-wq.github.io/-KICKS./"
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-primary"
             >
-              <i class="ti ti-external-link"></i>
-              <span data-key="portfolio-btn-demo">View Demo</span>
+              <i class="fas fa-external-link-alt"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
               href="https://github.com/hj904549-wq/-KICKS."
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-ghost"
             >
               <i class="fab fa-github"></i>
-              <span data-key="portfolio-btn-source">Source code</span>
+              <span data-key="portfolio-btn-source">کد</span>
             </a>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <span class="stat-item"
-                ><i class="fas fa-file-alt"></i>
-                <span data-key="portfolio-stat-single">Single-page</span></span
-              >
-              <span class="stat-item"
-                ><i class="fas fa-tag"></i>
-                <span data-key="portfolio-stat-v1">Version 1</span></span
-              >
-            </div>
-            <span class="project-date"
-              ><i class="far fa-calendar-alt"></i> May 2025</span
-            >
           </div>
         </div>
 
+        <!-- کارت ۲ -->
         <div
           class="portfolio-card"
+          data-category="landing"
           data-aos="flip-up"
-          data-aos-once="true"
-          data-aos-duration="500"
           data-aos-delay="100"
         >
           <div class="card-image">
             <img src="./img/Coffee-Land.png" alt="Cafe Land" loading="lazy" />
             <div class="project-status">
               <span class="status-dot"></span>
-              <span data-key="portfolio-status-online">Online</span>
+              <span data-key="portfolio-status-online">آنلاین</span>
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"
-              ><i class="ti ti-file-type-html"></i> HTML</span
-            >
-            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
-            <span class="tech-badge"
-              ><i class="ti ti-brand-javascript"></i> JS</span
-            >
+            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
+            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
           </div>
-          <h3 class="card-title">Cafe Land Website</h3>
+          <h3 class="card-title">Cafe Land</h3>
           <p class="card-description" data-key="portfolio-desc-2">
-            Responsive Coffee Shop Website with interactive menu, shopping cart,
-            and contact form. Built using vanilla HTML/CSS/JS with localStorage.
+            وب‌سایت کافه با منوی تعاملی و سبد خرید با ذخیره‌سازی محلی.
           </p>
           <div class="action-buttons">
             <a
               href="https://hj904549-wq.github.io/Cafe-Noir/"
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-primary"
             >
-              <i class="ti ti-external-link"></i>
-              <span data-key="portfolio-btn-demo">View Demo</span>
+              <i class="fas fa-external-link-alt"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
               href="https://github.com/hj904549-wq/Cafe-Noir-"
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-ghost"
             >
               <i class="fab fa-github"></i>
-              <span data-key="portfolio-btn-source">Source code</span>
+              <span data-key="portfolio-btn-source">کد</span>
             </a>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <span class="stat-item"
-                ><i class="fas fa-file-alt"></i>
-                <span data-key="portfolio-stat-single">Single-page</span></span
-              >
-              <span class="stat-item"
-                ><i class="fas fa-tag"></i>
-                <span data-key="portfolio-stat-v1">Version 1</span></span
-              >
-            </div>
-            <span class="project-date"
-              ><i class="far fa-calendar-alt"></i> July 2025</span
-            >
           </div>
         </div>
 
+        <!-- کارت ۳ -->
         <div
           class="portfolio-card"
+          data-category="webapp"
           data-aos="flip-up"
-          data-aos-once="true"
-          data-aos-duration="500"
           data-aos-delay="200"
         >
           <div class="card-image">
             <img src="./img/motor-sit.png" alt="Motoride" loading="lazy" />
             <div class="project-status">
               <span class="status-dot"></span>
-              <span data-key="portfolio-status-online">Online</span>
+              <span data-key="portfolio-status-online">آنلاین</span>
             </div>
           </div>
           <div class="tech-stack">
-            <span class="tech-badge"
-              ><i class="ti ti-file-type-html"></i> HTML</span
-            >
-            <span class="tech-badge"><i class="ti ti-brand-css3"></i> CSS</span>
-            <span class="tech-badge"
-              ><i class="ti ti-brand-javascript"></i> JS</span
-            >
+            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
+            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="tech-badge"><i class="fab fa-js"></i> JS</span>
           </div>
-          <h3 class="card-title">Motorcycle Rental</h3>
+          <h3 class="card-title">Motoride</h3>
           <p class="card-description" data-key="portfolio-desc-3">
-            Motorcycle Rental Platform with dynamic bike listings, shopping
-            cart, destination slider, and blog system. Built with
-            HTML/CSS/JavaScript.
+            پلتفرم اجاره موتور با لیست پویا، سبد خرید و اسلایدر.
           </p>
           <div class="action-buttons">
             <a
               href="https://hj904549-wq.github.io/MOTORIDE/"
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-primary"
             >
-              <i class="ti ti-external-link"></i>
-              <span data-key="portfolio-btn-demo">View Demo</span>
+              <i class="fas fa-external-link-alt"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
             </a>
             <a
               href="https://github.com/hj904549-wq/MOTORIDE"
               target="_blank"
-              rel="noopener noreferrer"
               class="btn-card btn-ghost"
             >
               <i class="fab fa-github"></i>
-              <span data-key="portfolio-btn-source">Source code</span>
+              <span data-key="portfolio-btn-source">کد</span>
             </a>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <span class="stat-item"
-                ><i class="fas fa-file-alt"></i>
-                <span data-key="portfolio-stat-single">Single-page</span></span
-              >
-              <span class="stat-item"
-                ><i class="fas fa-tag"></i>
-                <span data-key="portfolio-stat-v1">Version 1</span></span
-              >
-            </div>
-            <span class="project-date"
-              ><i class="far fa-calendar-alt"></i> May 2025</span
-            >
           </div>
         </div>
       </div>
 
-      <div
-        style="text-align: center; margin-top: 40px"
-        data-aos="fade-up"
-        data-aos-once="true"
-        data-aos-duration="500"
-      >
-        <a href="#" class="view"
-          ><span data-key="portfolio-view-all">View All Portfolio</span></a
-        >
+      <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
+        <a href="./portfolio.html" class="view"
+          ><span data-key="portfolio-view-all">مشاهده همه نمونه کارها</span>
+          <i class="fas fa-arrow-left"></i
+        ></a>
       </div>
     </section>
 
-    <!-- ===== EDUCATION ===== -->
-    <section class="education-section" id="education">
-      <div class="education-container">
-        <div
-          class="education-header"
-          data-aos="fade-down"
-          data-aos-once="true"
-          data-aos-duration="500"
-        >
-          <span
-            class="education-tag"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
+    <!-- ============================================================ -->
+    <!-- ===== PROCESS ===== -->
+    <!-- ============================================================ -->
+    <section class="process-section" id="process">
+      <div class="process-container">
+        <div class="process-header" data-aos="fade-down">
+          <span class="process-tag"
+            ><i class="fas fa-sync-alt"></i>
+            <span data-key="process-tag">فرآیند کار</span></span
           >
-            <i class="ti ti-school"></i>
-            <span data-key="edu-tag">My Journey</span>
-          </span>
-          <h2
-            class="education-title"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
-          >
-            <span class="gradient-text" data-key="edu-title">Education</span>
+          <h2>
+            <span data-key="process-title">چگونه با هم کار می‌کنیم؟</span>
           </h2>
-          <p
-            class="education-subtitle"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="50"
-            data-key="edu-subtitle"
-          >
-            A strong foundation in computer science and modern web development
+          <p class="process-subtitle" data-key="process-subtitle">
+            روش من برای تبدیل ایده به محصول نهایی
           </p>
         </div>
 
-        <div
-          class="education-stats"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="500"
-        >
-          <div
-            class="stat-box"
-            data-aos="zoom-in"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="0"
-          >
-            <span class="icon"><i class="ti ti-certificate"></i></span>
-            <span class="number">3</span>
-            <span class="label" data-key="edu-stat-certs">Certificates</span>
-          </div>
-          <div
-            class="stat-box"
-            data-aos="zoom-in"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="50"
-          >
-            <span class="icon"><i class="ti ti-clock"></i></span>
-            <span class="number">2+</span>
-            <span class="label" data-key="edu-stat-learning"
-              >Years Learning</span
-            >
-          </div>
-          <div
-            class="stat-box"
-            data-aos="zoom-in"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="100"
-          >
-            <span class="icon"><i class="ti ti-code"></i></span>
-            <span class="number">15+</span>
-            <span class="label" data-key="edu-stat-projects"
-              >Projects Built</span
-            >
-          </div>
-        </div>
-
-        <div class="timeline">
-          <div
-            class="timeline-item"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="0"
-          >
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">
-                <i class="ti ti-calendar"></i> 2023 – 2026
-              </div>
-              <div class="timeline-title-wrapper">
-                <span class="title-icon">🎓</span>
-                <h3 class="timeline-title" data-key="edu-item1-title">
-                  High School Diploma
-                </h3>
-              </div>
-              <p class="timeline-institution">
-                <i class="ti ti-building-school"></i>
-                <span data-key="edu-item1-school">Bright Future School</span>
+        <div class="process-timeline">
+          <div class="process-step" data-aos="fade-right">
+            <div class="step-number">۱</div>
+            <div class="step-content">
+              <h3 data-key="process-step-1-title">بررسی نیاز</h3>
+              <p data-key="process-step-1-desc">
+                جلسه مشاوره برای درک اهداف، نیازها و چشم‌انداز پروژه شما
               </p>
-              <p class="timeline-description" data-key="edu-item1-desc">
-                Currently in 9th grade. Studying Mathematics, Physics, and
-                Computer Science. Passionate about coding, web development, and
-                design.
-              </p>
-              <div class="timeline-tags">
-                <span class="timeline-badge badge-current">
-                  <i class="ti ti-star"></i>
-                  <span data-key="edu-badge-progress">In Progress</span>
-                </span>
-                <span class="timeline-badge">
-                  <i class="ti ti-book"></i>
-                  <span data-key="edu-badge-student">Student</span>
-                </span>
-              </div>
-              <div class="timeline-progress">
-                <span class="progress-label" data-key="edu-progress"
-                  >Progress</span
-                >
-                <div class="progress-track">
-                  <div class="fill" style="width: 45%"></div>
-                </div>
-                <span class="progress-percent">45%</span>
-              </div>
             </div>
           </div>
-
-          <div
-            class="timeline-item"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="50"
-          >
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">
-                <i class="ti ti-calendar"></i> 2025 – Present
-              </div>
-              <div class="timeline-title-wrapper">
-                <span class="title-icon">💻</span>
-                <h3 class="timeline-title" data-key="edu-item2-title">
-                  Web Development &amp; UI/UX
-                </h3>
-              </div>
-              <p class="timeline-institution">
-                <i class="ti ti-world"></i>
-                <span data-key="edu-item2-school">Online — Self‑Taught</span>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="step-number">۲</div>
+            <div class="step-content">
+              <h3 data-key="process-step-2-title">طراحی اولیه</h3>
+              <p data-key="process-step-2-desc">
+                ایجاد وایرفریم و طراحی UI/UX با دریافت بازخورد شما
               </p>
-              <p class="timeline-description" data-key="edu-item2-desc">
-                Learning HTML, CSS, JavaScript, React, and UI/UX design
-                principles. Building real‑world projects and responsive
-                websites.
-              </p>
-              <div class="timeline-tags">
-                <span class="timeline-badge">
-                  <i class="ti ti-rocket"></i>
-                  <span data-key="edu-badge-learning">Learning</span>
-                </span>
-                <span class="timeline-badge"
-                  ><i class="ti ti-brand-react"></i> React</span
-                >
-                <span class="timeline-badge"
-                  ><i class="ti ti-brand-figma"></i> Figma</span
-                >
-              </div>
-              <div class="timeline-progress">
-                <span class="progress-label" data-key="edu-progress"
-                  >Progress</span
-                >
-                <div class="progress-track">
-                  <div class="fill" style="width: 70%"></div>
-                </div>
-                <span class="progress-percent">70%</span>
-              </div>
             </div>
           </div>
-
-          <div
-            class="timeline-item"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="100"
-          >
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">
-                <i class="ti ti-calendar"></i> 2023 – 2024
-              </div>
-              <div class="timeline-title-wrapper">
-                <span class="title-icon">🐍</span>
-                <h3 class="timeline-title" data-key="edu-item3-title">
-                  Programming Fundamentals
-                </h3>
-              </div>
-              <p class="timeline-institution">
-                <i class="ti ti-user"></i>
-                <span data-key="edu-item3-school">Self‑Taught</span>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-number">۳</div>
+            <div class="step-content">
+              <h3 data-key="process-step-3-title">توسعه</h3>
+              <p data-key="process-step-3-desc">
+                کدنویسی و پیاده‌سازی با استفاده از تکنولوژی‌های مدرن
               </p>
-              <p class="timeline-description" data-key="edu-item3-desc">
-                Started coding with Python and basic web technologies. Built
-                first mini‑projects and gained confidence in programming.
-              </p>
-              <div class="timeline-tags">
-                <span class="timeline-badge">
-                  <i class="ti ti-check"></i>
-                  <span data-key="edu-badge-completed">Completed</span>
-                </span>
-                <span class="timeline-badge"
-                  ><i class="ti ti-brand-python"></i> Python</span
-                >
-                <span class="timeline-badge"
-                  ><i class="ti ti-file-type-html"></i> HTML/CSS</span
-                >
-              </div>
-              <div class="timeline-progress">
-                <span class="progress-label" data-key="edu-progress"
-                  >Progress</span
-                >
-                <div class="progress-track">
-                  <div class="fill" style="width: 100%"></div>
-                </div>
-                <span class="progress-percent">100%</span>
-              </div>
             </div>
           </div>
-
-          <div
-            class="timeline-item"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="150"
-          >
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">
-                <i class="ti ti-calendar"></i> 2026 – 2030
-              </div>
-              <div class="timeline-title-wrapper">
-                <span class="title-icon">🎯</span>
-                <h3 class="timeline-title" data-key="edu-item4-title">
-                  Computer Science (Planned)
-                </h3>
-              </div>
-              <p class="timeline-institution">
-                <i class="ti ti-building"></i>
-                <span data-key="edu-item4-school">Future University</span>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="step-number">۴</div>
+            <div class="step-content">
+              <h3 data-key="process-step-4-title">تست و بازبینی</h3>
+              <p data-key="process-step-4-desc">
+                تست کامل، رفع باگ و بهینه‌سازی برای بهترین عملکرد
               </p>
-              <p class="timeline-description" data-key="edu-item4-desc">
-                Planning to pursue a Bachelor's degree in Computer Science.
-                Focus on software engineering, AI, and human‑computer
-                interaction.
+            </div>
+          </div>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-number">۵</div>
+            <div class="step-content">
+              <h3 data-key="process-step-5-title">تحویل و پشتیبانی</h3>
+              <p data-key="process-step-5-desc">
+                تحویل پروژه و پشتیبانی پس از راه‌اندازی
               </p>
-              <div class="timeline-tags">
-                <span class="timeline-badge">
-                  <i class="ti ti-target"></i>
-                  <span data-key="edu-badge-goal">Goal</span>
-                </span>
-                <span class="timeline-badge"
-                  ><i class="ti ti-brain"></i> AI &amp; ML</span
-                >
-              </div>
-              <div class="timeline-progress">
-                <span class="progress-label" data-key="edu-progress-prep"
-                  >Preparation</span
-                >
-                <div class="progress-track">
-                  <div class="fill" style="width: 20%"></div>
-                </div>
-                <span class="progress-percent">20%</span>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================ -->
+    <!-- ===== PRICING ===== -->
+    <!-- ============================================================ -->
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-container">
+        <div class="pricing-header" data-aos="fade-down">
+          <span class="pricing-tag"
+            ><i class="fas fa-box"></i>
+            <span data-key="pricing-tag">پلن‌های همکاری</span></span
+          >
+          <h2><span data-key="pricing-title">پکیج‌های طلایی من</span></h2>
+          <p class="pricing-subtitle" data-key="pricing-subtitle">
+            پلن مناسب پروژه خود را انتخاب کنید
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card" data-aos="zoom-in" data-aos-delay="0">
+            <div class="pricing-badge" data-key="pkg-1-badge">اقتصادی</div>
+            <h3 data-key="pkg-1-title">وب‌سایت شرکتی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-1-price">شروع از ۸ میلیون</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-1-desc">
+              مناسب برای معرفی خدمات، پزشکان، وکلا و کسب‌وکارهای نوپا
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-1-f1">طراحی اختصاصی UI/UX</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-1-f2">پیاده‌سازی با وردپرس</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-1-f3">کاملاً واکنش‌گرا</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-1-f4">امنیت استاندارد</span>
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>
+                <span data-key="pkg-1-f5">درگاه پرداخت آنلاین</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn order-trigger"
+              data-package="وب‌سایت شرکتی"
+            >
+              <span data-key="pkg-1-btn">درخواست همکاری</span>
+            </a>
+          </div>
+
+          <div
+            class="pricing-card featured"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="pricing-badge popular" data-key="pkg-2-badge">
+              پیشنهادی
+            </div>
+            <h3 data-key="pkg-2-title">فروشگاه اینترنتی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-2-price">شروع از ۱۵ میلیون</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-2-desc">
+              یک فروشگاه کامل با سرعت لود فوق‌العاده و طراحی مدرن
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-2-f1">طراحی اختصاصی UI/UX</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-2-f2">اتصال به درگاه پرداخت</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-2-f3">بهینه‌سازی سرعت تخصصی</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-2-f4">پنل مدیریت فارسی</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-2-f5">پشتیبانی ۳ ماهه</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn primary order-trigger"
+              data-package="فروشگاه اینترنتی"
+            >
+              <span data-key="pkg-2-btn">درخواست همکاری</span>
+            </a>
+          </div>
+
+          <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-badge" data-key="pkg-3-badge">پیشرفته</div>
+            <h3 data-key="pkg-3-title">طراحی اختصاصی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-3-price">نیاز به مشاوره</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-3-desc">
+              برای استارتاپ‌ها و سامانه‌های اختصاصی و اپلیکیشن‌های وب پیچیده
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-3-f1">توسعه با React / Next.js</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-3-f2">سرعت لود خارق‌العاده</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-3-f3">امنیت سازمانی</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-3-f4">انیمیشن‌های تعاملی</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-key="pkg-3-f5">پشتیبانی ۶ ماهه</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn order-trigger"
+              data-package="طراحی اختصاصی"
+            >
+              <span data-key="pkg-3-btn">درخواست مشاوره</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FAQ ===== -->
+    <!-- ============================================================ -->
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <div class="faq-header" data-aos="fade-down">
+          <span class="faq-tag"
+            ><i class="fas fa-question-circle"></i>
+            <span data-key="faq-tag">سوالات متداول</span></span
+          >
+          <h2><span data-key="faq-title">پاسخ به سوالات شما</span></h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item" data-aos="fade-up">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q1"
+                >چقدر زمان برای طراحی و توسعه سایت نیاز است؟</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a1">
+                زمان پروژه بستگی به پیچیدگی و نوع پروژه دارد. برای وب‌سایت‌های
+                شرکتی معمولاً ۲ تا ۴ هفته و برای فروشگاه‌های اینترنتی ۴ تا ۶
+                هفته زمان نیاز است.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q2"
+                >آیا امکان تغییرات در حین پروژه وجود دارد؟</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a2">
+                بله، من با مشتریان در تمام مراحل پروژه همکاری می‌کنم و بازخورد
+                شما برای من بسیار مهم است. تغییرات در مرحله طراحی اولیه کاملاً
+                رایگان است.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q3"
+                >آیا پشتیبانی پس از تحویل پروژه دارید؟</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a3">
+                بله، تمام پروژه‌ها حداقل ۳ ماه پشتیبانی رایگان دارند و برای
+                پروژه‌های بزرگتر، پشتیبانی تا ۶ ماه ارائه می‌شود.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q4">آیا پروژه بهینه‌سازی سئو هم می‌شود؟</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a4">
+                بله، تمام پروژه‌ها با اصول سئو و بهینه‌سازی سرعت پیاده‌سازی
+                می‌شوند تا در نتایج گوگل بهتر دیده شوند.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============================================================ -->
+    <!-- ===== BLOG ===== -->
+    <!-- ============================================================ -->
+    <section class="blog-section" id="blog">
+      <div class="blog-container">
+        <div class="blog-header" data-aos="fade-down">
+          <span class="blog-tag"
+            ><i class="fas fa-blog"></i>
+            <span data-key="blog-tag">وبلاگ</span></span
+          >
+          <h2><span data-key="blog-title">آخرین مقالات و مطالب</span></h2>
+          <p class="blog-subtitle" data-key="blog-subtitle">
+            دانش و تجربیات من در زمینه طراحی و توسعه
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- مقاله ۱ -->
+          <article class="blog-card" data-aos="fade-up">
+            <div class="blog-image">
+              <img src="./img/blog-1.jpg" alt="طراحی UI/UX" loading="lazy" />
+              <span class="blog-category" data-key="blog-cat-uiux">UI/UX</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> ۲۵ دی ۱۴۰۴</span>
+                <span><i class="far fa-clock"></i> ۵ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=1" data-key="blog-title-1"
+                  >چگونه یک طراحی UI/UX عالی داشته باشیم؟</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-1">
+                در این مقاله به اصول کلیدی طراحی رابط کاربری و تجربه کاربری
+                می‌پردازیم...
+              </p>
+              <a
+                href="blog-post.html?id=1"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- مقاله ۲ -->
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-image">
+              <img src="./img/blog-2.webp" alt="جاوااسکریپت" loading="lazy" />
+              <span class="blog-category" data-key="blog-cat-dev">توسعه</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> ۱۸ دی ۱۴۰۴</span>
+                <span><i class="far fa-clock"></i> ۷ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=2" data-key="blog-title-2"
+                  >بهترین فریم‌ورک‌های جاوااسکریپت برای ۲۰۲۵</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-2">
+                مقایسه React، Vue و Angular و کاربرد هرکدام در پروژه‌های
+                مختلف...
+              </p>
+              <a
+                href="blog-post.html?id=2"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- مقاله ۳ -->
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-image">
+              <img
+                src="./img/blog-3.jpg"
+                alt="بهینه‌سازی سرعت وب‌سایت"
+                loading="lazy"
+              />
+              <span class="blog-category" data-key="blog-cat-optimization"
+                >بهینه‌سازی</span
+              >
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> ۱۰ دی ۱۴۰۴</span>
+                <span><i class="far fa-clock"></i> ۶ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=3" data-key="blog-title-3"
+                  >۱۰ تکنیک طلایی برای افزایش سرعت وب‌سایت</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-3">
+                با این تکنیک‌ها سرعت سایت خود را تا ۵۰٪ افزایش دهید...
+              </p>
+              <a
+                href="blog-post.html?id=3"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
+          <a href="./blog.html" class="view"
+            ><span data-key="blog-view-all">مشاهده همه مقالات</span>
+            <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
     <!-- ===== CONTACT ===== -->
+    <!-- ============================================================ -->
     <section class="contact-section" id="contact">
       <div class="contact-container">
-        <div
-          class="contact-header"
-          data-aos="fade-down"
-          data-aos-once="true"
-          data-aos-duration="500"
-        >
-          <span
-            class="contact-tag"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
+        <div class="contact-header" data-aos="fade-down">
+          <span class="contact-tag"
+            ><i class="fas fa-envelope"></i>
+            <span data-key="contact-tag">تماس با من</span></span
           >
-            <i class="ti ti-mail"></i>
-            <span data-key="contact-tag">Get in Touch</span>
-          </span>
-          <h2
-            class="contact-title"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
-          >
-            <span data-key="contact-title-start">Let's</span>
-            <span class="gradient-text" data-key="contact-title-highlight"
-              >Connect</span
+          <h2>
+            <span data-key="contact-title"
+              >بیایید با هم <span class="gradient-text">چیزی خاص</span> خلق
+              کنیم</span
             >
           </h2>
-          <p
-            class="contact-subtitle"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="400"
-            data-aos-delay="50"
-            data-key="contact-subtitle"
-          >
-            Have a project in mind or just want to say hello? I'd love to hear
-            from you!
+          <p class="contact-subtitle" data-key="contact-subtitle">
+            راه‌های ارتباطی با من را مشاهده کنید
           </p>
         </div>
 
         <div class="contact-wrapper">
-          <div
-            class="contact-info"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="500"
-          >
-            <div
-              class="info-card"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="400"
-              data-aos-delay="0"
-            >
-              <div class="info-icon"><i class="ti ti-mail"></i></div>
+          <div class="contact-info">
+            <div class="info-card" data-aos="fade-up">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
               <div class="info-content">
-                <h4 data-key="contact-email-label">Email</h4>
-                <p>hamed@example.com</p>
-                <a href="mailto:hamed@example.com"
-                  ><span data-key="contact-send">Send Message</span> →</a
-                >
+                <h4 data-key="contact-email-label">ایمیل</h4>
+                <a href="mailto:hamed@example.com">hj904549@gmail.com</a>
               </div>
             </div>
-            <div
-              class="info-card"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="400"
-              data-aos-delay="50"
-            >
-              <div class="info-icon"><i class="ti ti-brand-github"></i></div>
+
+            <div class="info-card" data-aos="fade-up" data-aos-delay="50">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
               <div class="info-content">
-                <h4>GitHub</h4>
-                <p>github.com/hamed</p>
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  ><span data-key="contact-follow">Follow</span> →</a
-                >
+                <h4 data-key="contact-phone-label">شماره تماس</h4>
+                <p>+98 902 679 8406</p>
               </div>
             </div>
-            <div
-              class="info-card"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="400"
-              data-aos-delay="100"
-            >
-              <div class="info-icon"><i class="ti ti-brand-linkedin"></i></div>
+
+            <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div class="info-content">
-                <h4>LinkedIn</h4>
-                <p>linkedin.com/in/hamed</p>
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  ><span data-key="contact-connect">Connect</span> →</a
-                >
-              </div>
-            </div>
-            <div
-              class="info-card"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="400"
-              data-aos-delay="150"
-            >
-              <div class="info-icon"><i class="ti ti-map-pin"></i></div>
-              <div class="info-content">
-                <h4 data-key="contact-location-label">Location</h4>
-                <p><span data-key="contact-location">Iran, Tehran</span></p>
+                <h4 data-key="contact-location-label">موقعیت</h4>
+                <p data-key="contact-location">ایران، تهران</p>
                 <span data-key="contact-remote"
-                  >🌍 Available for remote work</span
+                  >🌍 آماده همکاری ریموت در سراسر جهان</span
                 >
               </div>
             </div>
 
-            <div
-              class="social-links"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="500"
-            >
+            <div class="social-links" data-aos="fade-up" data-aos-delay="150">
               <a
-                href="#"
+                href="https://github.com/hj904549-wq"
                 class="social-btn"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-duration="300"
-                data-aos-delay="0"
-                aria-label="Twitter"
-              >
-                <i class="ti ti-brand-twitter"></i>
-              </a>
-              <a
-                href="#"
-                class="social-btn"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-duration="300"
-                data-aos-delay="50"
-                aria-label="Instagram"
-              >
-                <i class="ti ti-brand-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="social-btn"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-duration="300"
-                data-aos-delay="100"
-                aria-label="YouTube"
-              >
-                <i class="ti ti-brand-youtube"></i>
-              </a>
-              <a
-                href="#"
-                class="social-btn"
-                data-aos="zoom-in"
-                data-aos-once="true"
-                data-aos-duration="300"
-                data-aos-delay="150"
-                aria-label="Discord"
-              >
-                <i class="ti ti-brand-discord"></i>
-              </a>
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="#" class="social-btn" target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-btn" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-btn" target="_blank"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+              <a href="#" class="social-btn" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
           </div>
 
-          <div
-            class="contact-form-wrapper"
-            data-aos="fade-left"
-            data-aos-once="true"
-            data-aos-duration="500"
-          >
-            <form class="contact-form" id="contactForm">
-              <div
-                class="form-group"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-duration="400"
-                data-aos-delay="0"
-              >
-                <label for="name"
-                  ><i class="ti ti-user"></i>
-                  <span data-key="contact-form-name">Your Name</span></label
+          <div class="contact-form-wrapper" data-aos="fade-left">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name"
+                  ><i class="fas fa-user"></i>
+                  <span data-key="form-name">نام و نام خانوادگی</span></label
                 >
-                <input type="text" id="name" placeholder="John Doe" required />
+                <input
+                  type="text"
+                  id="contact-name"
+                  required
+                  placeholder="نام خود را وارد کنید"
+                />
               </div>
-              <div
-                class="form-group"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-duration="400"
-                data-aos-delay="50"
-              >
-                <label for="email"
-                  ><i class="ti ti-mail"></i>
-                  <span data-key="contact-form-email"
-                    >Email Address</span
-                  ></label
+              <div class="form-group">
+                <label for="contact-email"
+                  ><i class="fas fa-envelope"></i>
+                  <span data-key="form-email">ایمیل</span></label
                 >
                 <input
                   type="email"
-                  id="email"
-                  placeholder="john@example.com"
+                  id="contact-email"
                   required
+                  placeholder="example@email.com"
                 />
               </div>
-              <div
-                class="form-group"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-duration="400"
-                data-aos-delay="100"
-              >
-                <label for="subject"
-                  ><i class="ti ti-tag"></i>
-                  <span data-key="contact-form-subject">Subject</span></label
+              <div class="form-group">
+                <label for="contact-project-type"
+                  ><i class="fas fa-box"></i>
+                  <span data-key="form-package">نوع پروژه</span></label
                 >
-                <input type="text" id="subject" placeholder="Project Inquiry" />
+                <select id="contact-project-type">
+                  <option value="" data-key="form-select-placeholder">
+                    لطفاً یک گزینه را انتخاب کنید
+                  </option>
+                  <option value="وب‌سایت شرکتی" data-key="form-option-1">
+                    وب‌سایت شرکتی
+                  </option>
+                  <option value="فروشگاه اینترنتی" data-key="form-option-2">
+                    فروشگاه اینترنتی
+                  </option>
+                  <option value="طراحی اختصاصی" data-key="form-option-3">
+                    طراحی اختصاصی (React/Next.js)
+                  </option>
+                  <option value="بهینه‌سازی سئو" data-key="form-option-4">
+                    بهینه‌سازی سرعت و سئو
+                  </option>
+                </select>
               </div>
-              <div
-                class="form-group"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-duration="400"
-                data-aos-delay="150"
-              >
-                <label for="message"
-                  ><i class="ti ti-message"></i>
-                  <span data-key="contact-form-message">Message</span></label
+              <div class="form-group">
+                <label for="contact-budget"
+                  ><i class="fas fa-money-bill"></i>
+                  <span data-key="form-budget">بودجه تقریبی</span></label
+                >
+                <select id="contact-budget">
+                  <option value="زیر ۱۰ میلیون" data-key="budget-1">
+                    زیر ۱۰ میلیون تومان
+                  </option>
+                  <option value="۱۰ تا ۲۰ میلیون" data-key="budget-2">
+                    ۱۰ تا ۲۰ میلیون تومان
+                  </option>
+                  <option value="۲۰ تا ۵۰ میلیون" data-key="budget-3">
+                    ۲۰ تا ۵۰ میلیون تومان
+                  </option>
+                  <option value="بالای ۵۰ میلیون" data-key="budget-4">
+                    بالای ۵۰ میلیون تومان
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message"
+                  ><i class="fas fa-align-left"></i>
+                  <span data-key="contact-message-label">پیام</span></label
                 >
                 <textarea
-                  id="message"
+                  id="contact-message"
                   rows="4"
-                  placeholder="Tell me about your project..."
-                  required
+                  placeholder="توضیحات پروژه خود را بنویسید..."
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                class="submit-btn"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-duration="500"
-                data-aos-delay="200"
-              >
-                <i class="ti ti-send"></i>
-                <span data-key="contact-form-send">Send Message</span>
-                <span class="btn-glow"></span>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                <span data-key="contact-send">ارسال پیام</span>
               </button>
             </form>
           </div>
@@ -1293,159 +1130,150 @@
       </div>
     </section>
 
-    <!-- ===== دکمه بازگشت به بالا ===== -->
+    <!-- ============================================================ -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- ============================================================ -->
     <div class="back-to-top" id="backToTop">
       <button class="back-to-top-btn" aria-label="Back to top">
-        <i class="ti ti-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
       </button>
     </div>
 
-    <!-- ===== فوتر ===== -->
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
-          <div
-            class="footer-brand"
-            data-aos="fade-right"
-            data-aos-once="true"
-            data-aos-duration="500"
-          >
-            <h2>Hamed<span>.</span></h2>
+          <div class="footer-brand" data-aos="fade-right">
+            <h2>حامد<span>.</span></h2>
             <p data-key="footer-desc">
-              UI/UX Designer &amp; Front-End Developer crafting beautiful,
-              responsive digital experiences with modern technologies.
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
             </p>
             <div class="footer-status">
               <span class="dot"></span>
               <span class="text" data-key="footer-status"
-                >Available for work</span
+                >پذیرش پروژه‌های جدید</span
               >
             </div>
             <div class="footer-email">
-              <i class="ti ti-mail"></i>
-              <a href="mailto:Hamed@example.com">Hamed@example.com</a>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:hamed@example.com">hj904549@gmail.com</a>
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
+          <div data-aos="fade-up">
             <h4 class="footer-title" data-key="footer-quick-links">
-              Quick Links
+              لینک‌های سریع
             </h4>
             <ul class="footer-links">
               <li>
                 <a href="#home"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-home">Home</span></a
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-home">خانه</span></a
                 >
               </li>
               <li>
-                <a href="#about"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-about">About</span></a
-                >
-              </li>
-              <li>
-                <a href="#skills"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-skills">Skills</span></a
+                <a href="#services"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-services">خدمات</span></a
                 >
               </li>
               <li>
                 <a href="#portfolio"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-portfolio">Portfolio</span></a
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
                 >
               </li>
               <li>
-                <a href="#education"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-education">Education</span></a
+                <a href="#pricing"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-packages">پلن‌ها</span></a
+                >
+              </li>
+              <li>
+                <a href="#blog"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
                 >
               </li>
               <li>
                 <a href="#contact"
-                  ><i class="ti ti-chevron-right"></i>
-                  <span data-key="nav-contact">Contact</span></a
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-contact">تماس</span></a
                 >
               </li>
             </ul>
           </div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="500"
-            data-aos-delay="50"
-          >
+          <div data-aos="fade-up" data-aos-delay="50">
             <h4 class="footer-title" data-key="footer-connect">
-              Connect With Me
+              شبکه‌های اجتماعی
             </h4>
             <div class="footer-social">
               <a
                 href="https://github.com/hj904549-wq"
                 class="social-link github"
-                ><i class="ti ti-brand-github"></i><span>GitHub</span></a
+                target="_blank"
               >
-              <a href="#" class="social-link twitter"
-                ><i class="ti ti-brand-twitter"></i><span>Twitter</span></a
-              >
-              <a href="#" class="social-link youtube"
-                ><i class="ti ti-brand-youtube"></i><span>YouTube</span></a
-              >
-              <a href="#" class="social-link discord"
-                ><i class="ti ti-brand-discord"></i><span>Discord</span></a
-              >
+                <i class="fab fa-github"></i>
+                <span>گیت‌هاب</span>
+              </a>
+              <a href="#" class="social-link linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+                <span>لینکدین</span>
+              </a>
+              <a href="#" class="social-link twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+                <span>توییتر</span>
+              </a>
+              <a href="#" class="social-link telegram" target="_blank">
+                <i class="fab fa-telegram-plane"></i>
+                <span>تلگرام</span>
+              </a>
             </div>
           </div>
 
-          <div
-            data-aos="fade-left"
-            data-aos-once="true"
-            data-aos-duration="500"
-          >
-            <h4 class="footer-title" data-key="footer-newsletter">
-              Stay Updated
-            </h4>
+          <div data-aos="fade-left">
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
             <p class="newsletter-text" data-key="footer-newsletter-desc">
-              Subscribe to get the latest projects, articles, and design
-              insights.
+              با عضویت در خبرنامه، از آخرین پروژه‌ها، مقالات و نکات طراحی وب
+              مطلع شوید.
             </p>
             <form class="newsletter-form" id="newsletterForm">
-              <input type="email" placeholder="Enter your email" required />
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+              />
               <button type="submit">
-                <i class="ti ti-send"></i>
-                <span data-key="footer-subscribe">Subscribe</span>
+                <i class="fas fa-send"></i>
+                <span data-key="footer-subscribe">عضویت</span>
               </button>
             </form>
           </div>
         </div>
 
-        <div
-          class="footer-bottom"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="500"
-        >
+        <div class="footer-bottom" data-aos="fade-up">
           <p>
-            &copy; 2026 <strong>Hamed</strong>.
-            <span data-key="footer-crafted">Crafted with</span>
-            <span class="heart"><i class="ti ti-heart"></i></span>
-            <span data-key="footer-tech">using HTML, CSS &amp; JavaScript</span>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="fas fa-heart"></i></span>
+            <span data-key="footer-tech"
+              >با استفاده از HTML، CSS و JavaScript</span
+            >
           </p>
           <div class="footer-bottom-links">
-            <a href="#" data-key="footer-privacy">Privacy Policy</a>
-            <a href="#" data-key="footer-terms">Terms of Service</a>
-            <span class="footer-version">v3.0</span>
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- =========================================
-         اسکریپت‌ها
-         ========================================= -->
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

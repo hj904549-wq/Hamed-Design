@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وبلاگ | حامد - مقالات طراحی و توسعه</title>
+    <meta
+      name="description"
+      content="مقالات تخصصی در زمینه طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی وب"
+    />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- آیکون‌ها -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <!-- پس‌زمینه -->
+    <div class="bg-gradient"></div>
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های کنترل ===== -->
+    <div class="header-controls">
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="fas fa-moon theme-icon moon"></i>
+        <i class="fas fa-sun theme-icon sun"></i>
+      </button>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="nav-link"
+          ><i class="fas fa-home"></i> <span data-key="nav-home">خانه</span></a
+        >
+        <a href="index.html#services" class="nav-link"
+          ><i class="fas fa-cogs"></i>
+          <span data-key="nav-services">خدمات</span></a
+        >
+        <a href="portfolio.html" class="nav-link"
+          ><i class="fas fa-briefcase"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
+        >
+        <a href="index.html#pricing" class="nav-link"
+          ><i class="fas fa-box"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="blog.html" class="nav-link active"
+          ><i class="fas fa-blog"></i> <span data-key="nav-blog">وبلاگ</span></a
+        >
+        <a href="index.html#contact" class="nav-link"
+          ><i class="fas fa-envelope"></i>
+          <span data-key="nav-contact">تماس</span></a
+        >
+      </div>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ===== هدر صفحه وبلاگ ===== -->
+    <header class="blog-page-header" data-aos="fade-down">
+      <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-right"></i>
+        <span data-key="blog-back-home">بازگشت به صفحه اصلی</span>
+      </a>
+      <h1 data-key="blog-page-title">📝 وبلاگ تخصصی</h1>
+      <p data-key="blog-page-desc">
+        مقالات، آموزش‌ها و تجربیات من در زمینه طراحی و توسعه وب
+      </p>
+
+      <!-- ===== فیلتر دسته‌بندی ===== -->
+      <div class="blog-filter-bar">
+        <button
+          class="blog-filter-btn active"
+          data-filter="all"
+          data-key="filter-all"
+        >
+          همه
+        </button>
+        <button
+          class="blog-filter-btn"
+          data-filter="uiux"
+          data-key="blog-filter-uiux"
+        >
+          UI/UX
+        </button>
+        <button
+          class="blog-filter-btn"
+          data-filter="development"
+          data-key="blog-filter-dev"
+        >
+          توسعه
+        </button>
+        <button
+          class="blog-filter-btn"
+          data-filter="optimization"
+          data-key="blog-filter-optimization"
+        >
+          بهینه‌سازی
+        </button>
+        <button
+          class="blog-filter-btn"
+          data-filter="wordpress"
+          data-key="blog-filter-wordpress"
+        >
+          وردپرس
+        </button>
+        <button
+          class="blog-filter-btn"
+          data-filter="seo"
+          data-key="blog-filter-seo"
+        >
+          سئو
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== گرید مقالات ===== -->
+    <div class="blog-page-grid" id="blogGrid">
+      <!-- مقاله ۱ - UI/UX -->
+      <article class="blog-page-card" data-category="uiux" data-aos="fade-up">
+        <div class="blog-image">
+          <img src="./img/blog-1.jpg" alt="طراحی UI/UX" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-uiux">UI/UX</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-1"
+              ><i class="far fa-calendar-alt"></i> ۲۵ دی ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-1"
+              ><i class="far fa-clock"></i> ۵ دقیقه</span
+            >
+            <span data-key="blog-meta-views-1"
+              ><i class="far fa-eye"></i> ۱,۲۰۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=1" data-key="blog-title-1"
+              >چگونه یک طراحی UI/UX عالی داشته باشیم؟</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-1">
+            در این مقاله به اصول کلیدی طراحی رابط کاربری و تجربه کاربری
+            می‌پردازیم و نکات عملی برای خلق محصولات دیجیتال موفق را بررسی
+            می‌کنیم...
+          </p>
+          <a
+            href="blog-post.html?id=1"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+
+      <!-- مقاله ۲ - توسعه -->
+      <article
+        class="blog-page-card"
+        data-category="development"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="blog-image">
+          <img src="./img/blog-2.webp" alt="جاوااسکریپت" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-dev">توسعه</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-2"
+              ><i class="far fa-calendar-alt"></i> ۱۸ دی ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-2"
+              ><i class="far fa-clock"></i> ۷ دقیقه</span
+            >
+            <span data-key="blog-meta-views-2"
+              ><i class="far fa-eye"></i> ۹۵۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=2" data-key="blog-title-2"
+              >بهترین فریم‌ورک‌های جاوااسکریپت برای ۲۰۲۵</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-2">
+            مقایسه کامل React، Vue و Angular به همراه بررسی کاربرد هرکدام در
+            پروژه‌های مختلف و انتخاب بهترین گزینه برای نیاز شما...
+          </p>
+          <a
+            href="blog-post.html?id=2"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+
+      <!-- مقاله ۳ - بهینه‌سازی -->
+      <article
+        class="blog-page-card"
+        data-category="optimization"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="blog-image">
+          <img src="./img/blog-3.jpg" alt="بهینه‌سازی سرعت" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-optimization"
+            >بهینه‌سازی</span
+          >
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-3"
+              ><i class="far fa-calendar-alt"></i> ۱۰ دی ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-3"
+              ><i class="far fa-clock"></i> ۶ دقیقه</span
+            >
+            <span data-key="blog-meta-views-3"
+              ><i class="far fa-eye"></i> ۲,۱۰۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=3" data-key="blog-title-3"
+              >۱۰ تکنیک طلایی برای افزایش سرعت وب‌سایت</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-3">
+            با این تکنیک‌های عملی و اثبات‌شده، سرعت سایت خود را تا ۵۰٪ افزایش
+            دهید و تجربه کاربری بهتری برای بازدیدکنندگان خود ایجاد کنید...
+          </p>
+          <a
+            href="blog-post.html?id=3"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+
+      <!-- مقاله ۴ - وردپرس -->
+      <article
+        class="blog-page-card"
+        data-category="wordpress"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="blog-image">
+          <img src="./img/blog-4.jpg" alt="وردپرس" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-wordpress"
+            >وردپرس</span
+          >
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-4"
+              ><i class="far fa-calendar-alt"></i> ۵ دی ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-4"
+              ><i class="far fa-clock"></i> ۴ دقیقه</span
+            >
+            <span data-key="blog-meta-views-4"
+              ><i class="far fa-eye"></i> ۷۸۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=4" data-key="blog-title-4"
+              >وردپرس یا React؟ کدام را برای پروژه خود انتخاب کنیم؟</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-4">
+            مقایسه جامع وردپرس و React برای پروژه‌های مختلف وب. مزایا، معایب و
+            بهترین کاربرد هرکدام را در این مقاله بخوانید...
+          </p>
+          <a
+            href="blog-post.html?id=4"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+
+      <!-- مقاله ۵ - سئو -->
+      <article
+        class="blog-page-card"
+        data-category="seo"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <div class="blog-image">
+          <img src="./img/blog-5.jpg" alt="سئو" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-seo">سئو</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-5"
+              ><i class="far fa-calendar-alt"></i> ۲۸ آذر ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-5"
+              ><i class="far fa-clock"></i> ۸ دقیقه</span
+            >
+            <span data-key="blog-meta-views-5"
+              ><i class="far fa-eye"></i> ۱,۵۰۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=5" data-key="blog-title-5"
+              >سئو فنی برای توسعه‌دهندگان فرانت‌اند</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-5">
+            هر آنچه یک توسعه‌دهنده فرانت‌اند باید درباره سئو بداند. از ساختار
+            HTML گرفته تا Core Web Vitals و بهینه‌سازی عملکرد...
+          </p>
+          <a
+            href="blog-post.html?id=5"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+
+      <!-- مقاله ۶ - UI/UX -->
+      <article
+        class="blog-page-card"
+        data-category="uiux"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <div class="blog-image">
+          <img src="./img/blog-6.jpg" alt="انیمیشن" loading="lazy" />
+          <span class="blog-category" data-key="blog-category-uiux">UI/UX</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span data-key="blog-meta-date-6"
+              ><i class="far fa-calendar-alt"></i> ۲۰ آذر ۱۴۰۴</span
+            >
+            <span data-key="blog-meta-read-6"
+              ><i class="far fa-clock"></i> ۵ دقیقه</span
+            >
+            <span data-key="blog-meta-views-6"
+              ><i class="far fa-eye"></i> ۶۴۰ بازدید</span
+            >
+          </div>
+          <h3>
+            <a href="blog-post.html?id=6" data-key="blog-title-6"
+              >انیمیشن‌های تعاملی با CSS و JavaScript</a
+            >
+          </h3>
+          <p data-key="blog-excerpt-6">
+            آموزش ساخت انیمیشن‌های جذاب و تعاملی با استفاده از CSS و JavaScript
+            برای بهبود تجربه کاربری و جذاب‌تر کردن وب‌سایت‌ها...
+          </p>
+          <a
+            href="blog-post.html?id=6"
+            class="read-more"
+            data-key="blog-read-more"
+            >ادامه مطلب <i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ===== سایدبار ===== -->
+    <div class="blog-sidebar">
+      <!-- CTA -->
+      <div class="sidebar-widget" data-aos="fade-up">
+        <h3 data-key="blog-sidebar-cta-title">
+          📌 پروژه خود را با من شروع کنید
+        </h3>
+        <p
+          style="
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+          data-key="blog-sidebar-cta-desc"
+        >
+          آیا به دنبال یک طراحی حرفه‌ای یا توسعه وب‌سایت هستید؟ من اینجا هستم تا
+          به شما کمک کنم.
+        </p>
+        <a
+          href="index.html#contact"
+          class="view"
+          style="display: inline-flex; padding: 14px 32px; font-size: 0.95rem"
+        >
+          <span data-key="blog-sidebar-cta-btn">شروع همکاری</span>
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- دسته‌بندی‌ها با لینک فیلتر -->
+      <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
+        <h3 data-key="blog-sidebar-categories">📂 دسته‌بندی مقالات</h3>
+        <ul>
+          <li>
+            <a href="?category=uiux" data-key="blog-cat-1"
+              ><i class="fas fa-chevron-left"></i> UI/UX Design (۱۲)</a
+            >
+          </li>
+          <li>
+            <a href="?category=development" data-key="blog-cat-2"
+              ><i class="fas fa-chevron-left"></i> توسعه فرانت‌اند (۸)</a
+            >
+          </li>
+          <li>
+            <a href="?category=wordpress" data-key="blog-cat-3"
+              ><i class="fas fa-chevron-left"></i> وردپرس (۶)</a
+            >
+          </li>
+          <li>
+            <a href="?category=optimization" data-key="blog-cat-4"
+              ><i class="fas fa-chevron-left"></i> بهینه‌سازی (۱۰)</a
+            >
+          </li>
+          <li>
+            <a href="?category=seo" data-key="blog-cat-5"
+              ><i class="fas fa-chevron-left"></i> سئو (۵)</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- پربازدیدها با لینک مستقیم -->
+      <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
+        <h3 data-key="blog-sidebar-popular">🔥 پربازدیدترین‌ها</h3>
+        <ul>
+          <li>
+            <a href="blog-post.html?id=3" data-key="blog-popular-1"
+              ><i class="fas fa-chevron-left"></i> ۱۰ تکنیک طلایی برای افزایش
+              سرعت</a
+            >
+          </li>
+          <li>
+            <a href="blog-post.html?id=1" data-key="blog-popular-2"
+              ><i class="fas fa-chevron-left"></i> چگونه یک طراحی UI/UX عالی
+              داشته باشیم؟</a
+            >
+          </li>
+          <li>
+            <a href="blog-post.html?id=5" data-key="blog-popular-3"
+              ><i class="fas fa-chevron-left"></i> سئو فنی برای توسعه‌دهندگان</a
+            >
+          </li>
+          <li>
+            <a href="blog-post.html?id=2" data-key="blog-popular-4"
+              ><i class="fas fa-chevron-left"></i> بهترین فریم‌ورک‌های
+              جاوااسکریپت</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- خبرنامه -->
+      <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="200">
+        <h3 data-key="blog-sidebar-newsletter">📧 خبرنامه</h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+          "
+          data-key="blog-sidebar-newsletter-desc"
+        >
+          جدیدترین مقالات و آموزش‌ها را در ایمیل خود دریافت کنید.
+        </p>
+        <form class="newsletter-form" id="newsletterFormBlog">
+          <input
+            type="email"
+            placeholder="ایمیل خود را وارد کنید"
+            required
+            data-key="blog-newsletter-placeholder"
+          />
+          <button type="submit">
+            <i class="fas fa-send"></i>
+            <span data-key="blog-sidebar-subscribe">عضویت</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2>حامد<span>.</span></h2>
+            <p data-key="footer-desc">
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >پذیرش پروژه‌های جدید</span
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-quick-links">
+              لینک‌های سریع
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-home">خانه</span></a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fas fa-chevron-left"></i>
+                  <span data-key="nav-contact">تماس</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-connect">
+              شبکه‌های اجتماعی
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i> <span>گیت‌هاب</span>
+              </a>
+              <a href="#" class="social-link linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i> <span>لینکدین</span>
+              </a>
+              <a href="#" class="social-link twitter" target="_blank">
+                <i class="fab fa-twitter"></i> <span>توییتر</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              با عضویت در خبرنامه، از آخرین مقالات و آموزش‌ها مطلع شوید.
+            </p>
+            <form class="newsletter-form" id="newsletterFormFooter">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+                data-key="footer-newsletter-placeholder"
+              />
+              <button type="submit">
+                <i class="fas fa-send"></i>
+                <span data-key="footer-subscribe">عضویت</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="fas fa-heart"></i></span>
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+            <span class="footer-version">v4.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+
+    
+  </body>
+</html>
