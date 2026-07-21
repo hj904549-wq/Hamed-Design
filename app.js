@@ -1,48 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const pageTitle = document.querySelector('title');
-    if (pageTitle) {
-        pageTitle.textContent = 'Optimized Page Title | Your Site Name';
+function updateMeta(title, description) {
+    if (document.title !== title) {
+        document.title = title;
     }
 
-    const metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    metaDescription.content = 'This is an optimized description for better SEO performance.';
-    document.head.appendChild(metaDescription);
-
-    const mainSection = document.querySelector('main');
-    if (mainSection) {
-        const accessibilityMessage = document.createElement('div');
-        accessibilityMessage.role = 'alert';
-        accessibilityMessage.textContent = 'Welcome to our optimized website!';
-        mainSection.insertBefore(accessibilityMessage, mainSection.firstChild);
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.setAttribute("content", description);
+    } else {
+        const newMetaDescription = document.createElement('meta');
+        newMetaDescription.name = 'description';
+        newMetaDescription.content = description;
+        document.head.appendChild(newMetaDescription);
     }
+}
 
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        if (!img.hasAttribute('alt')) {
-            img.setAttribute('alt', 'Descriptive text for SEO and accessibility');
-        }
+function createArticleElement(title, content) {
+    const article = document.createElement('article');
+    const articleTitle = document.createElement('h1');
+    articleTitle.textContent = title;
+    article.appendChild(articleTitle);
+
+    const articleContent = document.createElement('div');
+    articleContent.innerHTML = content;
+    article.appendChild(articleContent);
+    return article;
+}
+
+function loadArticles(articles) {
+    const container = document.getElementById('article-container');
+    articles.forEach(article => {
+        const articleElement = createArticleElement(article.title, article.content);
+        container.appendChild(articleElement);
     });
+}
 
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-        link.addEventListener('focus', function() {
-            link.style.outline = '2px solid blue';
-        });
-        link.addEventListener('blur', function() {
-            link.style.outline = 'none';
-        });
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const articles = [
+        { title: 'Article 1', content: '<p>This is the content of article 1.</p>' },
+        { title: 'Article 2', content: '<p>This is the content of article 2.</p>' }
+    ];
 
-    const dynamicContent = () => {
-        const container = document.getElementById('dynamic-content');
-        if (container) {
-            const newElement = document.createElement('article');
-            newElement.setAttribute('role', 'article');
-            newElement.innerHTML = '<h2>Dynamic Content Title</h2><p>This content is dynamically generated for better user engagement.</p>';
-            container.appendChild(newElement);
-        }
-    };
-
-    dynamicContent();
+    updateMeta('Dynamic Page Title', 'Dynamic page description for SEO optimization.');
+    loadArticles(articles);
 });
