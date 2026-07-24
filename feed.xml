@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>عنوان سایت من</title>
+    <link>https://username.github.io</link>
+    <description>توضیح کوتاه سایت</description>
+
+    <item>
+      <title>عنوان پست اول</title>
+      <link>https://username.github.io/post1</link>
+      <description>توضیح پست</description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
