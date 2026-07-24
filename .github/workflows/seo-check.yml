@@ -1,0 +1,64 @@
+name: SEO Automation
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # هر یکشنبه ساعت ۰۳:۰۰ صبح (UTC) اجرا میشه — یعنی حدود ۶:۳۰ صبح تهران
+    - cron: '0 3 * * 0'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ۱) ساخت / آپدیت خودکار sitemap.xml
+      - name: Generate sitemap.xml
+        run: node scripts/generate-sitemap.js
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      # ۲) بررسی وجود title و meta description در همه صفحات
+      - name: Check meta tags
+        run: node scripts/check-meta-tags.js
+
+      # ۳) بررسی لینک‌های شکسته (داخلی و خارجی)
+      - name: Check broken links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --no-progress --exclude-mail './**/*.html'
+          fail: false
+
+      # ۴) آدیت سئو با Lighthouse
+      - name: Lighthouse SEO audit
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ vars.SITE_URL }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          budgetPath: ./lighthouse-budget.json
+
+      # ۵) کامیت خودکار sitemap.xml در صورت تغییر
+      - name: Commit updated sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: به‌روزرسانی خودکار sitemap.xml [skip ci]"
+          file_pattern: sitemap.xml
+
+      # ۶) اطلاع‌رسانی به گوگل و بینگ از آپدیت سایت‌مپ
+      - name: Ping search engines
+        run: node scripts/ping-search-engines.js
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
