@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نمونه کارها | حامد - پروژه‌های طراحی و توسعه</title>
+    <meta
+      name="description"
+      content="نمونه پروژه‌های طراحی UI/UX، توسعه فرانت‌اند و وب‌سایت‌های حرفه‌ای"
+    />
+    <link
+      rel="canonical"
+      href="https://hj904549-wq.github.io/Hamed-Design/portfolio.html"
+    />
+
+    <meta
+      property="og:title"
+      content="نمونه کارها | حامد - پروژه‌های طراحی و توسعه"
+    />
+    <meta
+      property="og:description"
+      content="نمونه پروژه‌های طراحی UI/UX، توسعه فرانت‌اند و وب‌سایت‌های حرفه‌ای"
+    />
+    <meta
+      property="og:url"
+      content="https://hj904549-wq.github.io/Hamed-Design/portfolio.html"
+    />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===== Remix Icon ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+  <body>
+    <!-- پس‌زمینه -->
+    <div class="bg-gradient"></div>
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های کنترل ===== -->
+    <div class="header-controls">
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="ri-moon-line theme-icon moon"></i>
+        <i class="ri-sun-line theme-icon sun"></i>
+      </button>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="nav-link"
+          ><i class="ri-home-5-line"></i>
+          <span data-key="nav-home">خانه</span></a
+        >
+        <a href="index.html#services" class="nav-link"
+          ><i class="ri-settings-3-line"></i>
+          <span data-key="nav-services">خدمات</span></a
+        >
+        <a href="portfolio.html" class="nav-link active"
+          ><i class="ri-briefcase-4-line"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
+        >
+        <a href="index.html#pricing" class="nav-link"
+          ><i class="ri-coupon-3-line"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="blog.html" class="nav-link"
+          ><i class="ri-article-line"></i>
+          <span data-key="nav-blog">وبلاگ</span></a
+        >
+        <a href="index.html#contact" class="nav-link"
+          ><i class="ri-mail-line"></i>
+          <span data-key="nav-contact">تماس</span></a
+        >
+      </div>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="portfolio-page-header" data-aos="fade-down">
+      <a href="index.html" class="back-to-home">
+        <i class="ri-arrow-right-line"></i>
+        <span data-key="portfolio-back-home">بازگشت به صفحه اصلی</span>
+      </a>
+      <h1 data-key="portfolio-page-title">🚀 نمونه کارهای من</h1>
+      <p data-key="portfolio-page-desc">
+        پروژه‌هایی که با عشق و تخصص طراحی و توسعه داده‌ام
+      </p>
+    </header>
+
+    <!-- ===== آمار ===== -->
+    <div class="portfolio-stats">
+      <div class="portfolio-stat-item" data-aos="fade-up">
+        <div class="number">۳+</div>
+        <div class="label" data-key="hero-stat-exp-label">سال تجربه</div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="number">۲۵+</div>
+        <div class="label" data-key="hero-stat-projects-label">
+          پروژه انجام شده
+        </div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="number">۱۸</div>
+        <div class="label" data-key="hero-stat-clients-label">مشتری راضی</div>
+      </div>
+      <div class="portfolio-stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="number">۱۰۰%</div>
+        <div class="label" data-key="portfolio-stat-satisfaction">
+          رضایت مشتری
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== گرید پروژه‌ها ===== -->
+    <div class="portfolio-page-grid" id="portfolio-container">
+      
+    </div>
+
+    <!-- ===== بخش در حال ساخت ===== -->
+    <div class="coming-soon-section" data-aos="fade-up">
+      <div class="coming-soon-card">
+        <span class="coming-soon-icon">🚀</span>
+        <h2>
+          <span data-key="coming-soon-title">در حال ساخت</span>
+          <span class="highlight" data-key="coming-soon-title-highlight"
+            >پروژه‌های جدید</span
+          >
+        </h2>
+        <p data-key="coming-soon-desc">
+          تیم من در حال طراحی و توسعه پروژه‌های جذاب و مدرن است. به زودی شاهد
+          نمونه‌کارهای جدید و خلاقانه‌ای خواهید بود که با جدیدترین تکنولوژی‌های
+          روز دنیا ساخته می‌شوند.
+        </p>
+        <div class="coming-soon-projects">
+          <span class="project-badge">
+            <span class="badge-dot"></span>
+            <span data-key="coming-soon-project-1">فروشگاه آنلاین هوشمند</span>
+          </span>
+          <span class="project-badge">
+            <span class="badge-dot"></span>
+            <span data-key="coming-soon-project-2">اپلیکیشن مدیریت پروژه</span>
+          </span>
+          <span class="project-badge">
+            <span class="badge-dot"></span>
+            <span data-key="coming-soon-project-3">وب‌سایت شرکتی حرفه‌ای</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CTA پایین صفحه ===== -->
+    <div class="portfolio-cta-wrapper" data-aos="fade-up">
+      <a
+        href="index.html#contact"
+        class="view"
+        style="display: inline-flex; padding: 18px 48px; font-size: 1.05rem"
+      >
+        <span data-key="portfolio-cta-title"
+          >✨ آماده همکاری هستید؟ با من تماس بگیرید</span
+        >
+        <i class="ri-arrow-left-line"></i>
+      </a>
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2>حامد<span>.</span></h2>
+            <p data-key="footer-desc">
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >پذیرش پروژه‌های جدید</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-quick-links">
+              لینک‌های سریع
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-home">خانه</span></a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-contact">تماس</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-connect">
+              شبکه‌های اجتماعی
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="گیت‌هاب"
+              >
+                <i class="ri-github-line"></i> <span>گیت‌هاب</span>
+              </a>
+              <a
+                href="https://www.instagram.com/hamed176750/"
+                class="social-link instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="اینستاگرام"
+              >
+                <i class="ri-instagram-line"></i> <span>اینستاگرام</span>
+              </a>
+              <a
+                href="https://web.telegram.org/a/"
+                class="social-link telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="تلگرام"
+              >
+                <i class="ri-telegram-line"></i> <span>تلگرام</span>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCCxJGb3kewgx2W1T1ZjswbQ"
+                class="social-link youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="یوتیوب"
+              >
+                <i class="ri-youtube-line"></i> <span>یوتیوب</span>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              با عضویت در خبرنامه، از آخرین مقالات و آموزش‌ها مطلع شوید.
+            </p>
+            <form class="newsletter-form" id="newsletterFormFooter2">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+              />
+              <button type="submit">
+                <i class="ri-send-plane-2-line"></i>
+                <span data-key="footer-subscribe">عضویت</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="ri-heart-3-fill"></i></span>
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+            <span class="footer-version">v4.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts/sanity.js"></script>
+    <script src="scripts/portfolio-sanity.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

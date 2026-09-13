@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند</title>
+    <meta
+      name="description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای، فروشگاه اینترنتی و اپلیکیشن‌های مدرن با React و Next.js"
+    />
+    <link rel="canonical" href="https://hj904549-wq.github.io/Hamed-Design/" />
+
+    <meta
+      property="og:title"
+      content="حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند"
+    />
+    <meta
+      property="og:description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://hj904549-wq.github.io/Hamed-Design/"
+    />
+    <meta
+      property="og:image"
+      content="https://hj904549-wq.github.io/Hamed-Design/img/og-image.webp"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="حامد | طراح UI/UX و توسعه‌دهنده فرانت‌اند"
+    />
+    <meta
+      name="twitter:description"
+      content="طراحی و توسعه وب‌سایت‌های حرفه‌ای با تکنولوژی‌های مدرن"
+    />
+
+    <!-- ===== Structured Data (JSON-LD) ===== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "حامد",
+        "jobTitle": "UI/UX Designer & Front-End Developer",
+        "url": "https://hj904549-wq.github.io/Hamed-Design/",
+        "email": "hj904549@gmail.com",
+        "sameAs": ["https://github.com/hj904549-wq"]
+      }
+    </script>
+
+    <!-- ===== فونت‌ها ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===== Remix Icon ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===== AOS ===== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== نوار پیشرفت اسکرول ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== پس‌زمینه ===== -->
+    <div class="bg-gradient"></div>
+
+    <!-- ===== کانتینر ذرات ===== -->
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های بالا ===== -->
+    <div class="header-controls">
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="ri-moon-line theme-icon moon"></i>
+        <i class="ri-sun-line theme-icon sun"></i>
+      </button>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== کپسول ناوبری ===== -->
+    <nav class="capsule-nav">
+      <div class="desktop-menu">
+        <a href="#home" class="nav-link active"
+          ><i class="ri-home-5-line"></i
+        ></a>
+        <a href="#services" class="nav-link"
+          ><i class="ri-settings-3-line"></i
+        ></a>
+        <a href="#portfolio" class="nav-link"
+          ><i class="ri-briefcase-4-line"></i
+        ></a>
+        <a href="#process" class="nav-link"
+          ><i class="ri-loop-right-line"></i
+        ></a>
+        <a href="#pricing" class="nav-link"><i class="ri-coupon-3-line"></i></a>
+        <a href="#blog" class="nav-link"><i class="ri-article-line"></i></a>
+        <a href="#contact" class="nav-link"><i class="ri-mail-line"></i></a>
+      </div>
+    </nav>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="#home" class="nav-link active"
+          ><i class="ri-home-5-line"></i>
+          <span data-key="nav-home">خانه</span></a
+        >
+        <a href="#services" class="nav-link"
+          ><i class="ri-settings-3-line"></i>
+          <span data-key="nav-services">خدمات</span></a
+        >
+        <a href="#portfolio" class="nav-link"
+          ><i class="ri-briefcase-4-line"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
+        >
+        <a href="#pricing" class="nav-link"
+          ><i class="ri-coupon-3-line"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="#process" class="nav-link"
+          ><i class="ri-loop-right-line"></i>
+          <span data-key="nav-process">فرآیند کار</span></a
+        >
+        <a href="#blog" class="nav-link"
+          ><i class="ri-article-line"></i>
+          <span data-key="nav-blog">وبلاگ</span></a
+        >
+        <a href="#contact" class="nav-link"
+          ><i class="ri-mail-line"></i>
+          <span data-key="nav-contact">تماس</span></a
+        >
+      </div>
+    </div>
+
+    <!-- ===== اوورلی ===== -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ============================================================ -->
+    <!-- ===== HERO ===== -->
+    <!-- ============================================================ -->
+    <main class="content-area" id="home">
+      <section class="hero-content">
+        <div class="avatar-container">
+          <div class="avatar-ring"></div>
+          <img
+            src="./img/Profile-image.jpg"
+            alt="عکس پروفایل حامد، طراح UI/UX و توسعه‌دهنده فرانت‌اند"
+            class="avatar-img"
+            loading="eager"
+            width="140"
+            height="140"
+          />
+        </div>
+        <h1>
+          <span data-key="hero-greeting">سلام، من</span>
+          <span class="highlight-text" id="hero-name">حامد</span>
+        </h1>
+        <h2 class="subtitle" data-key="hero-title">
+          طراح UI/UX و توسعه‌دهنده فرانت‌اند
+        </h2>
+        <p data-key="hero-desc">
+          من با تخصص در <strong>طراحی UI/UX</strong>،
+          <strong>توسعه فرانت‌اند</strong> و <strong>بهینه‌سازی وردپرس</strong>،
+          به کسب‌وکارها کمک می‌کنم تا در فضای آنلاین بدرخشند.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-exp">۳+</span>
+            <span class="hero-stat-label" data-key="hero-stat-exp-label"
+              >سال تجربه</span
+            >
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-projects"
+              >۲۵+</span
+            >
+            <span class="hero-stat-label" data-key="hero-stat-projects-label"
+              >پروژه</span
+            >
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-key="hero-stat-clients"
+              >۱۸</span
+            >
+            <span class="hero-stat-label" data-key="hero-stat-clients-label"
+              >مشتری</span
+            >
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#portfolio" class="hero-btn primary" data-key="hero-btn-work"
+            >مشاهده پروژه‌ها</a
+          >
+          <a href="#contact" class="hero-btn" data-key="hero-btn-talk"
+            >شروع همکاری</a
+          >
+          <a href="#pricing" class="hero-btn ghost" data-key="hero-btn-pricing"
+            >مشاهده پلن‌ها</a
+          >
+        </div>
+
+        <div class="hero-tech">
+          <span data-key="hero-tech-label">تکنولوژی‌های من:</span>
+          <div class="tech-icons">
+            <i class="ri-html5-line" title="HTML5"></i>
+            <i class="ri-css3-line" title="CSS3"></i>
+            <i class="ri-javascript-line" title="JavaScript"></i>
+            <i class="ri-reactjs-line" title="React"></i>
+            <i class="ri-vuejs-line" title="Vue.js"></i>
+            <i class="ri-wordpress-line" title="WordPress"></i>
+            <i class="ri-git-branch-line" title="Git"></i>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- ===== SERVICES ===== -->
+    <!-- ============================================================ -->
+    <section class="services-section" id="services">
+      <div class="services-container">
+        <div class="services-header" data-aos="fade-down">
+          <span class="services-tag"
+            ><i class="ri-settings-3-line"></i>
+            <span data-key="services-tag">خدمات من</span></span
+          >
+          <h2 class="services-title">
+            <span data-key="services-title"
+              >چیزی که من برای شما انجام می‌دهم</span
+            >
+          </h2>
+          <p class="services-subtitle" data-key="services-subtitle">
+            از طراحی تا پیاده‌سازی، همه‌چیز در یک جا
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="flip-up" data-aos-delay="0">
+            <div class="service-icon"><i class="ri-paint-brush-line"></i></div>
+            <h3 data-key="service-1-title">طراحی UI/UX</h3>
+            <p data-key="service-1-desc">
+              طراحی رابط کاربری جذاب و تجربه کاربری روان که مشتریان شما را مجذوب
+              می‌کند.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-1">۲-۳ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="100">
+            <div class="service-icon"><i class="ri-code-line"></i></div>
+            <h3 data-key="service-2-title">توسعه فرانت‌اند</h3>
+            <p data-key="service-2-desc">
+              کدنویسی تمیز و بهینه با استفاده از مدرن‌ترین تکنولوژی‌های وب.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-2">۳-۴ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="200">
+            <div class="service-icon"><i class="ri-wordpress-line"></i></div>
+            <h3 data-key="service-3-title">وردپرس حرفه‌ای</h3>
+            <p data-key="service-3-desc">
+              ساخت و بهینه‌سازی وب‌سایت‌های وردپرسی با سرعت لود فوق‌العاده.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-3">۱-۲ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="300">
+            <div class="service-icon"><i class="ri-flashlight-line"></i></div>
+            <h3 data-key="service-4-title">بهینه‌سازی سرعت و سئو</h3>
+            <p data-key="service-4-desc">
+              افزایش سرعت لود و بهبود رتبه سایت شما در نتایج جستجوی گوگل.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-4">۱ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="400">
+            <div class="service-icon">
+              <i class="ri-shopping-cart-2-line"></i>
+            </div>
+            <h3 data-key="service-5-title">فروشگاه اینترنتی</h3>
+            <p data-key="service-5-desc">
+              راه‌اندازی فروشگاه آنلاین کامل با درگاه پرداخت و مدیریت آسان.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-5">۳-۵ هفته</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="flip-up" data-aos-delay="500">
+            <div class="service-icon"><i class="ri-headphone-line"></i></div>
+            <h3 data-key="service-6-title">پشتیبانی و نگهداری</h3>
+            <p data-key="service-6-desc">
+              پشتیبانی ۲۴ ساعته، بروزرسانی و نگهداری وب‌سایت شما.
+            </p>
+            <div class="service-meta">
+              <span class="service-time"
+                ><i class="ri-time-line"></i>
+                <span data-key="service-time-6">ماهانه</span></span
+              >
+              <a href="#contact" class="service-cta" data-key="service-cta"
+                >درخواست همکاری</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== PORTFOLIO ===== -->
+    <!-- ============================================================ -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="titel-portfolio" data-aos="fade-down">
+        <span data-key="portfolio-title-highlight">نمونه</span>
+        <span class="highlight-about" data-key="portfolio-title"
+          >کارهای من</span
+        >
+      </h2>
+
+      <div class="portfolio-filters" data-aos="fade-up">
+        <button
+          class="filter-btn active"
+          data-filter="all"
+          data-key="filter-all"
+        >
+          همه
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="landing"
+          data-key="filter-landing"
+        >
+          لندینگ
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="ecommerce"
+          data-key="filter-ecommerce"
+        >
+          فروشگاهی
+        </button>
+        <button class="filter-btn" data-filter="ui" data-key="filter-ui">
+          UI/UX
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="webapp"
+          data-key="filter-webapp"
+        >
+          اپلیکیشن
+        </button>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- کارت ۱ -->
+        <div
+          class="portfolio-card"
+          data-category="ecommerce"
+          data-aos="flip-up"
+          data-aos-delay="0"
+        >
+          <div class="card-image">
+            <img
+              src="./img/Screenshot 2026-07-06 153718.png"
+              alt="KICKS Store"
+              loading="lazy"
+            />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">آنلاین</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">KICKS</h3>
+          <p class="card-description" data-key="portfolio-desc-1">
+            فروشگاه تخصصی کفش با فیلترهای پویا، سبد خرید و فرم تماس.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/-KICKS./"
+              target="_blank"
+              class="btn-card btn-primary"
+            >
+              <i class="ri-external-link-line"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/-KICKS."
+              target="_blank"
+              class="btn-card btn-ghost"
+            >
+              <i class="ri-github-line"></i>
+              <span data-key="portfolio-btn-source">کد</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- کارت ۲ -->
+        <div
+          class="portfolio-card"
+          data-category="landing"
+          data-aos="flip-up"
+          data-aos-delay="100"
+        >
+          <div class="card-image">
+            <img src="./img/Coffee-Land.png" alt="Cafe Land" loading="lazy" />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">آنلاین</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">Cafe Land</h3>
+          <p class="card-description" data-key="portfolio-desc-2">
+            وب‌سایت کافه با منوی تعاملی و سبد خرید با ذخیره‌سازی محلی.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/Cafe-Noir/"
+              target="_blank"
+              class="btn-card btn-primary"
+            >
+              <i class="ri-external-link-line"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/Cafe-Noir-"
+              target="_blank"
+              class="btn-card btn-ghost"
+            >
+              <i class="ri-github-line"></i>
+              <span data-key="portfolio-btn-source">کد</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- کارت ۳ -->
+        <div
+          class="portfolio-card"
+          data-category="webapp"
+          data-aos="flip-up"
+          data-aos-delay="200"
+        >
+          <div class="card-image">
+            <img src="./img/motor-sit.png" alt="Motoride" loading="lazy" />
+            <div class="project-status">
+              <span class="status-dot"></span>
+              <span data-key="portfolio-status-online">آنلاین</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="tech-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="tech-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
+          </div>
+          <h3 class="card-title">Motoride</h3>
+          <p class="card-description" data-key="portfolio-desc-3">
+            پلتفرم اجاره موتور با لیست پویا، سبد خرید و اسلایدر.
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://hj904549-wq.github.io/MOTORIDE/"
+              target="_blank"
+              class="btn-card btn-primary"
+            >
+              <i class="ri-external-link-line"></i>
+              <span data-key="portfolio-btn-demo">مشاهده</span>
+            </a>
+            <a
+              href="https://github.com/hj904549-wq/MOTORIDE"
+              target="_blank"
+              class="btn-card btn-ghost"
+            >
+              <i class="ri-github-line"></i>
+              <span data-key="portfolio-btn-source">کد</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
+        <a href="./portfolio.html" class="view"
+          ><span data-key="portfolio-view-all">مشاهده همه نمونه کارها</span>
+          <i class="ri-arrow-left-line"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== PROCESS ===== -->
+    <!-- ============================================================ -->
+    <section class="process-section" id="process">
+      <div class="process-container">
+        <div class="process-header" data-aos="fade-down">
+          <span class="process-tag"
+            ><i class="ri-loop-right-line"></i>
+            <span data-key="process-tag">فرآیند کار</span></span
+          >
+          <h2>
+            <span data-key="process-title">چگونه با هم کار می‌کنیم؟</span>
+          </h2>
+          <p class="process-subtitle" data-key="process-subtitle">
+            روش من برای تبدیل ایده به محصول نهایی
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step" data-aos="fade-right">
+            <div class="step-number">۱</div>
+            <div class="step-content">
+              <h3 data-key="process-step-1-title">بررسی نیاز</h3>
+              <p data-key="process-step-1-desc">
+                جلسه مشاوره برای درک اهداف، نیازها و چشم‌انداز پروژه شما
+              </p>
+            </div>
+          </div>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="step-number">۲</div>
+            <div class="step-content">
+              <h3 data-key="process-step-2-title">طراحی اولیه</h3>
+              <p data-key="process-step-2-desc">
+                ایجاد وایرفریم و طراحی UI/UX با دریافت بازخورد شما
+              </p>
+            </div>
+          </div>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-number">۳</div>
+            <div class="step-content">
+              <h3 data-key="process-step-3-title">توسعه</h3>
+              <p data-key="process-step-3-desc">
+                کدنویسی و پیاده‌سازی با استفاده از تکنولوژی‌های مدرن
+              </p>
+            </div>
+          </div>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="step-number">۴</div>
+            <div class="step-content">
+              <h3 data-key="process-step-4-title">تست و بازبینی</h3>
+              <p data-key="process-step-4-desc">
+                تست کامل، رفع باگ و بهینه‌سازی برای بهترین عملکرد
+              </p>
+            </div>
+          </div>
+          <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-number">۵</div>
+            <div class="step-content">
+              <h3 data-key="process-step-5-title">تحویل و پشتیبانی</h3>
+              <p data-key="process-step-5-desc">
+                تحویل پروژه و پشتیبانی پس از راه‌اندازی
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== PRICING ===== -->
+    <!-- ============================================================ -->
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-container">
+        <div class="pricing-header" data-aos="fade-down">
+          <span class="pricing-tag"
+            ><i class="ri-coupon-3-line"></i>
+            <span data-key="pricing-tag">پلن‌های همکاری</span></span
+          >
+          <h2><span data-key="pricing-title">پکیج‌های طلایی من</span></h2>
+          <p class="pricing-subtitle" data-key="pricing-subtitle">
+            پلن مناسب پروژه خود را انتخاب کنید
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card" data-aos="zoom-in" data-aos-delay="0">
+            <div class="pricing-badge" data-key="pkg-1-badge">اقتصادی</div>
+            <h3 data-key="pkg-1-title">وب‌سایت شرکتی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-1-price">شروع از ۸ میلیون</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-1-desc">
+              مناسب برای معرفی خدمات، پزشکان، وکلا و کسب‌وکارهای نوپا
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-1-f1">طراحی اختصاصی UI/UX</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-1-f2">پیاده‌سازی با وردپرس</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-1-f3">کاملاً واکنش‌گرا</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-1-f4">امنیت استاندارد</span>
+              </li>
+              <li class="disabled">
+                <i class="ri-close-line"></i>
+                <span data-key="pkg-1-f5">درگاه پرداخت آنلاین</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn order-trigger"
+              data-package="وب‌سایت شرکتی"
+            >
+              <span data-key="pkg-1-btn">درخواست همکاری</span>
+            </a>
+          </div>
+
+          <div
+            class="pricing-card featured"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="pricing-badge popular" data-key="pkg-2-badge">
+              پیشنهادی
+            </div>
+            <h3 data-key="pkg-2-title">فروشگاه اینترنتی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-2-price">شروع از ۱۵ میلیون</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-2-desc">
+              یک فروشگاه کامل با سرعت لود فوق‌العاده و طراحی مدرن
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-2-f1">طراحی اختصاصی UI/UX</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-2-f2">اتصال به درگاه پرداخت</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-2-f3">بهینه‌سازی سرعت تخصصی</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-2-f4">پنل مدیریت فارسی</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-2-f5">پشتیبانی ۳ ماهه</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn primary order-trigger"
+              data-package="فروشگاه اینترنتی"
+            >
+              <span data-key="pkg-2-btn">درخواست همکاری</span>
+            </a>
+          </div>
+
+          <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-badge" data-key="pkg-3-badge">پیشرفته</div>
+            <h3 data-key="pkg-3-title">طراحی اختصاصی</h3>
+            <div class="pricing-price">
+              <span data-key="pkg-3-price">نیاز به مشاوره</span>
+            </div>
+            <p class="pricing-desc" data-key="pkg-3-desc">
+              برای استارتاپ‌ها و سامانه‌های اختصاصی و اپلیکیشن‌های وب پیچیده
+            </p>
+            <ul class="pricing-features">
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-3-f1">توسعه با React / Next.js</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-3-f2">سرعت لود خارق‌العاده</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-3-f3">امنیت سازمانی</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-3-f4">انیمیشن‌های تعاملی</span>
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span data-key="pkg-3-f5">پشتیبانی ۶ ماهه</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="pricing-btn order-trigger"
+              data-package="طراحی اختصاصی"
+            >
+              <span data-key="pkg-3-btn">درخواست مشاوره</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FAQ ===== -->
+    <!-- ============================================================ -->
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <div class="faq-header" data-aos="fade-down">
+          <span class="faq-tag"
+            ><i class="ri-question-line"></i>
+            <span data-key="faq-tag">سوالات متداول</span></span
+          >
+          <h2><span data-key="faq-title">پاسخ به سوالات شما</span></h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item" data-aos="fade-up">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q1"
+                >چقدر زمان برای طراحی و توسعه سایت نیاز است؟</span
+              >
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a1">
+                زمان پروژه بستگی به پیچیدگی و نوع پروژه دارد. برای وب‌سایت‌های
+                شرکتی معمولاً ۲ تا ۴ هفته و برای فروشگاه‌های اینترنتی ۴ تا ۶
+                هفته زمان نیاز است.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q2"
+                >آیا امکان تغییرات در حین پروژه وجود دارد؟</span
+              >
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a2">
+                بله، من با مشتریان در تمام مراحل پروژه همکاری می‌کنم و بازخورد
+                شما برای من بسیار مهم است. تغییرات در مرحله طراحی اولیه کاملاً
+                رایگان است.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q3"
+                >آیا پشتیبانی پس از تحویل پروژه دارید؟</span
+              >
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a3">
+                بله، تمام پروژه‌ها حداقل ۳ ماه پشتیبانی رایگان دارند و برای
+                پروژه‌های بزرگتر، پشتیبانی تا ۶ ماه ارائه می‌شود.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span data-key="faq-q4">آیا پروژه بهینه‌سازی سئو هم می‌شود؟</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+              <p data-key="faq-a4">
+                بله، تمام پروژه‌ها با اصول سئو و بهینه‌سازی سرعت پیاده‌سازی
+                می‌شوند تا در نتایج گوگل بهتر دیده شوند.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== BLOG ===== -->
+    <!-- ============================================================ -->
+    <section class="blog-section" id="blog">
+      <div class="blog-container">
+        <div class="blog-header" data-aos="fade-down">
+          <span class="blog-tag"
+            ><i class="ri-article-line"></i>
+            <span data-key="blog-tag">وبلاگ</span></span
+          >
+          <h2><span data-key="blog-title">آخرین مقالات و مطالب</span></h2>
+          <p class="blog-subtitle" data-key="blog-subtitle">
+            دانش و تجربیات من در زمینه طراحی و توسعه
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- مقاله ۱ -->
+          <article class="blog-card" data-aos="fade-up">
+            <div class="blog-image">
+              <img src="./img/blog-1.jpg" alt="طراحی UI/UX" loading="lazy" />
+              <span class="blog-category" data-key="blog-cat-uiux">UI/UX</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="ri-calendar-line"></i> ۲۵ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۵ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=1" data-key="blog-title-1"
+                  >چگونه یک طراحی UI/UX عالی داشته باشیم؟</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-1">
+                در این مقاله به اصول کلیدی طراحی رابط کاربری و تجربه کاربری
+                می‌پردازیم...
+              </p>
+              <a
+                href="blog-post.html?id=1"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- مقاله ۲ -->
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-image">
+              <img src="./img/blog-2.webp" alt="جاوااسکریپت" loading="lazy" />
+              <span class="blog-category" data-key="blog-cat-dev">توسعه</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="ri-calendar-line"></i> ۱۸ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۷ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=2" data-key="blog-title-2"
+                  >بهترین فریم‌ورک‌های جاوااسکریپت برای ۲۰۲۵</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-2">
+                مقایسه React، Vue و Angular و کاربرد هرکدام در پروژه‌های
+                مختلف...
+              </p>
+              <a
+                href="blog-post.html?id=2"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- مقاله ۳ -->
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-image">
+              <img
+                src="./img/blog-3.jpg"
+                alt="بهینه‌سازی سرعت وب‌سایت"
+                loading="lazy"
+              />
+              <span class="blog-category" data-key="blog-cat-optimization"
+                >بهینه‌سازی</span
+              >
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="ri-calendar-line"></i> ۱۰ دی ۱۴۰۴</span>
+                <span><i class="ri-time-line"></i> ۶ دقیقه</span>
+              </div>
+              <h3>
+                <a href="blog-post.html?id=3" data-key="blog-title-3"
+                  >۱۰ تکنیک طلایی برای افزایش سرعت وب‌سایت</a
+                >
+              </h3>
+              <p data-key="blog-excerpt-3">
+                با این تکنیک‌ها سرعت سایت خود را تا ۵۰٪ افزایش دهید...
+              </p>
+              <a
+                href="blog-post.html?id=3"
+                class="blog-read-more"
+                data-key="blog-read-more"
+                >ادامه مطلب <i class="ri-arrow-left-line"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px" data-aos="fade-up">
+          <a href="./blog.html" class="view"
+            ><span data-key="blog-view-all">مشاهده همه مقالات</span>
+            <i class="ri-arrow-left-line"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CONTACT ===== -->
+    <!-- ============================================================ -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-header" data-aos="fade-down">
+          <span class="contact-tag"
+            ><i class="ri-mail-line"></i>
+            <span data-key="contact-tag">تماس با من</span></span
+          >
+          <h2>
+            <span data-key="contact-title"
+              >بیایید با هم <span class="gradient-text">چیزی خاص</span> خلق
+              کنیم</span
+            >
+          </h2>
+          <p class="contact-subtitle" data-key="contact-subtitle">
+            راه‌های ارتباطی با من را مشاهده کنید
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="info-card" data-aos="fade-up">
+              <div class="info-icon"><i class="ri-mail-line"></i></div>
+              <div class="info-content">
+                <h4 data-key="contact-email-label">ایمیل</h4>
+                <a href="mailto:hj904549@gmail.com">hj904549@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="info-card" data-aos="fade-up" data-aos-delay="50">
+              <div class="info-icon"><i class="ri-phone-line"></i></div>
+              <div class="info-content">
+                <h4 data-key="contact-phone-label">شماره تماس</h4>
+                <p>+98 902 679 8406</p>
+              </div>
+            </div>
+
+            <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="info-icon"><i class="ri-map-pin-line"></i></div>
+              <div class="info-content">
+                <h4 data-key="contact-location-label">موقعیت</h4>
+                <p data-key="contact-location">ایران، تهران</p>
+                <span data-key="contact-remote"
+                  >🌍 آماده همکاری ریموت در سراسر جهان</span
+                >
+              </div>
+            </div>
+
+            <div class="social-links" data-aos="fade-up" data-aos-delay="150">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-btn"
+                target="_blank"
+                aria-label="گیت‌هاب"
+                ><i class="ri-github-line"></i
+              ></a>
+              <a
+                href="#"
+                class="social-btn"
+                target="_blank"
+                aria-label="اینستاگرام"
+                ><i class="ri-instagram-line"></i
+              ></a>
+            
+              <a href="https://web.telegram.org/a/" class="social-btn" target="_blank" aria-label="تلگرام"
+                ><i class="ri-telegram-line"></i
+              ></a>
+              <a href="https://www.youtube.com/channel/UCCxJGb3kewgx2W1T1ZjswbQ" class="social-btn" target="_blank" aria-label="یوتیوب"
+                ><i class="ri-youtube-line"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper" data-aos="fade-left">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name"
+                  ><i class="ri-user-line"></i>
+                  <span data-key="form-name">نام و نام خانوادگی</span></label
+                >
+                <input
+                  type="text"
+                  id="contact-name"
+                  required
+                  placeholder="نام خود را وارد کنید"
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-email"
+                  ><i class="ri-mail-line"></i>
+                  <span data-key="form-email">ایمیل</span></label
+                >
+                <input
+                  type="email"
+                  id="contact-email"
+                  required
+                  placeholder="example@email.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-project-type"
+                  ><i class="ri-coupon-3-line"></i>
+                  <span data-key="form-package">نوع پروژه</span></label
+                >
+                <select id="contact-project-type">
+                  <option value="" data-key="form-select-placeholder">
+                    لطفاً یک گزینه را انتخاب کنید
+                  </option>
+                  <option value="وب‌سایت شرکتی" data-key="form-option-1">
+                    وب‌سایت شرکتی
+                  </option>
+                  <option value="فروشگاه اینترنتی" data-key="form-option-2">
+                    فروشگاه اینترنتی
+                  </option>
+                  <option value="طراحی اختصاصی" data-key="form-option-3">
+                    طراحی اختصاصی (React/Next.js)
+                  </option>
+                  <option value="بهینه‌سازی سئو" data-key="form-option-4">
+                    بهینه‌سازی سرعت و سئو
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-budget"
+                  ><i class="ri-money-dollar-circle-line"></i>
+                  <span data-key="form-budget">بودجه تقریبی</span></label
+                >
+                <select id="contact-budget">
+                  <option value="زیر ۱۰ میلیون" data-key="budget-1">
+                    زیر ۱۰ میلیون تومان
+                  </option>
+                  <option value="۱۰ تا ۲۰ میلیون" data-key="budget-2">
+                    ۱۰ تا ۲۰ میلیون تومان
+                  </option>
+                  <option value="۲۰ تا ۵۰ میلیون" data-key="budget-3">
+                    ۲۰ تا ۵۰ میلیون تومان
+                  </option>
+                  <option value="بالای ۵۰ میلیون" data-key="budget-4">
+                    بالای ۵۰ میلیون تومان
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message"
+                  ><i class="ri-message-3-line"></i>
+                  <span data-key="contact-message-label">پیام</span></label
+                >
+                <textarea
+                  id="contact-message"
+                  rows="4"
+                  placeholder="توضیحات پروژه خود را بنویسید..."
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                <i class="ri-send-plane-2-line"></i>
+                <span data-key="contact-send">ارسال پیام</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- ============================================================ -->
+    <div class="back-to-top" id="backToTop">
+      <button class="back-to-top-btn" aria-label="Back to top">
+        <i class="ri-arrow-up-line"></i>
+      </button>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand" data-aos="fade-right">
+            <h2>حامد<span>.</span></h2>
+            <p data-key="footer-desc">
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >پذیرش پروژه‌های جدید</span
+              >
+            </div>
+            <div class="footer-email">
+              <i class="ri-mail-line"></i>
+              <a href="mailto:hj904549@gmail.com">hj904549@gmail.com</a>
+            </div>
+          </div>
+
+          <div data-aos="fade-up">
+            <h4 class="footer-title" data-key="footer-quick-links">
+              لینک‌های سریع
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#home"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-home">خانه</span></a
+                >
+              </li>
+              <li>
+                <a href="#services"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-services">خدمات</span></a
+                >
+              </li>
+              <li>
+                <a href="#portfolio"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
+                >
+              </li>
+              <li>
+                <a href="#pricing"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-packages">پلن‌ها</span></a
+                >
+              </li>
+              <li>
+                <a href="#blog"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
+                >
+              </li>
+              <li>
+                <a href="#contact"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-contact">تماس</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="50">
+            <h4 class="footer-title" data-key="footer-connect">
+              شبکه‌های اجتماعی
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                target="_blank"
+                aria-label="گیت‌هاب"
+              >
+                <i class="ri-github-line"></i>
+                <span>گیت‌هاب</span>
+              </a>
+              <a
+                href="https://www.instagram.com/hamed176750/?hl=en"
+                class="social-link instagram"
+                target="_blank"
+                aria-label="instagram"
+              >
+                <i class="ri-instagram-line"></i>
+                <span>اینستاگرام</span>
+              </a>
+
+              <a
+                href="https://web.telegram.org/a/"
+                class="social-link telegram"
+                target="_blank"
+                aria-label="تلگرام"
+              >
+                <i class="ri-telegram-line"></i>
+                <span>تلگرام</span>
+              </a>
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              با عضویت در خبرنامه، از آخرین پروژه‌ها، مقالات و نکات طراحی وب
+              مطلع شوید.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+              />
+              <button type="submit">
+                <i class="ri-send-plane-2-line"></i>
+                <span data-key="footer-subscribe">عضویت</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom" data-aos="fade-up">
+          <p>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="ri-heart-3-fill"></i></span>
+            <span data-key="footer-tech"
+              >با استفاده از HTML، CSS و JavaScript</span
+            >
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./app.js"></script>
+    <script type="module">
+  const projectId = 'h4g60wzb';
+  const dataset = 'production';
+  const apiVersion = '2025-02-19';
+
+  const query = `count(*[_type == "project"])`;
+
+  const url =
+    `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}` +
+    `?query=${encodeURIComponent(query)}`;
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    console.log('Sanity connected successfully!');
+    console.log('Projects:', data.result);
+  } catch (error) {
+    console.error('Sanity connection failed:', error);
+  }
+</script>
+  </body>
+</html>

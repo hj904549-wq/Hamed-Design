@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مقاله | حامد - وبلاگ طراحی و توسعه</title>
+    <meta
+      name="description"
+      content="مطالعه مقاله تخصصی در زمینه طراحی و توسعه وب - UI/UX، فرانت‌اند، وردپرس و بهینه‌سازی"
+    />
+    <link
+      rel="canonical"
+      href="https://hj904549-wq.github.io/Hamed-Design/blog-post.html"
+    />
+
+    <meta property="og:title" content="مقاله | حامد - وبلاگ طراحی و توسعه" />
+    <meta
+      property="og:description"
+      content="مطالعه مقاله تخصصی در زمینه طراحی و توسعه وب"
+    />
+    <meta
+      property="og:url"
+      content="https://hj904549-wq.github.io/Hamed-Design/blog-post.html"
+    />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===== Remix Icon ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="blog-post.css" />
+  </head>
+  <body>
+    <!-- پس‌زمینه -->
+    <div class="bg-gradient"></div>
+    <div class="particle-container" id="particleContainer"></div>
+
+    <!-- ===== دکمه‌های کنترل ===== -->
+    <div class="header-controls">
+      <div class="language-selector">
+        <button
+          id="lang-toggle-btn"
+          class="lang-btn"
+          aria-label="Toggle language"
+        >
+          <span class="lang-current" id="lang-current-label">FA</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" data-lang="fa">
+            <span class="lang-flag">🇮🇷</span> فارسی
+          </button>
+          <button class="lang-option" data-lang="en">
+            <span class="lang-flag">🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="theme-switch-btn" class="theme-btn" aria-label="Toggle theme">
+        <i class="ri-moon-line theme-icon moon"></i>
+        <i class="ri-sun-line theme-icon sun"></i>
+      </button>
+    </div>
+
+    <!-- ===== دکمه همبرگر ===== -->
+    <button id="menu-toggle-btn" class="hamburger-btn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- ===== منوی موبایل ===== -->
+    <div class="mobile-menu-wrapper" id="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="nav-link"
+          ><i class="ri-home-5-line"></i>
+          <span data-key="nav-home">خانه</span></a
+        >
+        <a href="index.html#services" class="nav-link"
+          ><i class="ri-settings-3-line"></i>
+          <span data-key="nav-services">خدمات</span></a
+        >
+        <a href="portfolio.html" class="nav-link"
+          ><i class="ri-briefcase-4-line"></i>
+          <span data-key="nav-portfolio">نمونه کارها</span></a
+        >
+        <a href="index.html#pricing" class="nav-link"
+          ><i class="ri-coupon-3-line"></i>
+          <span data-key="nav-packages">پلن‌ها</span></a
+        >
+        <a href="blog.html" class="nav-link active"
+          ><i class="ri-article-line"></i>
+          <span data-key="nav-blog">وبلاگ</span></a
+        >
+        <a href="index.html#contact" class="nav-link"
+          ><i class="ri-mail-line"></i>
+          <span data-key="nav-contact">تماس</span></a
+        >
+      </div>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ===== محتوای مقاله ===== -->
+    <div id="postContent">
+      <!-- مقاله توسط JS لود می‌شود -->
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2>حامد<span>.</span></h2>
+            <p data-key="footer-desc">
+              طراح UI/UX و توسعه‌دهنده فرانت‌اند که تجربه‌های دیجیتال زیبا،
+              واکنش‌گرا و کاربرپسند با فناوری‌های مدرن خلق می‌کند.
+            </p>
+            <div class="footer-status">
+              <span class="dot"></span>
+              <span class="text" data-key="footer-status"
+                >پذیرش پروژه‌های جدید</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-quick-links">
+              لینک‌های سریع
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-home">خانه</span></a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-portfolio">نمونه کارها</span></a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-blog">وبلاگ</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="ri-arrow-left-s-line"></i>
+                  <span data-key="nav-contact">تماس</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-connect">
+              شبکه‌های اجتماعی
+            </h4>
+            <div class="footer-social">
+              <a
+                href="https://github.com/hj904549-wq"
+                class="social-link github"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="گیت‌هاب"
+              >
+                <i class="ri-github-line"></i> <span>گیت‌هاب</span>
+              </a>
+              <a
+                href="https://www.instagram.com/hamed176750/"
+                class="social-link instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="اینستاگرام"
+              >
+                <i class="ri-instagram-line"></i> <span>اینستاگرام</span>
+              </a>
+              <a
+                href="https://web.telegram.org/a/"
+                class="social-link telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="تلگرام"
+              >
+                <i class="ri-telegram-line"></i> <span>تلگرام</span>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCCxJGb3kewgx2W1T1ZjswbQ"
+                class="social-link youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="یوتیوب"
+              >
+                <i class="ri-youtube-line"></i> <span>یوتیوب</span>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title" data-key="footer-newsletter">خبرنامه</h4>
+            <p class="newsletter-text" data-key="footer-newsletter-desc">
+              با عضویت در خبرنامه، از آخرین مقالات و آموزش‌ها مطلع شوید.
+            </p>
+            <form class="newsletter-form" id="newsletterFormFooter">
+              <input
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                required
+              />
+              <button type="submit">
+                <i class="ri-send-plane-2-line"></i>
+                <span data-key="footer-subscribe">عضویت</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; ۲۰۲۶ <strong>حامد</strong>.
+            <span data-key="footer-crafted">طراحی و توسعه با عشق</span>
+            <span class="heart"><i class="ri-heart-3-fill"></i></span>
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
+            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+            <span class="footer-version">v4.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
