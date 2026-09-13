@@ -1,15 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>عنوان سایت من</title>
-    <link>https://username.github.io</link>
-    <description>توضیح کوتاه سایت</description>
-
+    <title>حامد | وبلاگ طراحی و توسعه وب</title>
+    <link>https://hj904549-wq.github.io/Hamed-Design/blog.html</link>
+    <description>مقالات تخصصی طراحی UI/UX، توسعه فرانت‌اند، وردپرس و بهینه‌سازی وب</description>
+    <language>fa</language>
+    <lastBuildDate>Sun, 13 Sep 2026 12:01:17 GMT</lastBuildDate>
+    <atom:link href="https://hj904549-wq.github.io/Hamed-Design/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://hj904549-wq.github.io/Hamed-Design/img/Profile-image.jpg</url>
+      <title>حامد | وبلاگ</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog.html</link>
+    </image>
     <item>
-      <title>عنوان پست اول</title>
-      <link>https://username.github.io/post1</link>
-      <description>توضیح پست</description>
-      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+      <title>چگونه یک طراحی UI/UX عالی داشته باشیم؟</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=1</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=1</guid>
+      <description>در این مقاله به اصول کلیدی طراحی رابط کاربری و تجربه کاربری می‌پردازیم و نکات عملی برای خلق محصولات دیجیتال موفق را بررسی می‌کنیم.</description>
+      <category>UI/UX</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-1.jpg" length="0" type="image/jpeg" />
+    </item>
+    <item>
+      <title>بهترین فریم‌ورک‌های جاوااسکریپت برای ۲۰۲۵</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=2</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=2</guid>
+      <description>بررسی مقایسه‌ای فریم‌ورک‌های جاوااسکریپت و راهنمای انتخاب بهترین ابزار برای پروژه‌هایتان.</description>
+      <category>Development</category>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-2.webp" length="0" type="image/jpeg" />
+    </item>
+    <item>
+      <title>۱۰ تکنیک طلایی برای افزایش سرعت وب‌سایت</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=3</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=3</guid>
+      <description>با به‌کارگیری تکنیک‌های بهینه‌سازی، سرعت وب‌سایت خود را چند برابر کنید و سئو بهتری بگیرید.</description>
+      <category>Optimization</category>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-3.jpg" length="0" type="image/jpeg" />
+    </item>
+    <item>
+      <title>وردپرس یا React؟ کدام را برای پروژه خود انتخاب کنیم؟</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=4</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=4</guid>
+      <description>در این مقاله به مقایسه سایت‌های وردپرسی و برنامه‌های React می‌پردازیم تا بهترین انتخاب را داشته باشید.</description>
+      <category>WordPress</category>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-4.jpg" length="0" type="image/jpeg" />
+    </item>
+    <item>
+      <title>سئو فنی برای توسعه‌دهندگان فرانت‌اند</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=5</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=5</guid>
+      <description>مفاهیم سئو فنی، Core Web Vitals و بهینه‌سازی خزیدن موتورهای جستجو را با مثال‌های عملی مرور می‌کنیم.</description>
+      <category>SEO</category>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-5.jpg" length="0" type="image/jpeg" />
+    </item>
+    <item>
+      <title>انیمیشن‌های تعاملی با CSS و JavaScript</title>
+      <link>https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=6</link>
+      <guid isPermaLink="true">https://hj904549-wq.github.io/Hamed-Design/blog-post.html?id=6</guid>
+      <description>با مثال‌های کاربردی از CSS و JavaScript، انیمیشن‌های جذاب و تعاملی برای وب‌سایت خود بسازید.</description>
+      <category>UI/UX</category>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://hj904549-wq.github.io/Hamed-Design/img/blog-6.jpg" length="0" type="image/jpeg" />
     </item>
   </channel>
 </rss>
