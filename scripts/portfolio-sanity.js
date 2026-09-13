@@ -115,6 +115,12 @@ async function loadProjects() {
       document.getElementById("portfolio-container");
 
 
+    if (!container) {
+      console.error("portfolio-container not found");
+      return;
+    }
+
+
     container.innerHTML =
       projects
       .map(createProjectCard)

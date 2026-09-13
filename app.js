@@ -285,8 +285,6 @@ const translations = {
         "footer-subscribe": "عضویت",
         "footer-crafted": "طراحی و توسعه با عشق",
         "footer-tech": "با استفاده از HTML، CSS و JavaScript",
-        "footer-privacy": "حریم خصوصی",
-        "footer-terms": "قوانین و مقررات",
         "footer-all-rights": "تمامی حقوق محفوظ است",
         "footer-newsletter-placeholder": "ایمیل خود را وارد کنید"
     },
@@ -573,8 +571,6 @@ const translations = {
         "footer-subscribe": "Subscribe",
         "footer-crafted": "Crafted with",
         "footer-tech": "using HTML, CSS & JavaScript",
-        "footer-privacy": "Privacy Policy",
-        "footer-terms": "Terms of Service",
         "footer-all-rights": "All Rights Reserved",
         "footer-newsletter-placeholder": "Enter your email"
     }
@@ -657,30 +653,41 @@ const postsData = {
 // =========================================
 let currentLang = localStorage.getItem("language") || "fa";
 
-function loadPostContent() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('id');
-    const container = document.getElementById('postContent');
+function normalizeSlug(str) {
+    if (!str) return '';
+    return String(str).trim().toLowerCase().replace(/\s+/g, '-');
+}
 
-    if (!container) return;
+function findPostBySlug(slug) {
+    if (!slug) return null;
+    const target = normalizeSlug(decodeURIComponent(slug));
+    for (const id in postsData) {
+        const post = postsData[id];
+        if (normalizeSlug(post.title) === target) return post;
+        // also match a plain id passed as slug
+        if (id === slug) return post;
+    }
+    return null;
+}
 
-    const lang = document.documentElement.lang || 'fa';
+async function renderSanityPost(slug, container, lang) {
+    try {
+        const safeSlug = slug.replace(/['"\\]/g, '');
+        const articles = await sanityQuery(`
+            *[_type=="article" && isPublished == true && slug.current == "${safeSlug}"][0]
+            {
+                title,
+                excerpt,
+                category,
+                publishedAt,
+                coverImage
+            }
+        `);
+        const article = articles;
 
-    if (postId && postsData[postId]) {
-        const post = postsData[postId];
-        const contentKey = 'post-content-' + postId;
-        const titleKey = 'post-title-' + postId;
-
-        let translatedTitle = post.title;
-        if (translations[lang] && translations[lang][titleKey]) {
-            translatedTitle = translations[lang][titleKey];
-        }
-
-        let content = '';
-        if (translations[lang] && translations[lang][contentKey]) {
-            content = translations[lang][contentKey];
-        } else {
-            content = translations['fa'][contentKey] || '<p>محتوای مقاله یافت نشد</p>';
+        if (!article) {
+            renderPostNotFound(container, lang);
+            return;
         }
 
         const dir = lang === 'fa' ? 'rtl' : 'ltr';
@@ -691,49 +698,149 @@ function loadPostContent() {
                     <i class="ri-arrow-right-line"></i>
                     <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
                 </a>
-                <span class="post-category">${post.category}</span>
-                <h1>${translatedTitle}</h1>
+                <span class="post-category">${article.category || 'عمومی'}</span>
+                <h1>${article.title}</h1>
                 <div class="post-meta">
-                    <span><i class="ri-calendar-line"></i> ${post.date}</span>
-                    <span><i class="ri-time-line"></i> ${post.readTime}</span>
-                    <span><i class="ri-eye-line"></i> ${post.views}</span>
+                    <span><i class="ri-calendar-line"></i> ${formatDate(article.publishedAt)}</span>
+                    <span><i class="ri-time-line"></i> ۵ دقیقه</span>
                 </div>
             </header>
 
             <div class="blog-post-container">
-                <img src="${post.image}" alt="${translatedTitle}" class="blog-post-image" loading="lazy" />
-                
+                ${
+                    article.coverImage?.asset?._ref
+                        ? `<img src="${sanityImageUrl(article.coverImage)}" alt="${article.title}" class="blog-post-image" loading="lazy" />`
+                        : ''
+                }
                 <div class="blog-post-content" dir="${dir}">
-                    ${content}
-                    
-                    <div class="post-tags">
-                        ${post.tags.map(tag => `<span>#${tag}</span>`).join('')}
-                    </div>
+                    <p>${article.excerpt || ''}</p>
                 </div>
             </div>
         `;
-    } else {
-        container.innerHTML = `
-            <header class="blog-post-header" data-aos="fade-down">
-                <a href="blog.html" class="back-to-home">
-                    <i class="ri-arrow-right-line"></i>
-                    <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
-                </a>
-            </header>
-            <div class="not-found">
-                <h2>🔍 ${lang === 'fa' ? 'مقاله‌ای یافت نشد' : 'Article Not Found'}</h2>
-                <p>${lang === 'fa' ? 'متأسفیم، مقاله‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.' : 'Sorry, the article you are looking for does not exist or has been removed.'}</p>
-                <a href="blog.html" class="back-btn">
-                    <i class="ri-arrow-right-line"></i>
-                    ${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}
-                </a>
-            </div>
-        `;
+    } catch (error) {
+        console.error('Sanity post error:', error);
+        renderPostNotFound(container, lang);
     }
+}
+
+function formatDate(dateString) {
+    if (!dateString) return '';
+    const d = new Date(dateString);
+    if (isNaN(d)) return '';
+    return new Intl.DateTimeFormat('fa-IR', { dateStyle: 'long' }).format(d);
+}
+
+function sanityImageUrl(image) {
+    if (!image?.asset?._ref) return '';
+    const match = image.asset._ref.match(/^image-(.+)-(\d+x\d+)-(\w+)$/);
+    if (!match) return '';
+    return `https://cdn.sanity.io/images/h4g60wzb/production/${match[1]}-${match[2]}.${match[3]}`;
+}
+
+function renderPostNotFound(container, lang) {
+    container.innerHTML = `
+        <header class="blog-post-header" data-aos="fade-down">
+            <a href="blog.html" class="back-to-home">
+                <i class="ri-arrow-right-line"></i>
+                <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
+            </a>
+        </header>
+        <div class="not-found">
+            <h2>🔍 ${lang === 'fa' ? 'مقاله‌ای یافت نشد' : 'Article Not Found'}</h2>
+            <p>${lang === 'fa' ? 'متأسفیم، مقاله‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.' : 'Sorry, the article you are looking for does not exist or has been removed.'}</p>
+            <a href="blog.html" class="back-btn">
+                <i class="ri-arrow-right-line"></i>
+                ${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}
+            </a>
+        </div>
+    `;
+}
+
+function loadPostContent() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    const slug = urlParams.get('slug');
+    const container = document.getElementById('postContent');
+
+    if (!container) return;
+
+    const lang = document.documentElement.lang || 'fa';
+
+    // slug parameter: try static match, else fetch from Sanity.
+    if (slug && !postId) {
+        const matched = findPostBySlug(slug);
+        if (matched) {
+            renderStaticPost(matched, container, lang);
+        } else {
+            renderSanityPost(slug, container, lang);
+        }
+        if (typeof AOS !== 'undefined') {
+            setTimeout(() => AOS.refresh(), 100);
+        }
+        return;
+    }
+
+    if (postId && postsData[postId]) {
+        renderStaticPost(postsData[postId], container, lang);
+        if (typeof AOS !== 'undefined') {
+            setTimeout(() => AOS.refresh(), 100);
+        }
+        return;
+    }
+
+    renderPostNotFound(container, lang);
 
     if (typeof AOS !== 'undefined') {
         setTimeout(() => AOS.refresh(), 100);
     }
+}
+
+function renderStaticPost(post, container, lang) {
+    const postId = post.id;
+    const contentKey = 'post-content-' + postId;
+    const titleKey = 'post-title-' + postId;
+
+    let translatedTitle = post.title;
+    if (translations[lang] && translations[lang][titleKey]) {
+        translatedTitle = translations[lang][titleKey];
+    }
+
+    let content = '';
+    if (translations[lang] && translations[lang][contentKey]) {
+        content = translations[lang][contentKey];
+    } else {
+        content = translations['fa'][contentKey] || '<p>محتوای مقاله یافت نشد</p>';
+    }
+
+    const dir = lang === 'fa' ? 'rtl' : 'ltr';
+
+    container.innerHTML = `
+        <header class="blog-post-header" data-aos="fade-down">
+            <a href="blog.html" class="back-to-home">
+                <i class="ri-arrow-right-line"></i>
+                <span>${lang === 'fa' ? 'بازگشت به وبلاگ' : 'Back to Blog'}</span>
+            </a>
+            <span class="post-category">${post.category}</span>
+            <h1>${translatedTitle}</h1>
+            <div class="post-meta">
+                <span><i class="ri-calendar-line"></i> ${post.date}</span>
+                <span><i class="ri-time-line"></i> ${post.readTime}</span>
+                <span><i class="ri-eye-line"></i> ${post.views}</span>
+            </div>
+        </header>
+
+        <div class="blog-post-container">
+            <img src="${post.image}" alt="${translatedTitle}" class="blog-post-image" loading="lazy" />
+
+            <div class="blog-post-content" dir="${dir}">
+                ${content}
+
+                <div class="post-tags">
+                    ${post.tags.map(tag => `<span>#${tag}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 function setLanguage(lang) {
@@ -1080,7 +1187,6 @@ if (contactForm) {
 // =========================================
 // 13. خبرنامه (با EmailJS)
 // =========================================
-const newsletterForm = document.getElementById('newsletterForm');
 const newsletterForms = document.querySelectorAll('.newsletter-form');
 
 newsletterForms.forEach(form => {

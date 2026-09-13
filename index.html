@@ -1297,8 +1297,7 @@
             >
           </p>
           <div class="footer-bottom-links">
-            <a href="#" data-key="footer-privacy">حریم خصوصی</a>
-            <a href="#" data-key="footer-terms">قوانین و مقررات</a>
+            <span data-key="footer-all-rights">تمامی حقوق محفوظ است</span>
           </div>
         </div>
       </div>
@@ -1307,31 +1306,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./app.js"></script>
-    <script type="module">
-  const projectId = 'h4g60wzb';
-  const dataset = 'production';
-  const apiVersion = '2025-02-19';
-
-  const query = `count(*[_type == "project"])`;
-
-  const url =
-    `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}` +
-    `?query=${encodeURIComponent(query)}`;
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    console.log('Sanity connected successfully!');
-    console.log('Projects:', data.result);
-  } catch (error) {
-    console.error('Sanity connection failed:', error);
-  }
-</script>
   </body>
 </html>
