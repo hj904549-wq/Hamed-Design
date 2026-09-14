@@ -1,6 +1,7 @@
 // Blog list — Sanity CMS progressive enhancement
 // Renders any published Sanity articles at the top of #blogGrid,
 // keeping the static fallback cards below (hybrid content source).
+// Depends on scripts/sanity.js (loaded first) for sanityQuery/getSanityImageUrl/formatSanityDate.
 
 const SANITY_CATEGORY_FILTERS = {
   uiux: "UI/UX",
@@ -21,26 +22,6 @@ const SANITY_CATEGORY_FILTERS = {
   css: "توسعه",
   "ui-ux": "UI/UX"
 };
-
-function getSanityImageUrl(image) {
-  if (!image?.asset?._ref) return "";
-
-  const ref = image.asset._ref;
-
-  // Sanity ref format: image-{assetId}-{width}x{height}-{format}
-  const match = ref.match(/^image-(.+)-(\d+x\d+)-(\w+)$/);
-
-  if (!match) return "";
-
-  return `https://cdn.sanity.io/images/h4g60wzb/production/${match[1]}-${match[2]}.${match[3]}`;
-}
-
-function formatSanityDate(dateString) {
-  if (!dateString) return "";
-  const date = new Date(dateString);
-  if (isNaN(date)) return "";
-  return new Intl.DateTimeFormat("fa-IR", { dateStyle: "long" }).format(date);
-}
 
 function createArticleCard(article) {
   const imageUrl = getSanityImageUrl(article.coverImage);

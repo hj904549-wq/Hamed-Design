@@ -1,31 +1,16 @@
-console.log("portfolio-sanity loaded");
-
-
-function getSanityImageUrl(image) {
-  if (!image?.asset?._ref) return "";
-
-  const ref = image.asset._ref;
-
-  const parts = ref.split("-");
-
-  const id = parts[1];
-  const dimensions = parts[2];
-  const format = parts[3];
-
-  return `https://cdn.sanity.io/images/h4g60wzb/production/${id}-${dimensions}.${format}`;
-}
-
+// Portfolio — Sanity CMS rendering
+// Fills #portfolio-container with Sanity projects.
+// Depends on scripts/sanity.js (loaded first).
+// Note: renderSanityPost (app.js) still has its own sanityImageUrl — app.js doesn't load the shared one.
 
 function createProjectCard(project) {
-
   const imageUrl = getSanityImageUrl(project.coverImage);
-
 
   return `
     <div class="portfolio-page-card" data-aos="flip-up">
 
       <div class="card-image">
-        <img 
+        <img
           src="${imageUrl}"
           alt="${project.title}"
           loading="lazy"
@@ -37,32 +22,25 @@ function createProjectCard(project) {
         </div>
       </div>
 
-
       <div class="tech-stack">
-
         ${
           project.technologies?.map(
             tech => `<span>${tech}</span>`
           ).join("")
         }
-
       </div>
 
-
       <h3>${project.title}</h3>
-
 
       <p>
         ${project.shortDescription}
       </p>
 
-
       <div class="action-buttons">
-
         ${
           project.liveUrl
           ?
-          `<a href="${project.liveUrl}" target="_blank" class="btn-primary">
+          `<a href="${project.liveUrl}" target="_blank" rel="noopener" class="btn-primary">
              <i class="ri-external-link-line"></i>
              مشاهده
            </a>`
@@ -70,11 +48,10 @@ function createProjectCard(project) {
           ""
         }
 
-
         ${
           project.githubUrl
           ?
-          `<a href="${project.githubUrl}" target="_blank" class="btn-ghost">
+          `<a href="${project.githubUrl}" target="_blank" rel="noopener" class="btn-ghost">
              <i class="ri-github-line"></i>
              کد
            </a>`
@@ -88,14 +65,9 @@ function createProjectCard(project) {
   `;
 }
 
-
-
 async function loadProjects() {
-
   try {
-
     const projects = await sanityQuery(`
-
       *[_type == "project"]
       | order(order asc)
 
@@ -107,36 +79,28 @@ async function loadProjects() {
         liveUrl,
         githubUrl
       }
-
     `);
 
-
-    const container =
-      document.getElementById("portfolio-container");
-
+    const container = document.getElementById("portfolio-container");
 
     if (!container) {
       console.error("portfolio-container not found");
       return;
     }
 
-
-    container.innerHTML =
-      projects
-      .map(createProjectCard)
-      .join("");
-
-
-    console.log("Projects rendered:", projects);
-
-
-  } catch(error) {
-
+    if (projects && projects.length > 0) {
+      container.innerHTML = projects.map(createProjectCard).join("");
+    } else {
+      container.innerHTML = `
+        <div class="portfolio-empty">
+          <i class="ri-folder-open-line"></i>
+          <p>هنوز پروژه‌ای اضافه نشده است.</p>
+        </div>
+      `;
+    }
+  } catch (error) {
     console.error("Sanity Error:", error);
-
   }
-
 }
-
 
 loadProjects();
